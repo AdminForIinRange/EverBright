@@ -362,16 +362,7 @@ const Navbar = () => {
               >
                 EverBright
               </Text>
-              <Text
-              textStyle={"smallText"}
-                color="#777777"
-             
-                letterSpacing="0.5px"
-                fontFamily="arial"
-                textTransform="uppercase"
-              >
-                Premium Services
-              </Text>
+          
             </Box>
           </Box>
 
