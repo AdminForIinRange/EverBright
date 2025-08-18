@@ -4,8 +4,7 @@ import { useState, useRef, useCallback, memo, useEffect } from "react";
 import { Box, Text } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
-
+import { Menu, Phone, X } from "lucide-react";
 
 const Navbar = () => {
   const router = useRouter();
@@ -78,11 +77,11 @@ const Navbar = () => {
                 index !== items.length - 1 ? "1px solid #F5F5F5" : "none"
               }
             >
-              <Text  textStyle={"smallText"} fontWeight="500" mb="4px">
+              <Text textStyle={"smallText"} fontWeight="500" mb="4px">
                 {item.label}
               </Text>
               {item.description && (
-                <Text  textStyle={"smallText"} color="#666" lineHeight="1.4">
+                <Text textStyle={"smallText"} color="#666" lineHeight="1.4">
                   {item.description}
                 </Text>
               )}
@@ -91,7 +90,7 @@ const Navbar = () => {
         </Box>
         <Box p="12px 20px" bg="#F9F9F9" borderTop="1px solid #F5F5F5">
           <Text
-          textStyle={"smallText"}
+            textStyle={"smallText"}
             fontWeight="500"
             color="#555"
             cursor="pointer"
@@ -102,7 +101,7 @@ const Navbar = () => {
           </Text>
         </Box>
       </Box>
-    ),
+    )
   );
   Dropdown.displayName = "Dropdown";
 
@@ -143,7 +142,7 @@ const Navbar = () => {
         ))}
         <Box py="12px" borderTop="1px solid #eee">
           <Text
-           textStyle={"smallText"}
+            textStyle={"smallText"}
             fontWeight="500"
             color="#555"
             cursor="pointer"
@@ -158,7 +157,7 @@ const Navbar = () => {
           </Text>
         </Box>
       </Box>
-    ),
+    )
   );
   MobileDropdown.displayName = "MobileDropdown";
 
@@ -189,7 +188,7 @@ const Navbar = () => {
       router.push(path);
       setMobileMenuOpen(false);
     },
-    [router],
+    [router]
   );
 
   const toggleMobileDropdown = useCallback((name: string) => {
@@ -264,11 +263,7 @@ const Navbar = () => {
       position="sticky"
       top="0"
       zIndex="100"
-      bg={[
-        "rgba(255, 255, 255, 1)",
-        "rgba(255, 255, 255, 0.9)",
-        "rgba(255, 255, 255, 0.9)",
-      ]}
+      bg={["rgba(255, 255, 255, 1)"]}
       backdropFilter="blur(10px)"
     >
       {/* Top Bar with Contact Info */}
@@ -295,15 +290,15 @@ const Navbar = () => {
               mr="24px"
               mb={{ base: "4px", sm: "0" }}
             >
-            Premium Pressure Washing Services
+              Premium Pressure Washing Services
             </Text>
-            <Text  textStyle={"smallText"} color="#666">
+            <Text textStyle={"smallText"} color="#666">
               idk.info@gmail.com
             </Text>
           </Box>
           <Box display="flex" alignItems="center" flexWrap="wrap">
             <Text
-             textStyle={"smallText"}
+              textStyle={"smallText"}
               color="#666"
               mr="24px"
               mb={{ base: "4px", sm: "0" }}
@@ -338,46 +333,33 @@ const Navbar = () => {
             position="relative"
           >
             <Box
-              w={{ base: "50px", md: "66px" }}
-              h={{ base: "50px", md: "66px" }}
-              mr="0px"
-              position="relative"
-              overflow="hidden"
+              display={{ base: "block", md: "block", lg: "none" }}
+              cursor="pointer"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {/* <Image
-                quality={70}
-                src={luxeLogo}
-                alt="EverBright Logo"
-                  title="EverBright Logo"
-              /> */}
-            </Box>
-            <Box>
-              <Text
-             textStyle={"basicText"}
-                fontWeight="600"
-                letterSpacing="0.2px"
-                fontFamily="arial"
-                color="#222222"
-                lineHeight="1.1"
-              >
-                EverBright
-              </Text>
-          
+              {mobileMenuOpen ? (
+                <X size={24} color="#222" />
+              ) : (
+                <Menu size={24} color="#222" />
+              )}
             </Box>
           </Box>
 
-          {/* Mobile Menu Toggle */}
-          <Box
-            display={{ base: "block", md: "block", lg: "none" }}
-            cursor="pointer"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          <Text
+            textStyle={"basicText"}
+            fontWeight="600"
+            letterSpacing="0.2px"
+            fontFamily="arial"
+            color="#222222"
+            lineHeight="1.1"
           >
-            {mobileMenuOpen ? (
-              <X size={24} color="#222" />
-            ) : (
-              <Menu size={24} color="#222" />
-            )}
+            EverBright
+          </Text>
+          <Box textAlign={"center"}>
+            <Phone />
           </Box>
+
+          {/* Mobile Menu Toggle */}
 
           {/* Desktop Navigation Items */}
           <Box
@@ -407,7 +389,7 @@ const Navbar = () => {
                   role="group"
                 >
                   <Text
-                   textStyle={"smallText"}
+                    textStyle={"smallText"}
                     fontWeight={activePage === item.path ? "600" : "500"}
                     fontFamily="arial"
                     transition="all 0.2s ease"
@@ -492,7 +474,7 @@ const Navbar = () => {
               onClick={() => handleNavigate("/contact")}
             >
               <Text
-            textStyle={"smallText"}
+                textStyle={"smallText"}
                 fontWeight="500"
                 whiteSpace="nowrap"
               >
@@ -538,7 +520,7 @@ const Navbar = () => {
                 }}
               >
                 <Text
-              textStyle={"smallText"}
+                  textStyle={"smallText"}
                   fontWeight={activePage === item.path ? "600" : "500"}
                   color={activePage === item.path ? "#000" : "#444"}
                 >
@@ -580,7 +562,7 @@ const Navbar = () => {
             onClick={() => handleNavigate("/contact")}
             textAlign="center"
           >
-            <Text  textStyle={"smallText"} fontWeight="500">
+            <Text textStyle={"smallText"} fontWeight="500">
               Get a Quote
             </Text>
           </Box>
@@ -588,13 +570,13 @@ const Navbar = () => {
           {/* Mobile Contact Info */}
           <Box mt="32px" pt="20px" borderTop="1px solid #eee">
             <Text textStyle={"smallText"} color="#666" mb="12px">
-           luxemanagemnets.info@gmail.com
+              luxemanagemnets.info@gmail.com
             </Text>
-            <Text  textStyle={"smallText"} color="#666" mb="12px">
+            <Text textStyle={"smallText"} color="#666" mb="12px">
               +61 406 631 461
             </Text>
             <Text
-           textStyle={"smallText"}
+              textStyle={"smallText"}
               fontWeight="500"
               color="#333"
               cursor="pointer"

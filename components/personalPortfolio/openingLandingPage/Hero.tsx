@@ -2,6 +2,7 @@
 import { Box, VStack, Text, HStack, Span } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
+import Google from "@/public/Google.png";
 
 import { FaStar } from "react-icons/fa";
 const Hero = () => {
@@ -10,14 +11,19 @@ const Hero = () => {
       <VStack>
         <Box w={"100%"} h={"100vh"} fontFamily={"poppins"}>
           <Text
+          color={"white"}
+            lineHeight={"0.9"}
+            letterSpacing="-2px"
             textAlign={"start"}
             fontWeight={"700"}
             fontFamily={"poppins"}
-            textStyle={"title"}
+            fontSize={"40px"}
           >
-            Because a Clean Home Feels Like A New Home
+             A Clean Home Feels Like a New Home
           </Text>
           <Text
+              color={"white"}
+            mt={"20px"}
             textAlign={"start"}
             fontWeight={"700"}
             fontFamily={"poppins"}
@@ -26,16 +32,16 @@ const Hero = () => {
             Adelaide's #1 choice for remarkable exterior results
           </Text>
           <Box>
-            <VStack justify={"start"} align={"start"}>
+            <VStack  justify={"start"} align={"start"}>
               <HStack justify={"start"} align={"start"}>
-                <Text color="Black" fontSize="24px" fontWeight={"700"}>
+                <Text color="White" fontSize="24px" fontWeight={"700"} >
                   ✓{" "}
                   <Span textStyle={"tinyText"} fontWeight={"normal"}>
                     {" "}
                     Pressure Cleaning
                   </Span>
                 </Text>
-                <Text color="Black" fontSize="24px" fontWeight={"700"}>
+                <Text color="White" fontSize="24px" fontWeight={"700"}>
                   ✓{" "}
                   <Span textStyle={"tinyText"} fontWeight={"normal"}>
                     {" "}
@@ -46,14 +52,14 @@ const Hero = () => {
             </VStack>
             <VStack justify={"start"} align={"start"}>
               <HStack justify={"start"} align={"start"}>
-                <Text color="Black" fontSize="24px" fontWeight={"700"}>
+                <Text color="White" fontSize="24px" fontWeight={"700"}>
                   ✓{" "}
                   <Span textStyle={"tinyText"} fontWeight={"normal"}>
                     {" "}
                     Pressure Cleaning
                   </Span>
                 </Text>
-                <Text color="Black" fontSize="24px" fontWeight={"700"}>
+                <Text color="White" fontSize="24px" fontWeight={"700"}>
                   ✓{" "}
                   <Span textStyle={"tinyText"} fontWeight={"normal"}>
                     {" "}
@@ -91,17 +97,22 @@ const Hero = () => {
               <Text>Call for a Quote!</Text>
             </Box>
           </Box>
-          <Box
+          <HStack
             mt={"20px"}
             p={{ base: "5px", md: "40px" }}
             rounded={"2xl"}
-            bg={"gray.50"}
-            border={"1px solid lightgray"}
+            // bg={"gray.50"}
+            // border={"1px solid lightgray"}
             width={{ base: "100%", md: "40%" }}
             textAlign={{ base: "center", md: "left" }}
             position="relative"
           >
-            <Box fontSize={{ base: "24px", md: "26px" }}>G</Box>
+            <Box fontSize={{ base: "24px", md: "26px" }}>
+         
+              <Image src={Google} alt="Google"  width="50" />
+
+            </Box>
+              <Box color={"white"} fontSize={{ base: "24px", md: "26px" }}>5.0</Box>
             <Box
               display="flex"
               h={"100%"}
@@ -139,10 +150,11 @@ const Hero = () => {
                 fontSize={{ base: "18px", md: "26px" }}
               />
             </Box>
-            <Text fontSize={{ base: "18px", md: "26px" }}>
-              with 5 stars on Google!
+           
+          </HStack>
+           <Text color={"white"} textIndent={"12px"} fontSize={{ base: "18px", md: "26px" }}>
+             Verified 5 stars on Google!
             </Text>
-          </Box>
           <Box
             mt={"20px"}
             p={{ base: "20px", md: "40px" }}
@@ -307,7 +319,7 @@ const Hero = () => {
               Adelaide's #1 choice for remarkable exterior results
             </Text>
 
-            <Text w={"100%"} textAlign={"start"} color="Black" fontSize="14px">
+            <Text w={"100%"} textAlign={"start"} color="White" fontSize="14px">
               Experience “100% Risk-Free Pressure Cleaning” from Calibre
               Exterior Cleaning, Adelaide’s premier exterior cleaning
               specialists. Our local team of skilled professionals is dedicated
@@ -691,7 +703,7 @@ const Hero = () => {
               Adelaide's #1 choice for remarkable exterior results
             </Text>
 
-            <Text w={"100%"} textAlign={"start"} color="Black" fontSize="14px">
+            <Text w={"100%"} textAlign={"start"} color="White" fontSize="14px">
               Experience “100% Risk-Free Pressure Cleaning” from Calibre
               Exterior Cleaning, Adelaide’s premier exterior cleaning
               specialists. Our local team of skilled professionals is dedicated
@@ -825,29 +837,21 @@ const Hero = () => {
             </Text>
 
             <VStack justify={"start"} align={"start"} w={"100%"}>
-              <Text color="Black" fontSize="24px" fontWeight={"700"}>
+              <Text color="White" fontSize="24px" fontWeight={"700"}>
                 ✓{" "}
                 <Span textStyle={"tinyText"} fontWeight={"normal"}>
                   {" "}
                   Pressure Cleaning
                 </Span>
               </Text>
-              <Text color="Black" fontSize="24px" fontWeight={"700"}>
+              <Text color="White" fontSize="24px" fontWeight={"700"}>
                 ✓{" "}
                 <Span textStyle={"tinyText"} fontWeight={"normal"}>
                   {" "}
                   Pressure Cleaning
                 </Span>
               </Text>
-              <Text color="Black" fontSize="24px" fontWeight={"700"}>
-                ✓{" "}
-                <Span textStyle={"tinyText"} fontWeight={"normal"}>
-                  {" "}
-                  Pressure Cleaning
-                </Span>
-              </Text>
-
-              <Text color="Black" fontSize="24px" fontWeight={"700"}>
+              <Text color="White" fontSize="24px" fontWeight={"700"}>
                 ✓{" "}
                 <Span textStyle={"tinyText"} fontWeight={"normal"}>
                   {" "}
@@ -855,7 +859,7 @@ const Hero = () => {
                 </Span>
               </Text>
 
-              <Text color="Black" fontSize="24px" fontWeight={"700"}>
+              <Text color="White" fontSize="24px" fontWeight={"700"}>
                 ✓{" "}
                 <Span textStyle={"tinyText"} fontWeight={"normal"}>
                   {" "}
@@ -863,7 +867,15 @@ const Hero = () => {
                 </Span>
               </Text>
 
-              <Text color="Black" fontSize="24px" fontWeight={"700"}>
+              <Text color="White" fontSize="24px" fontWeight={"700"}>
+                ✓{" "}
+                <Span textStyle={"tinyText"} fontWeight={"normal"}>
+                  {" "}
+                  Pressure Cleaning
+                </Span>
+              </Text>
+
+              <Text color="White" fontSize="24px" fontWeight={"700"}>
                 ✓{" "}
                 <Span textStyle={"tinyText"} fontWeight={"normal"}>
                   {" "}
