@@ -18,6 +18,7 @@ const page = () => {
 
 <Box position="absolute" zIndex={-1} inset="0">
   <Image
+
     src={Adelimg}
     alt="Adel"
     fill
@@ -27,11 +28,12 @@ const page = () => {
     }}
     priority
   />
+  
 </Box>
-
 <HStack justify={"center"} align={"start"} w={"100%"} h={"100vh"}>
 <Hero />
 </HStack>
+
       {/* <UpWardScroll /> */}
     </>
   );

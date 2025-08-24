@@ -332,6 +332,8 @@ const Navbar = () => {
             onClick={() => handleNavigate("/")}
             position="relative"
           >
+          
+
             <Box
               display={{ base: "block", md: "block", lg: "none" }}
               cursor="pointer"
@@ -343,21 +345,26 @@ const Navbar = () => {
                 <Menu size={24} color="#222" />
               )}
             </Box>
+
+           
           </Box>
 
-          <Text
-            textStyle={"basicText"}
-            fontWeight="600"
-            letterSpacing="0.2px"
-            fontFamily="arial"
-            color="#222222"
-            lineHeight="1.1"
-          >
-            EverBright
-          </Text>
-          <Box textAlign={"center"}>
+            <Text
+                textStyle={"basicText"}
+                fontWeight="600"
+                letterSpacing="0.2px"
+                fontFamily="arial"
+                color="#222222"
+                lineHeight="1.1"
+              >
+                EverBright
+              </Text>
+           <Box  textAlign={"center"}>
+
+
             <Phone />
-          </Box>
+            
+            </Box>
 
           {/* Mobile Menu Toggle */}
 
