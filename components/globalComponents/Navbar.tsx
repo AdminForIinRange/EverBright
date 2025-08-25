@@ -14,23 +14,17 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const timeoutRef = useRef<any>(null);
-  const [windowWidth, setWindowWidth] = useState(0);
 
   // Simulate active page for demo purposes
   const activePage = `/`;
 
-  // Track window width for responsive behavior
+  // Close mobile menu on large screen
   useEffect(() => {
     const handleResize = () => {
-      setWindowWidth(window.innerWidth);
       if (window.innerWidth >= 1023) {
         setMobileMenuOpen(false);
       }
     };
-
-    // Set initial width
-    setWindowWidth(window.innerWidth);
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -202,175 +196,70 @@ const Navbar = () => {
       path: "/about",
       hasDropdown: true,
       items: [
-        {
-          label: "Our Story",
-          link: "/about/#story",
-          description: "Learn about our journey and values",
-        },
-        {
-          label: "Our Team",
-          link: "/about/#team",
-          description: "Meet the experts behind EverBright",
-        },
-        {
-          label: "Testimonials",
-          link: "/about/#testimonials",
-          description: "What our clients say about us",
-        },
-        {
-          label: "Our Journey",
-          link: "/about/journey",
-          description: "See how EverBright has evolved",
-        },
+        { label: "Our Story", link: "/about/#story", description: "Learn about our journey and values" },
+        { label: "Our Team", link: "/about/#team", description: "Meet the experts behind EverBright" },
+        { label: "Testimonials", link: "/about/#testimonials", description: "What our clients say about us" },
+        { label: "Our Journey", link: "/about/journey", description: "See how EverBright has evolved" },
       ],
     },
-    // { name: "News", path: "/news", hasDropdown: false },
     {
       name: "Services",
       path: "/services",
       hasDropdown: true,
       items: [
-        {
-          label: "Property Management",
-          link: "/services/property-management",
-          description: "Full-service management for luxury properties",
-        },
-        {
-          label: "Cleaning & Linen",
-          link: "/services/cleaning-and-linen",
-          description: "Premium cleaning and linen services",
-        },
-        {
-          label: "Furnishing & Styling",
-          link: "/services/furnishing-and-styling",
-          description: "Expert interior design and furnishing",
-        },
-        {
-          label: "Photography",
-          link: "/services/photography",
-          description: "Professional property photography",
-        },
+        { label: "Property Management", link: "/services/property-management", description: "Full-service management for luxury properties" },
+        { label: "Cleaning & Linen", link: "/services/cleaning-and-linen", description: "Premium cleaning and linen services" },
+        { label: "Furnishing & Styling", link: "/services/furnishing-and-styling", description: "Expert interior design and furnishing" },
+        { label: "Photography", link: "/services/photography", description: "Professional property photography" },
       ],
     },
-    // { name: "Calculate", path: "/calculate", hasDropdown: false },
     { name: "Pricing", path: "/pricing", hasDropdown: false },
     { name: "Gallery", path: "/gallery", hasDropdown: false },
     { name: "Contact", path: "/contact", hasDropdown: false },
   ];
 
   return (
-    <Box
-      w="100%"
-      position="sticky"
-      top="0"
-      zIndex="100"
-      bg={"blue.400"}
-      backdropFilter="blur(10px)"
-    >
-      {/* Top Bar with Contact Info */}
-      <Box
-        w="100%"
-        py="8px"
-        fontFamily={"arial"}
-        backdropFilter="blur(10px)"
-        borderBottom="1px solid #F0F0F0"
-        display={{ base: "none", md: "block" }}
-      >
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          maxW="1400px"
-          mx="auto"
-          px={{ base: "20px", lg: "40px" }}
-        >
+    <Box w="100%" position="sticky" top="0" zIndex="100" bg={"blue.400"} backdropFilter="blur(10px)" >
+      {/* Top Bar */}
+      <Box w="100%" py="8px" fontFamily={"arial"} borderBottom="1px solid #F0F0F0" display={{ base: "none", md: "block" }}>
+        <Box display="flex" justifyContent="space-between" alignItems="center" maxW="1400px" mx="auto" px={{ base: "20px", lg: "40px" }}>
           <Box display="flex" alignItems="center" flexWrap="wrap">
-            <Text
-              textStyle={"smallText"}
-              color="#666"
-              mr="24px"
-              mb={{ base: "4px", sm: "0" }}
-            >
-              Premium Pressure Washing Services
-            </Text>
-            <Text textStyle={"smallText"} color="#666">
-              idk.info@gmail.com
-            </Text>
+            <Text textStyle={"smallText"} color="#666" mr="24px">Premium Pressure Washing Services</Text>
+            <Text textStyle={"smallText"} color="#666">idk.info@gmail.com</Text>
           </Box>
-          <Box display="flex" alignItems="center" flexWrap="wrap">
-            <Text
-              textStyle={"smallText"}
-              color="#666"
-              mr="24px"
-              mb={{ base: "4px", sm: "0" }}
-            >
-              +61 123 345 678
-            </Text>
-          </Box>
+          <Box display="flex" alignItems="center"><Text textStyle={"smallText"} color="#666">+61 123 345 678</Text></Box>
         </Box>
       </Box>
 
-      {/* Main Navigation */}
-      <Box
-        w="100%"
-        py="10px"
-        borderBottom="1px solid #F0F0F0"
-        transition="all 0.3s ease"
-      >
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          maxW="1400px"
-          mx="auto"
-          px={{ base: "20px", lg: "40px" }}
-        >
-          {/* Logo Section */}
+      {/* Main Nav */}
+      <Box w="100%" py="10px" borderBottom="1px solid #F0F0F0" transition="all 0.3s ease">
+        <Box display="flex" justifyContent="space-between" alignItems="center" maxW="1400px" mx="auto" px={{ base: "20px", lg: "40px" }}>
+          
+          {/* Hamburger (mobile only) */}
           <Box
-            display="flex"
-            alignItems="center"
-            cursor="pointer"
-            onClick={() => handleNavigate("/")}
-            position="relative"
+            display={{ base: "block", md: "block", lg: "none" }}
+            as="button"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            onClick={(e) => {
+              e.stopPropagation();
+              setMobileMenuOpen((prev) => !prev);
+            }}
           >
-            <Box
-              display={{ base: "block", md: "block", lg: "none" }}
-              cursor="pointer"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? (
-                <X size={24} color="#222" />
-              ) : (
-                <Menu size={24} color="#222" />
-              )}
-            </Box>
-          </Box>
-          <VStack>
-            <Image src={Presure} alt="logo" width={100} height={100} />
-            {/* <Text
-              textStyle={"basicText"}
-              fontWeight="600"
-              letterSpacing="0.2px"
-              fontFamily="arial"
-              color="#222222"
-              lineHeight="1.1"
-            >
-              EverBright
-            </Text> */}
-          </VStack>
-
-          <Box textAlign={"center"}>
-            <Phone />
+            {mobileMenuOpen ? <X size={24} color="#222" /> : <Menu size={24} color="#222" />}
           </Box>
 
-          {/* Mobile Menu Toggle */}
+          {/* Logo */}
+          <Box display="flex" alignItems="center" cursor="pointer" onClick={() => handleNavigate("/")} position="relative">
+            <VStack>
+              <Image src={Presure} alt="logo" width={100} height={100} />
+            </VStack>
+          </Box>
 
-          {/* Desktop Navigation Items */}
-          <Box
-            display={{ base: "none", md: "none", lg: "flex" }}
-            alignItems="center"
-            justifyContent="flex-end"
-          >
+          {/* Phone icon */}
+          <Box textAlign={"center"}><Phone /></Box>
+
+          {/* Desktop Nav */}
+          <Box display={{ base: "none", md: "none", lg: "flex" }} alignItems="center" justifyContent="flex-end">
             {navigationItems.map((item) => (
               <Box
                 key={item.name}
@@ -385,13 +274,7 @@ const Navbar = () => {
                   if (item.hasDropdown) handleLeave();
                 }}
               >
-                <Box
-                  cursor="pointer"
-                  onClick={() => handleNavigate(item.path)}
-                  position="relative"
-                  pb="4px"
-                  role="group"
-                >
+                <Box cursor="pointer" onClick={() => handleNavigate(item.path)} position="relative" pb="4px">
                   <Text
                     textStyle={"smallText"}
                     fontWeight={activePage === item.path ? "600" : "500"}
@@ -401,8 +284,8 @@ const Navbar = () => {
                       activePage === item.path
                         ? "#000000"
                         : hoveredItem === item.name.toLowerCase()
-                          ? "#000000"
-                          : "#444444"
+                        ? "#000000"
+                        : "#444444"
                     }
                     letterSpacing="0.3px"
                     whiteSpace="nowrap"
@@ -417,8 +300,8 @@ const Navbar = () => {
                       activePage === item.path
                         ? "100%"
                         : hoveredItem === item.name.toLowerCase()
-                          ? "70%"
-                          : "0%"
+                        ? "70%"
+                        : "0%"
                     }
                     height="2px"
                     bg={activePage === item.path ? "#000000" : "#555555"}
@@ -426,45 +309,12 @@ const Navbar = () => {
                   />
                 </Box>
                 {item.hasDropdown && (
-                  <Box
-                    position="absolute"
-                    top="100%"
-                    left="50%"
-                    transform="translateX(-50%)"
-                    width="16px"
-                    height="16px"
-                    pointerEvents="none"
-                    opacity={activeDropdown === item.name.toLowerCase() ? 1 : 0}
-                    visibility={
-                      activeDropdown === item.name.toLowerCase()
-                        ? "visible"
-                        : "hidden"
-                    }
-                    transition="all 0.25s ease-in-out"
-                    zIndex="101"
-                  >
-                    <Box
-                      position="absolute"
-                      top="8px"
-                      left="0"
-                      width="16px"
-                      height="16px"
-                      bg="white"
-                      transform="rotate(45deg)"
-                      boxShadow="0 0 10px rgba(0, 0, 0, 0.05)"
-                    />
-                  </Box>
-                )}
-                {item.hasDropdown && (
-                  <Dropdown
-                    items={item.items || []}
-                    category={item.name.toLowerCase()}
-                  />
+                  <Dropdown items={item.items || []} category={item.name.toLowerCase()} />
                 )}
               </Box>
             ))}
 
-            {/* Desktop Call to Action Button */}
+            {/* Desktop CTA */}
             <Box
               ml={{ md: "16px", lg: "24px" }}
               bg="#0A0F29"
@@ -473,17 +323,10 @@ const Navbar = () => {
               py="10px"
               borderRadius="4px"
               cursor="pointer"
-              transition="all 0.2s ease"
               _hover={{ bg: "#000" }}
               onClick={() => handleNavigate("/contact")}
             >
-              <Text
-                textStyle={"smallText"}
-                fontWeight="500"
-                whiteSpace="nowrap"
-              >
-                Get a Quote
-              </Text>
+              <Text textStyle={"smallText"} fontWeight="500">Get a Quote</Text>
             </Box>
           </Box>
         </Box>
@@ -492,7 +335,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <Box
         position="fixed"
-        top={{ base: "70px", md: "100px", lg: "none" }} // Height of the navbar
+        top="70px"
         left="0"
         right="0"
         bottom="0"
@@ -532,11 +375,7 @@ const Navbar = () => {
                 </Text>
                 {item.hasDropdown && (
                   <Box
-                    transform={
-                      mobileDropdown === item.name.toLowerCase()
-                        ? "rotate(180deg)"
-                        : "rotate(0)"
-                    }
+                    transform={mobileDropdown === item.name.toLowerCase() ? "rotate(180deg)" : "rotate(0)"}
                     transition="transform 0.3s ease"
                   >
                     <Text textStyle={"smallText"}>↓</Text>
@@ -553,7 +392,7 @@ const Navbar = () => {
             </Box>
           ))}
 
-          {/* Mobile Call to Action Button */}
+          {/* Mobile CTA */}
           <Box
             mt="24px"
             bg="#0A0F29"
@@ -561,24 +400,17 @@ const Navbar = () => {
             py="12px"
             borderRadius="4px"
             cursor="pointer"
-            transition="all 0.2s ease"
             _hover={{ bg: "#000" }}
             onClick={() => handleNavigate("/contact")}
             textAlign="center"
           >
-            <Text textStyle={"smallText"} fontWeight="500">
-              Get a Quote
-            </Text>
+            <Text textStyle={"smallText"} fontWeight="500">Get a Quote</Text>
           </Box>
 
           {/* Mobile Contact Info */}
           <Box mt="32px" pt="20px" borderTop="1px solid #eee">
-            <Text textStyle={"smallText"} color="#666" mb="12px">
-              luxemanagemnets.info@gmail.com
-            </Text>
-            <Text textStyle={"smallText"} color="#666" mb="12px">
-              +61 406 631 461
-            </Text>
+            <Text textStyle={"smallText"} color="#666" mb="12px">luxemanagemnets.info@gmail.com</Text>
+            <Text textStyle={"smallText"} color="#666" mb="12px">+61 406 631 461</Text>
             <Text
               textStyle={"smallText"}
               fontWeight="500"

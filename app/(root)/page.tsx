@@ -8,6 +8,7 @@ import OpeningLandingPage from "@/components/personalPortfolio/openingLandingPag
 import UpWardScroll from "@/components/personalPortfolio/openingLandingPage/UpWardScroll";
 import Hero from "@/components/personalPortfolio/openingLandingPage/Hero";
 import Navbar from "@/components/globalComponents/Navbar";
+import FAQ from "@/components/globalComponents/FAQ";
 
 const page = () => {
   return (
@@ -32,8 +33,9 @@ const page = () => {
 </Box>
 <HStack justify={"center"} align={"start"} w={"100%"} h={"100vh"}>
 <Hero />
-</HStack>
 
+</HStack>
+<FAQ type={""} />
       {/* <UpWardScroll /> */}
     </>
   );

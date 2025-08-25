@@ -1,5 +1,5 @@
 "use client";
-import { Box, VStack, Text, HStack, Span } from "@chakra-ui/react";
+import { Box, VStack, Text, HStack, Span, Link } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
 import Google from "@/public/Google.png";
@@ -473,7 +473,10 @@ const Hero = () => {
                 >
                   Get a quote
                 </Box>
-                <Box
+
+                <Link
+                  href={"/services/PressureWashing"}
+                  cursor={"pointer"}
                   w={"100%"}
                   zIndex={"1"}
                   p={{ base: "5px", md: "40px" }}
@@ -485,9 +488,15 @@ const Hero = () => {
                   fontSize={"12px"}
                   fontWeight={"600"}
                   color={"white"}
+                  _hover={{
+                    textDecoration: "none",
+                    bg: "blue.500",
+                  }}
                 >
-                  Learn More
-                </Box>
+                  <HStack w={"100%"} align={"center"} justify={"center"}>
+                    Learn More
+                  </HStack>
+                </Link>
               </HStack>
             </Box>
 
@@ -522,9 +531,8 @@ const Hero = () => {
                 fontFamily={"poppins"}
                 textStyle={"heading"}
                 w={"100%"}
-                fontSize="16px"
               >
-                How We Can Help Your Home
+                Pressure Washing
               </Text>
               <HStack justify={"center"} align={"start"} w={"100%"} gap={"3px"}>
                 <Box
@@ -542,7 +550,9 @@ const Hero = () => {
                 >
                   Get a quote
                 </Box>
-                <Box
+                <Link
+                  href={"/services/PressureWashing"}
+                  cursor={"pointer"}
                   w={"100%"}
                   zIndex={"1"}
                   p={{ base: "5px", md: "40px" }}
@@ -554,9 +564,15 @@ const Hero = () => {
                   fontSize={"12px"}
                   fontWeight={"600"}
                   color={"white"}
+                  _hover={{
+                    textDecoration: "none",
+                    bg: "blue.500",
+                  }}
                 >
-                  Learn More
-                </Box>
+                  <HStack w={"100%"} align={"center"} justify={"center"}>
+                    Learn More
+                  </HStack>
+                </Link>
               </HStack>
             </Box>
 
@@ -591,9 +607,8 @@ const Hero = () => {
                 fontFamily={"poppins"}
                 textStyle={"heading"}
                 w={"100%"}
-                fontSize="16px"
               >
-                How We Can Help Your Home
+                Pressure Washing
               </Text>
               <HStack justify={"center"} align={"start"} w={"100%"} gap={"3px"}>
                 <Box
@@ -611,21 +626,31 @@ const Hero = () => {
                 >
                   Get a quote
                 </Box>
-                <Box
-                  w={"100%"}
-                  zIndex={"1"}
-                  p={{ base: "5px", md: "40px" }}
-                  rounded={"2xl"}
-                  bg={"blue.400"}
-                  border={"1px solid lightgray"}
-                  width={{ base: "80%", md: "40%" }}
-                  textAlign={{ base: "center", md: "left" }}
-                  fontSize={"12px"}
-                  fontWeight={"600"}
-                  color={"white"}
-                >
-                  Learn More
-                </Box>
+           <Link
+                    href={"/services/PressureWashing"}
+                    cursor={"pointer"}
+                    w={"100%"}
+                    zIndex={"1"}
+                    p={{ base: "5px", md: "40px" }}
+                    rounded={"2xl"}
+                    bg={"blue.400"}
+                    border={"1px solid lightgray"}
+                    width={{ base: "80%", md: "40%" }}
+                    textAlign={{ base: "center", md: "left" }}
+                    fontSize={"12px"}
+                    fontWeight={"600"}
+                    color={"white"}
+                    _hover={{
+                      textDecoration: "none",
+                      bg: "blue.500",
+                    }}
+                    
+                  >
+                    <HStack w={"100%"} align={"center"} justify={"center"}>
+
+                    Learn More
+                    </HStack>
+                  </Link>
               </HStack>
             </Box>
 
@@ -660,9 +685,8 @@ const Hero = () => {
                 fontFamily={"poppins"}
                 textStyle={"heading"}
                 w={"100%"}
-                fontSize="16px"
               >
-                How We Can Help Your Home
+                Pressure Washing
               </Text>
               <HStack justify={"center"} align={"start"} w={"100%"} gap={"3px"}>
                 <Box
@@ -680,21 +704,31 @@ const Hero = () => {
                 >
                   Get a quote
                 </Box>
-                <Box
-                  w={"100%"}
-                  zIndex={"1"}
-                  p={{ base: "5px", md: "40px" }}
-                  rounded={"2xl"}
-                  bg={"blue.400"}
-                  border={"1px solid lightgray"}
-                  width={{ base: "80%", md: "40%" }}
-                  textAlign={{ base: "center", md: "left" }}
-                  fontSize={"12px"}
-                  fontWeight={"600"}
-                  color={"white"}
-                >
-                  Learn More
-                </Box>
+                <Link
+                    href={"/services/PressureWashing"}
+                    cursor={"pointer"}
+                    w={"100%"}
+                    zIndex={"1"}
+                    p={{ base: "5px", md: "40px" }}
+                    rounded={"2xl"}
+                    bg={"blue.400"}
+                    border={"1px solid lightgray"}
+                    width={{ base: "80%", md: "40%" }}
+                    textAlign={{ base: "center", md: "left" }}
+                    fontSize={"12px"}
+                    fontWeight={"600"}
+                    color={"white"}
+                    _hover={{
+                      textDecoration: "none",
+                      bg: "blue.500",
+                    }}
+                    
+                  >
+                    <HStack w={"100%"} align={"center"} justify={"center"}>
+
+                    Learn More
+                    </HStack>
+                  </Link>
               </HStack>
             </Box>
           </Box>
@@ -933,154 +967,152 @@ const Hero = () => {
                   Pressure Cleaning
                 </Span>
               </Text>
-             
             </VStack>
-            
           </VStack>
-           <Box    px={["4%", "4%", "6%", "6%", "6%", "10%"]}> 
+          <Box px={["4%", "4%", "6%", "6%", "6%", "10%"]}>
+            <Box
+              mt={"20px"}
+              p={{ base: "20px", md: "40px" }}
+              rounded={"2xl"}
+              bg={"blue.400"}
+              border={"8px solid lightblue"}
+              width={{ base: "100%", md: "40%" }}
+              textAlign={{ base: "center", md: "left" }}
+              position="relative"
+              pb={"50px"}
+              zIndex={"1"}
+            >
+              <VStack
+                display="flex"
+                h={"100%"}
+                alignContent={"center"}
+                justifyContent={"center"}
+                textAlign={"start"}
+                fontWeight={"700"}
+                fontFamily={"poppins"}
+                fontSize={"26px"}
+              >
+                <Text color={"white"}>
+                  Get Instant <Span color={"blue.500"}>FREE QUOTE</Span>
+                </Text>
+
+                <Text
+                  textAlign={"center"}
+                  fontWeight={"500"}
+                  fontFamily={"poppins"}
+                  textStyle={"tinyText"}
+                  color={"white"}
+                >
+                  Adelaide's #1 choice for remarkable exterior results
+                </Text>
                 <Box
                   mt={"20px"}
-                  p={{ base: "20px", md: "40px" }}
-                  rounded={"2xl"}
-                  bg={"blue.400"}
-                  border={"8px solid lightblue"}
-                  width={{ base: "100%", md: "40%" }}
-                  textAlign={{ base: "center", md: "left" }}
-                  position="relative"
-                  pb={"50px"}
-                  zIndex={"1"}
-                >
-                  <VStack
-                    display="flex"
-                    h={"100%"}
-                    alignContent={"center"}
-                    justifyContent={"center"}
-                    textAlign={"start"}
-                    fontWeight={"700"}
-                    fontFamily={"poppins"}
-                    fontSize={"26px"}
+                  fontWeight={"500"}
+                  w={"100%"}
+                  as="input"
+                  // value={input}
+                  // onChange={(e) => setInput(e.target.value)}
+                  placeholder="Ask something..."
+                  borderBottom="1px solid #E2E8F0"
+                  flex="1"
+                  fontSize="14px"
+                  outline="none"
+                  py="10px"
+                  bg="transparent"
+                  color="white"
+                  textColor={"white"}
+                />
+                <Box
+                  fontWeight={"500"}
+                  w={"100%"}
+                  as="input"
+                  // value={input}
+                  // onChange={(e) => setInput(e.target.value)}
+                  placeholder="Ask something..."
+                  borderBottom="1px solid #E2E8F0"
+                  flex="1"
+                  fontSize="14px"
+                  outline="none"
+                  py="10px"
+                  bg="transparent"
+                  color="white"
+                />
+                <Box
+                  fontWeight={"500"}
+                  w={"100%"}
+                  as="input"
+                  // value={input}
+                  // onChange={(e) => setInput(e.target.value)}
+                  placeholder="Ask something..."
+                  borderBottom="1px solid #E2E8F0"
+                  flex="1"
+                  fontSize="14px"
+                  outline="none"
+                  py="10px"
+                  bg="transparent"
+                  color="white"
+                />
+                <Box
+                  fontWeight={"500"}
+                  w={"100%"}
+                  as="input"
+                  // value={input}
+                  // onChange={(e) => setInput(e.target.value)}
+                  placeholder="Ask something..."
+                  borderBottom="1px solid #E2E8F0"
+                  flex="1"
+                  fontSize="14px"
+                  outline="none"
+                  py="10px"
+                  bg="transparent"
+                  color="white"
+                />
+                <Box
+                  fontWeight={"500"}
+                  w={"100%"}
+                  as="input"
+                  // value={input}
+                  // onChange={(e) => setInput(e.target.value)}
+                  placeholder="Ask something..."
+                  borderBottom="1px solid #E2E8F0"
+                  flex="1"
+                  fontSize="14px"
+                  outline="none"
+                  py="10px"
+                  bg="transparent"
+                  color="white"
+                />
+                <Box display="flex" justifyContent="start" width="100%">
+                  <Box
+                    mt={"5px"}
+                    p={{ base: "20px", md: "40px" }}
+                    rounded={"2xl"}
+                    bg={"cyan.200"}
+                    border={"1px solid cyan.500"}
+                    width={{ base: "100%", md: "40%" }}
+                    textAlign={{ base: "center", md: "left" }}
+                    position="relative"
+                    color="cyan.600"
+                    borderRadius="30px"
+                    py="10px"
+                    px={{ base: "20px", md: "20px" }}
+                    fontFamily="arial"
+                    fontWeight="600"
+                    fontSize="16px"
+                    cursor="pointer"
+                    transition="all 0.3s ease"
+                    _hover={{
+                      transform: "translateY(-3px)",
+                      boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)",
+                    }}
+                    // onClick={() => setIsDialogOpen(true)}
                   >
-                    <Text color={"white"}>
-                      Get Instant <Span color={"blue.500"}>FREE QUOTE</Span>
-                    </Text>
-
-                    <Text
-                      textAlign={"center"}
-                      fontWeight={"500"}
-                      fontFamily={"poppins"}
-                      textStyle={"tinyText"}
-                      color={"white"}
-                    >
-                      Adelaide's #1 choice for remarkable exterior results
-                    </Text>
-                    <Box
-                      mt={"20px"}
-                      fontWeight={"500"}
-                      w={"100%"}
-                      as="input"
-                      // value={input}
-                      // onChange={(e) => setInput(e.target.value)}
-                      placeholder="Ask something..."
-                      borderBottom="1px solid #E2E8F0"
-                      flex="1"
-                      fontSize="14px"
-                      outline="none"
-                      py="10px"
-                      bg="transparent"
-                      color="white"
-                      textColor={"white"}
-                    />
-                    <Box
-                      fontWeight={"500"}
-                      w={"100%"}
-                      as="input"
-                      // value={input}
-                      // onChange={(e) => setInput(e.target.value)}
-                      placeholder="Ask something..."
-                      borderBottom="1px solid #E2E8F0"
-                      flex="1"
-                      fontSize="14px"
-                      outline="none"
-                      py="10px"
-                      bg="transparent"
-                      color="white"
-                    />
-                    <Box
-                      fontWeight={"500"}
-                      w={"100%"}
-                      as="input"
-                      // value={input}
-                      // onChange={(e) => setInput(e.target.value)}
-                      placeholder="Ask something..."
-                      borderBottom="1px solid #E2E8F0"
-                      flex="1"
-                      fontSize="14px"
-                      outline="none"
-                      py="10px"
-                      bg="transparent"
-                      color="white"
-                    />
-                    <Box
-                      fontWeight={"500"}
-                      w={"100%"}
-                      as="input"
-                      // value={input}
-                      // onChange={(e) => setInput(e.target.value)}
-                      placeholder="Ask something..."
-                      borderBottom="1px solid #E2E8F0"
-                      flex="1"
-                      fontSize="14px"
-                      outline="none"
-                      py="10px"
-                      bg="transparent"
-                      color="white"
-                    />
-                    <Box
-                      fontWeight={"500"}
-                      w={"100%"}
-                      as="input"
-                      // value={input}
-                      // onChange={(e) => setInput(e.target.value)}
-                      placeholder="Ask something..."
-                      borderBottom="1px solid #E2E8F0"
-                      flex="1"
-                      fontSize="14px"
-                      outline="none"
-                      py="10px"
-                      bg="transparent"
-                      color="white"
-                    />
-                    <Box display="flex" justifyContent="start" width="100%">
-                      <Box
-                        mt={"5px"}
-                        p={{ base: "20px", md: "40px" }}
-                        rounded={"2xl"}
-                        bg={"cyan.200"}
-                        border={"1px solid cyan.500"}
-                        width={{ base: "100%", md: "40%" }}
-                        textAlign={{ base: "center", md: "left" }}
-                        position="relative"
-                        color="cyan.600"
-                        borderRadius="30px"
-                        py="10px"
-                        px={{ base: "20px", md: "20px" }}
-                        fontFamily="arial"
-                        fontWeight="600"
-                        fontSize="16px"
-                        cursor="pointer"
-                        transition="all 0.3s ease"
-                        _hover={{
-                          transform: "translateY(-3px)",
-                          boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)",
-                        }}
-                        // onClick={() => setIsDialogOpen(true)}
-                      >
-                        <Text>Call for a Quote!</Text>
-                      </Box>
-                    </Box>
-                  </VStack>
+                    <Text>Call for a Quote!</Text>
+                  </Box>
                 </Box>
-              </Box>
+              </VStack>
+            </Box>
+          </Box>
         </Box>
       </VStack>
     </Box>
