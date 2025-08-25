@@ -1,12 +1,13 @@
-import { Box, VStack } from "@chakra-ui/react";
+"use client";
+import { Box, VStack, Text, HStack, Span, Link } from "@chakra-ui/react";
+import Image from "next/image";
+import React from "react";
+import Google from "@/public/Google.png";
 
-
-const page = () => {
+const Home = () => {
   return (
-    <>
+    <div>Home</div>
+  )
+}
 
-    </>
-  );
-};
-
-export default page;
+export default Home
