@@ -31,9 +31,9 @@ export const textStyles = defineTextStyles({
   basicText: {
     value: {
       fontSize: {
-        base: "16px",
-        sm:   "16px",
-        md:   "16px",
+        base: "18px",
+        sm:   "18px",
+        md:   "18px",
         lg:   "18px",
         xl:   "18px",
         "2xl":"18px",
@@ -60,9 +60,9 @@ export const textStyles = defineTextStyles({
   heading: {
     value: {
       fontSize: {
-        base: "25px",
-        sm:   "25px",
-        md:   "25px",
+        base: "50px",
+        sm:   "50px",
+        md:   "50px",
         lg:   "50px",
         xl:   "50px",
         "2xl":"50px",

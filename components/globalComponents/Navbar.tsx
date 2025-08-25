@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback, memo, useEffect } from "react";
-import { Box, Text, VStack } from "@chakra-ui/react";
+import { Box, HStack, Text, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Menu, Phone, X } from "lucide-react";
@@ -42,9 +42,9 @@ const Navbar = () => {
         top="calc(100% + 16px)"
         left="50%"
         transform="translateX(-50%)"
-        bg="white"
+        bg="#05204A"
         boxShadow="0 8px 24px rgba(0, 0, 0, 0.08)"
-        border={"1px solid #F5F5F5"}
+      
         borderRadius="8px"
         w={{ base: "280px", md: "320px" }}
         zIndex={10}
@@ -59,37 +59,37 @@ const Navbar = () => {
           timeoutRef.current = setTimeout(() => setActiveDropdown(null), 300);
         }}
       >
-        <Box maxH="320px" overflowY="auto">
+        <Box maxH="100%" overflowY="auto">
           {items.map((item, index) => (
             <Box
               key={index}
               p="16px 20px"
               cursor="pointer"
               transition="all 0.2s ease"
-              _hover={{ bg: "#F9F9F9" }}
+              _hover={{ bg: "#0A0F29" }}
               onClick={() => router.push(item.link)}
               borderBottom={
                 index !== items.length - 1 ? "1px solid #F5F5F5" : "none"
               }
             >
-              <Text textStyle={"smallText"} fontWeight="500" mb="4px">
+              <Text textStyle={"smallText"} color="#F5F5F5" fontWeight="500" mb="4px">
                 {item.label}
               </Text>
               {item.description && (
-                <Text textStyle={"smallText"} color="#666" lineHeight="1.4">
+                <Text textStyle={"smallText"} color="#F5F5F5" lineHeight="1.4">
                   {item.description}
                 </Text>
               )}
             </Box>
           ))}
         </Box>
-        <Box p="12px 20px" bg="#F9F9F9" borderTop="1px solid #F5F5F5">
+        <Box p="12px 20px" bg="#05204A" borderTop="1px solid #F5F5F5">
           <Text
             textStyle={"smallText"}
             fontWeight="500"
-            color="#555"
+            color="#F5F5F5"
             cursor="pointer"
-            _hover={{ color: "#000" }}
+            _hover={{ color: "#F5F5F5" }}
             onClick={() => router.push(`/${category}`)}
           >
             View all {category} →
@@ -219,18 +219,9 @@ const Navbar = () => {
   ];
 
   return (
-    <Box w="100%" position="sticky" top="0" zIndex="100" bg={"blue.400"} backdropFilter="blur(10px)" >
+    <Box w="100%" position="sticky" top="0" zIndex="100" bg={"#05204A"} backdropFilter="blur(10px)" >
       {/* Top Bar */}
-      <Box w="100%" py="8px" fontFamily={"arial"} borderBottom="1px solid #F0F0F0" display={{ base: "none", md: "block" }}>
-        <Box display="flex" justifyContent="space-between" alignItems="center" maxW="1400px" mx="auto" px={{ base: "20px", lg: "40px" }}>
-          <Box display="flex" alignItems="center" flexWrap="wrap">
-            <Text textStyle={"smallText"} color="#666" mr="24px">Premium Pressure Washing Services</Text>
-            <Text textStyle={"smallText"} color="#666">idk.info@gmail.com</Text>
-          </Box>
-          <Box display="flex" alignItems="center"><Text textStyle={"smallText"} color="#666">+61 123 345 678</Text></Box>
-        </Box>
-      </Box>
-
+     
       {/* Main Nav */}
       <Box w="100%" py="10px" borderBottom="1px solid #F0F0F0" transition="all 0.3s ease">
         <Box display="flex" justifyContent="space-between" alignItems="center" maxW="1400px" mx="auto" px={{ base: "20px", lg: "40px" }}>
@@ -245,7 +236,7 @@ const Navbar = () => {
               setMobileMenuOpen((prev) => !prev);
             }}
           >
-            {mobileMenuOpen ? <X size={24} color="#222" /> : <Menu size={24} color="#222" />}
+            {mobileMenuOpen ? <X size={24} color="#F0F0F0" /> : <Menu size={24} color="#F0F0F0" />}
           </Box>
 
           {/* Logo */}
@@ -256,7 +247,7 @@ const Navbar = () => {
           </Box>
 
           {/* Phone icon */}
-          <Box textAlign={"center"}><Phone /></Box>
+          <Box display={{ base: "block", md: "block", lg: "none" }} textAlign={"center"}><Phone size={24} color="#F0F0F0" /></Box>
 
           {/* Desktop Nav */}
           <Box display={{ base: "none", md: "none", lg: "flex" }} alignItems="center" justifyContent="flex-end">
@@ -278,14 +269,14 @@ const Navbar = () => {
                   <Text
                     textStyle={"smallText"}
                     fontWeight={activePage === item.path ? "600" : "500"}
-                    fontFamily="arial"
+                    fontFamily="poppins"
                     transition="all 0.2s ease"
                     color={
                       activePage === item.path
-                        ? "#000000"
+                        ? "white"
                         : hoveredItem === item.name.toLowerCase()
-                        ? "#000000"
-                        : "#444444"
+                        ? "white"
+                        : "white"
                     }
                     letterSpacing="0.3px"
                     whiteSpace="nowrap"
@@ -325,8 +316,13 @@ const Navbar = () => {
               cursor="pointer"
               _hover={{ bg: "#000" }}
               onClick={() => handleNavigate("/contact")}
+              
             >
-              <Text textStyle={"smallText"} fontWeight="500">Get a Quote</Text>
+              <HStack>
+
+               <Box textAlign={"center"}><Phone /></Box>
+              <Text textStyle={"smallText"} fontFamily="poppins" fontWeight="500">Get a Quote</Text>
+              </HStack>
             </Box>
           </Box>
         </Box>
