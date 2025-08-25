@@ -35,7 +35,7 @@ const page = () => {
 <Hero />
 
 </HStack>
-<FAQ type={""} />
+
       {/* <UpWardScroll /> */}
     </>
   );
