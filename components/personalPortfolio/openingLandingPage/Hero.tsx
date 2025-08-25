@@ -116,7 +116,10 @@ const Hero = () => {
             textAlign={{ base: "center", md: "left" }}
             position="relative"
           >
-            <Box fontSize={{ base: "24px", md: "26px" }}>
+            <Box
+              fontSize={{ base: "24px", md: "26px" }}
+              px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+            >
               <Image src={Google} alt="Google" width="50" />
             </Box>
             <Box color={"white"} fontSize={{ base: "24px", md: "26px" }}>
@@ -451,7 +454,6 @@ const Hero = () => {
                 fontFamily={"poppins"}
                 textStyle={"heading"}
                 w={"100%"}
-               
               >
                 Pressure Washing
               </Text>
@@ -733,7 +735,7 @@ const Hero = () => {
           </VStack>
 
           <VStack bg={"blue.200"}>
-            <Box >
+            <Box>
               <Text
                 mt={"50px"}
                 justifyContent={"start"}
@@ -799,13 +801,12 @@ const Hero = () => {
               </HStack>
             </Box>
 
-            <Box maxW="350px" >
+            <Box maxW="350px">
               <HStack
-              justify={"start"}
-              w={"100%"}
+                justify={"start"}
+                w={"100%"}
                 overflowX="auto"
                 overflowY="hidden"
-               
                 align="start"
                 pb={2} // room for scrollbar
               >
@@ -825,9 +826,14 @@ const Hero = () => {
                 ))}
               </HStack>
             </Box>
-            <Box mt={"25px"} h={"120px"} bg={"blue.500"} px={["4%", "4%", "6%", "6%", "6%", "10%"]}>
-              <Text 
-              mt={"20px"} 
+            <Box
+              mt={"25px"}
+              h={"120px"}
+              bg={"blue.500"}
+              px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+            >
+              <Text
+                mt={"20px"}
                 justifyContent={"start"}
                 alignContent={"start"}
                 fontWeight={"700"}
@@ -840,7 +846,8 @@ const Hero = () => {
               </Text>
             </Box>
 
-            <Text px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+            <Text
+              px={["4%", "4%", "6%", "6%", "6%", "10%"]}
               mt={"25px"}
               justifyContent={"start"}
               alignContent={"start"}
@@ -853,197 +860,227 @@ const Hero = () => {
               What we Promise
             </Text>
 
-            <VStack gap={"0px"} justify={"start"} align={"start"} w={"100%"} px={["4%", "4%", "6%", "6%", "6%", "10%"]}>
-              <Text color="blue" fontSize="24px" fontWeight={"700"} >
-                ✓{" "}
-                <Span  color="white" textStyle={"tinyText"} fontWeight={"normal"}>
-                  {" "}
-                  Pressure Cleaning
-                </Span>
-              </Text>
-             <Text color="blue" fontSize="24px" fontWeight={"700"} >
-                ✓{" "}
-                <Span  color="white" textStyle={"tinyText"} fontWeight={"normal"}>
-                  {" "}
-                  Pressure Cleaning
-                </Span>
-              </Text>
-              <Text color="blue" fontSize="24px" fontWeight={"700"} >
-                ✓{" "}
-                <Span  color="white" textStyle={"tinyText"} fontWeight={"normal"}>
-                  {" "}
-                  Pressure Cleaning
-                </Span>
-              </Text>
-              <Text color="blue" fontSize="24px" fontWeight={"700"} >
-                ✓{" "}
-                <Span  color="white" textStyle={"tinyText"} fontWeight={"normal"}>
-                  {" "}
-                  Pressure Cleaning
-                </Span>
-              </Text>
-              <Text color="blue" fontSize="24px" fontWeight={"700"} >
-                ✓{" "}
-                <Span  color="white" textStyle={"tinyText"} fontWeight={"normal"}>
-                  {" "}
-                  Pressure Cleaning
-                </Span>
-              </Text>
-              <Text color="blue" fontSize="24px" fontWeight={"700"} >
-                ✓{" "}
-                <Span  color="white" textStyle={"tinyText"} fontWeight={"normal"}>
-                  {" "}
-                  Pressure Cleaning
-                </Span>
-              </Text>
-             <Box px={["4%", "4%", "6%", "6%", "6%", "10%"]}>
-            <Box
-              mt={"20px"}
-              p={{ base: "20px", md: "40px" }}
-              rounded={"2xl"}
-              bg={"blue.400"}
-              border={"8px solid lightblue"}
-              width={{ base: "100%", md: "40%" }}
-              textAlign={{ base: "center", md: "left" }}
-              position="relative"
-              pb={"50px"}
-              zIndex={"1"}
+            <VStack
+              gap={"0px"}
+              justify={"start"}
+              align={"start"}
+              w={"100%"}
+              px={["4%", "4%", "6%", "6%", "6%", "10%"]}
             >
-              <VStack
-                display="flex"
-                h={"100%"}
-                alignContent={"center"}
-                justifyContent={"center"}
-                textAlign={"start"}
-                fontWeight={"700"}
-                fontFamily={"poppins"}
-                fontSize={"26px"}
-              >
-                <Text color={"white"}>
-                  Get Instant <Span color={"blue.500"}>FREE QUOTE</Span>
-                </Text>
-
-                <Text
-                  textAlign={"center"}
-                  fontWeight={"500"}
-                  fontFamily={"poppins"}
+              <Text color="blue" fontSize="24px" fontWeight={"700"}>
+                ✓{" "}
+                <Span
+                  color="white"
                   textStyle={"tinyText"}
-                  color={"white"}
+                  fontWeight={"normal"}
                 >
-                  Adelaide's #1 choice for remarkable exterior results
-                </Text>
+                  {" "}
+                  Pressure Cleaning
+                </Span>
+              </Text>
+              <Text color="blue" fontSize="24px" fontWeight={"700"}>
+                ✓{" "}
+                <Span
+                  color="white"
+                  textStyle={"tinyText"}
+                  fontWeight={"normal"}
+                >
+                  {" "}
+                  Pressure Cleaning
+                </Span>
+              </Text>
+              <Text color="blue" fontSize="24px" fontWeight={"700"}>
+                ✓{" "}
+                <Span
+                  color="white"
+                  textStyle={"tinyText"}
+                  fontWeight={"normal"}
+                >
+                  {" "}
+                  Pressure Cleaning
+                </Span>
+              </Text>
+              <Text color="blue" fontSize="24px" fontWeight={"700"}>
+                ✓{" "}
+                <Span
+                  color="white"
+                  textStyle={"tinyText"}
+                  fontWeight={"normal"}
+                >
+                  {" "}
+                  Pressure Cleaning
+                </Span>
+              </Text>
+              <Text color="blue" fontSize="24px" fontWeight={"700"}>
+                ✓{" "}
+                <Span
+                  color="white"
+                  textStyle={"tinyText"}
+                  fontWeight={"normal"}
+                >
+                  {" "}
+                  Pressure Cleaning
+                </Span>
+              </Text>
+              <Text color="blue" fontSize="24px" fontWeight={"700"}>
+                ✓{" "}
+                <Span
+                  color="white"
+                  textStyle={"tinyText"}
+                  fontWeight={"normal"}
+                >
+                  {" "}
+                  Pressure Cleaning
+                </Span>
+              </Text>
+             
+            </VStack>
+            
+          </VStack>
+           <Box    px={["4%", "4%", "6%", "6%", "6%", "10%"]}> 
                 <Box
                   mt={"20px"}
-                  fontWeight={"500"}
-                  w={"100%"}
-                  as="input"
-                  // value={input}
-                  // onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask something..."
-                  borderBottom="1px solid #E2E8F0"
-                  flex="1"
-                  fontSize="14px"
-                  outline="none"
-                  py="10px"
-                  bg="transparent"
-                  color="white"
-                  textColor={"white"}
-                />
-                <Box
-                  fontWeight={"500"}
-                  w={"100%"}
-                  as="input"
-                  // value={input}
-                  // onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask something..."
-                  borderBottom="1px solid #E2E8F0"
-                  flex="1"
-                  fontSize="14px"
-                  outline="none"
-                  py="10px"
-                  bg="transparent"
-                  color="white"
-                />
-                <Box
-                  fontWeight={"500"}
-                  w={"100%"}
-                  as="input"
-                  // value={input}
-                  // onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask something..."
-                  borderBottom="1px solid #E2E8F0"
-                  flex="1"
-                  fontSize="14px"
-                  outline="none"
-                  py="10px"
-                  bg="transparent"
-                  color="white"
-                />
-                <Box
-                  fontWeight={"500"}
-                  w={"100%"}
-                  as="input"
-                  // value={input}
-                  // onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask something..."
-                  borderBottom="1px solid #E2E8F0"
-                  flex="1"
-                  fontSize="14px"
-                  outline="none"
-                  py="10px"
-                  bg="transparent"
-                  color="white"
-                />
-                <Box
-                  fontWeight={"500"}
-                  w={"100%"}
-                  as="input"
-                  // value={input}
-                  // onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask something..."
-                  borderBottom="1px solid #E2E8F0"
-                  flex="1"
-                  fontSize="14px"
-                  outline="none"
-                  py="10px"
-                  bg="transparent"
-                  color="white"
-                />
-                <Box display="flex" justifyContent="start" width="100%">
-                  <Box
-                    mt={"5px"}
-                    p={{ base: "20px", md: "40px" }}
-                    rounded={"2xl"}
-                    bg={"cyan.200"}
-                    border={"1px solid cyan.500"}
-                    width={{ base: "100%", md: "40%" }}
-                    textAlign={{ base: "center", md: "left" }}
-                    position="relative"
-                    color="cyan.600"
-                    borderRadius="30px"
-                    py="10px"
-                    px={{ base: "20px", md: "20px" }}
-                    fontFamily="arial"
-                    fontWeight="600"
-                    fontSize="16px"
-                    cursor="pointer"
-                    transition="all 0.3s ease"
-                    _hover={{
-                      transform: "translateY(-3px)",
-                      boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)",
-                    }}
-                    // onClick={() => setIsDialogOpen(true)}
+                  p={{ base: "20px", md: "40px" }}
+                  rounded={"2xl"}
+                  bg={"blue.400"}
+                  border={"8px solid lightblue"}
+                  width={{ base: "100%", md: "40%" }}
+                  textAlign={{ base: "center", md: "left" }}
+                  position="relative"
+                  pb={"50px"}
+                  zIndex={"1"}
+                >
+                  <VStack
+                    display="flex"
+                    h={"100%"}
+                    alignContent={"center"}
+                    justifyContent={"center"}
+                    textAlign={"start"}
+                    fontWeight={"700"}
+                    fontFamily={"poppins"}
+                    fontSize={"26px"}
                   >
-                    <Text>Call for a Quote!</Text>
-                  </Box>
-                </Box>
-              </VStack>
-            </Box>
-          </Box>
-         
+                    <Text color={"white"}>
+                      Get Instant <Span color={"blue.500"}>FREE QUOTE</Span>
+                    </Text>
 
-            </VStack>
-          </VStack>
+                    <Text
+                      textAlign={"center"}
+                      fontWeight={"500"}
+                      fontFamily={"poppins"}
+                      textStyle={"tinyText"}
+                      color={"white"}
+                    >
+                      Adelaide's #1 choice for remarkable exterior results
+                    </Text>
+                    <Box
+                      mt={"20px"}
+                      fontWeight={"500"}
+                      w={"100%"}
+                      as="input"
+                      // value={input}
+                      // onChange={(e) => setInput(e.target.value)}
+                      placeholder="Ask something..."
+                      borderBottom="1px solid #E2E8F0"
+                      flex="1"
+                      fontSize="14px"
+                      outline="none"
+                      py="10px"
+                      bg="transparent"
+                      color="white"
+                      textColor={"white"}
+                    />
+                    <Box
+                      fontWeight={"500"}
+                      w={"100%"}
+                      as="input"
+                      // value={input}
+                      // onChange={(e) => setInput(e.target.value)}
+                      placeholder="Ask something..."
+                      borderBottom="1px solid #E2E8F0"
+                      flex="1"
+                      fontSize="14px"
+                      outline="none"
+                      py="10px"
+                      bg="transparent"
+                      color="white"
+                    />
+                    <Box
+                      fontWeight={"500"}
+                      w={"100%"}
+                      as="input"
+                      // value={input}
+                      // onChange={(e) => setInput(e.target.value)}
+                      placeholder="Ask something..."
+                      borderBottom="1px solid #E2E8F0"
+                      flex="1"
+                      fontSize="14px"
+                      outline="none"
+                      py="10px"
+                      bg="transparent"
+                      color="white"
+                    />
+                    <Box
+                      fontWeight={"500"}
+                      w={"100%"}
+                      as="input"
+                      // value={input}
+                      // onChange={(e) => setInput(e.target.value)}
+                      placeholder="Ask something..."
+                      borderBottom="1px solid #E2E8F0"
+                      flex="1"
+                      fontSize="14px"
+                      outline="none"
+                      py="10px"
+                      bg="transparent"
+                      color="white"
+                    />
+                    <Box
+                      fontWeight={"500"}
+                      w={"100%"}
+                      as="input"
+                      // value={input}
+                      // onChange={(e) => setInput(e.target.value)}
+                      placeholder="Ask something..."
+                      borderBottom="1px solid #E2E8F0"
+                      flex="1"
+                      fontSize="14px"
+                      outline="none"
+                      py="10px"
+                      bg="transparent"
+                      color="white"
+                    />
+                    <Box display="flex" justifyContent="start" width="100%">
+                      <Box
+                        mt={"5px"}
+                        p={{ base: "20px", md: "40px" }}
+                        rounded={"2xl"}
+                        bg={"cyan.200"}
+                        border={"1px solid cyan.500"}
+                        width={{ base: "100%", md: "40%" }}
+                        textAlign={{ base: "center", md: "left" }}
+                        position="relative"
+                        color="cyan.600"
+                        borderRadius="30px"
+                        py="10px"
+                        px={{ base: "20px", md: "20px" }}
+                        fontFamily="arial"
+                        fontWeight="600"
+                        fontSize="16px"
+                        cursor="pointer"
+                        transition="all 0.3s ease"
+                        _hover={{
+                          transform: "translateY(-3px)",
+                          boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)",
+                        }}
+                        // onClick={() => setIsDialogOpen(true)}
+                      >
+                        <Text>Call for a Quote!</Text>
+                      </Box>
+                    </Box>
+                  </VStack>
+                </Box>
+              </Box>
         </Box>
       </VStack>
     </Box>

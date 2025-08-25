@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useRef, useCallback, memo, useEffect } from "react";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Menu, Phone, X } from "lucide-react";
+import Presure from "@/public/Presure washing- Driveways, houses, patios and more-3.png";
 
 const Navbar = () => {
   const router = useRouter();
@@ -263,7 +264,7 @@ const Navbar = () => {
       position="sticky"
       top="0"
       zIndex="100"
-      bg={["rgba(255, 255, 255, 1)"]}
+      bg={"blue.400"}
       backdropFilter="blur(10px)"
     >
       {/* Top Bar with Contact Info */}
@@ -332,8 +333,6 @@ const Navbar = () => {
             onClick={() => handleNavigate("/")}
             position="relative"
           >
-          
-
             <Box
               display={{ base: "block", md: "block", lg: "none" }}
               cursor="pointer"
@@ -345,26 +344,24 @@ const Navbar = () => {
                 <Menu size={24} color="#222" />
               )}
             </Box>
-
-           
           </Box>
+          <VStack>
+            <Image src={Presure} alt="logo" width={100} height={100} />
+            {/* <Text
+              textStyle={"basicText"}
+              fontWeight="600"
+              letterSpacing="0.2px"
+              fontFamily="arial"
+              color="#222222"
+              lineHeight="1.1"
+            >
+              EverBright
+            </Text> */}
+          </VStack>
 
-            <Text
-                textStyle={"basicText"}
-                fontWeight="600"
-                letterSpacing="0.2px"
-                fontFamily="arial"
-                color="#222222"
-                lineHeight="1.1"
-              >
-                EverBright
-              </Text>
-           <Box  textAlign={"center"}>
-
-
+          <Box textAlign={"center"}>
             <Phone />
-            
-            </Box>
+          </Box>
 
           {/* Mobile Menu Toggle */}
 
