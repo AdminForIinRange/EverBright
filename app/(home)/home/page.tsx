@@ -139,7 +139,7 @@ const Home = () => {
         </HStack>
       </HStack>
 
-      <Box mt={["100px", "100px", "100px", "100px", "100px", "100px"]}>
+      <Box mt={["100px", "100px", "100px", "100px", "100px", "300px"]}>
         <VStack justify={"center"} align={"center"} w={"100%"} textAlign={"center"}    px={["4%", "4%", "6%", "6%", "6%", "10%"]}>
           <Text
             fontSize={["16px", "18px", "24px"]}
