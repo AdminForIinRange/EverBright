@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, VStack, Text, HStack, Span, Link } from "@chakra-ui/react";
-function ServicesBox() {
+function ServicesBox({ title, image }: { title: string;  image: string }) {
   return (
     <>
         <Box
@@ -26,13 +26,16 @@ function ServicesBox() {
             <Box
               w={"100%"}
               zIndex={"1"}
-              h={"200px"}
-              p={{ base: "20px", md: "40px" }}
-              pb={"150px"}
+              h={"100px"}
+
               rounded={"2xl"}
-              bg={"gray.50"}
+          
               border={"1px solid lightgray"}
               textAlign={{ base: "center", md: "center" }}
+              backgroundImage={image}
+              backgroundSize={"cover"}
+              backgroundPosition={"center"}
+              backgroundRepeat={"no-repeat"}
             ></Box>
 
             <Text
@@ -43,7 +46,7 @@ function ServicesBox() {
               textStyle={"subheading"}
               w={"100%"}
             >
-              Pressure Washing
+                {title}
             </Text>
             <HStack justify={"center"} align={"start"} w={"100%"} gap={"3px"}>
               <Box
