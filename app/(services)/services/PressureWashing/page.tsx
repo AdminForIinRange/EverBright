@@ -1,4 +1,6 @@
 "use client";
+import FreeQuote from "@/components/comp/FreeQuote";
+import FAQ from "@/components/globalComponents/FAQ";
 import { Box, HStack, Span, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import router from "next/router";
@@ -99,12 +101,7 @@ const PressureWashing = () => {
               lineHeight={{ base: "1.7", md: "1.85" }}
               mt={{ base: "6px", md: "10px" }}
             >
-              Experience “100% Risk-Free Pressure Cleaning” from Calibre
-              Exterior Cleaning, Adelaide’s premier exterior cleaning
-              specialists. Our local team of skilled professionals is dedicated
-              to revitalising your property’s appearance with state-of-the-art
-              equipment and eco-friendly cleaning solutions.
-              <br />
+           
               <br />
               With a deep understanding of Adelaide’s unique climate and
               environment, we ensure the highest quality results while
@@ -239,6 +236,8 @@ const PressureWashing = () => {
           </Box>
         </HStack>
       </HStack>
+
+<FAQ type={""} />
 
 
 

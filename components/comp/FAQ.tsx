@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Box, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import {
   ChevronDown,
   ChevronUp,
@@ -150,7 +150,7 @@ const FAQ = ({ type }: { type: string }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [animatedItems, setAnimatedItems] = useState<boolean[]>(
-    Array(selectedFaqs.length).fill(false)
+    Array(selectedFaqs.length).fill(false),
   );
 
   // Staggered animation for FAQ items
@@ -193,26 +193,34 @@ const FAQ = ({ type }: { type: string }) => {
     >
       {/* Decorative elements */}
       <Box position="relative">
-        <HStack justify={"space-between"} align={"start"} w="100%" h={"100%"} >
         {/* FAQ Title Section */}
-        <VStack justify={"start"} align={"start"} w={"150%"} h={"100%"} mb={16} position="relative">
+        <Box textAlign="center" mb={16} position="relative">
           <Text
-            textStyle={"title"}
+              textStyle={"title"}
             fontWeight="800"
             color="#0A1029"
             mb={3}
             letterSpacing="-0.03em"
             position="relative"
             display="inline-block"
-          
+            _after={{
+              content: '""',
+              position: "absolute",
+              bottom: "-10px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "80px",
+              height: "4px",
+              background: "#0A1029",
+              borderRadius: "full",
+            }}
             as={"h2"}
-            borderBottom={"2px solid #4B5563"}
           >
             FAQ
           </Text>
           <Text
             as="h3"
-            textStyle={"basicText"}
+   textStyle={"basicText"}
             color="#4B5563"
             fontWeight="400"
             maxWidth="1200px"
@@ -223,10 +231,43 @@ const FAQ = ({ type }: { type: string }) => {
             Frequently Asked Questions about our premium AirBnB management
             services
           </Text>
-        </VStack>
+        </Box>
 
         {/* Category filters */}
-        
+        <Box
+          display="flex"
+          justifyContent="center"
+          flexWrap="wrap"
+          gap={3}
+          mb={12}
+          mx="auto"
+          maxWidth="1200px"
+        >
+          {categories.map((category, index) => (
+            <Box
+              key={index}
+              py={2}
+              px={4}
+              borderRadius="full"
+              bg={activeCategory === category ? "#0A1029" : "transparent"}
+              color={activeCategory === category ? "white" : "#4B5563"}
+              border="1px solid"
+              borderColor={activeCategory === category ? "#0A1029" : "#E5E7EB"}
+              cursor="pointer"
+              onClick={() => setActiveCategory(category)}
+              _hover={{
+                borderColor: "#0A1029",
+                color: activeCategory === category ? "white" : "#0A1029",
+              }}
+              transition="all 0.2s"
+              textTransform="capitalize"
+              fontWeight={activeCategory === category ? "600" : "400"}
+textStyle={"basicText"}
+            >
+              {category}
+            </Box>
+          ))}
+        </Box>
 
         {/* FAQ Items */}
         <Box
@@ -235,10 +276,6 @@ const FAQ = ({ type }: { type: string }) => {
           px={["0", "20px", "40px"]}
           position="relative"
         >
-
-
-
-
           {filteredFaqs.map((faq, index) => {
             const IconComponent = faq.icon || CheckCircle;
 
@@ -271,13 +308,14 @@ const FAQ = ({ type }: { type: string }) => {
                   {/* Icon indicator */}
 
                   <Text
+                 
                     fontWeight="600"
                     color={openIndex === index ? "#0A1029" : "#111827"}
                     pr={10}
                     flex="1"
                     transition="all 0.2s"
                     as={"p"}
-                    textStyle={"basicText"}
+               textStyle={"basicText"}
                   >
                     {faq.question}
                   </Text>
@@ -309,8 +347,8 @@ const FAQ = ({ type }: { type: string }) => {
                   position="relative"
                 >
                   <Text
-                    as={"p"}
-                    textStyle={"basicText"}
+                  as={"p"}
+                 textStyle={"basicText"}
                     color="#4B5563"
                     lineHeight="1.8"
                     position="relative"
@@ -332,7 +370,7 @@ const FAQ = ({ type }: { type: string }) => {
             );
           })}
         </Box>
-</HStack>
+
         {/* Still have questions section */}
         <Box
           mt={20}
@@ -350,29 +388,18 @@ const FAQ = ({ type }: { type: string }) => {
           border="1px solid #E5E7EB"
         >
           <Box flex="1">
-            <Text
-              textStyle={"basicText"}
-              fontWeight="700"
-              color="#0A1029"
-              mb={2}
-              as={"h3"}
-            >
+            <Text textStyle={"basicText"} fontWeight="700" color="#0A1029" mb={2} as={'h3'}>
               Still have questions?
             </Text>
-            <Text
-              textStyle={"basicText"}
-              color="#4B5563"
-              lineHeight="1.6"
-              as={"p"}
-            >
+            <Text textStyle={"basicText"} color="#4B5563" lineHeight="1.6" as={"p"}>
               Our team is ready to provide personalized answers to all your
               questions about AirBnB management and how we can help maximize
               your property's potential.
             </Text>
           </Box>
           <Box
-            aria-label="Contact us"
-            as={"button"}
+          aria-label="Contact us"
+          as={"button"}
             display="flex"
             alignItems="center"
             justifyContent="center"
@@ -382,6 +409,7 @@ const FAQ = ({ type }: { type: string }) => {
             px={6}
             borderRadius="full"
             fontWeight="600"
+           
             cursor="pointer"
             _hover={{ bg: "#1A2142", transform: "translateY(-2px)" }}
             transition="all 0.3s"
@@ -389,9 +417,7 @@ const FAQ = ({ type }: { type: string }) => {
             whiteSpace="nowrap"
             onClick={() => router.push("/contact")}
           >
-            <Text mr={2} textStyle={"basicText"}>
-              Contact us
-            </Text>
+            <Text mr={2} textStyle={"basicText"}>Contact us</Text>
             <ArrowRight size={16} />
           </Box>
         </Box>
