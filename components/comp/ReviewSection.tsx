@@ -76,7 +76,41 @@ const ReviewCard = ({ name, date, reviewText, stars, platform, avatar, verified 
 
 const ReviewSection = () => {
   return (
+    
     <Box bgGradient="linear(180deg, #f7fafc, #edf2f7)" py={{ base: "10", md: "16" }}>
+       <Box mt={["100px", "100px", "100px", "100px", "100px", "300px"]}>
+              <VStack
+                justify={"center"}
+                align={"center"}
+                w={"100%"}
+                textAlign={"center"}
+                px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+              >
+                <Text
+                  color={"blue.400"}
+                  fontSize={["16px", "18px", "24px"]}
+                  fontFamily="poppins"
+                  fontWeight={700}
+                  lineHeight="1.6"
+                >
+                  You'll be amazed at how good your property can look!
+                </Text>
+                <Text
+                  fontSize={["36px", "48px", "56px"]}
+                  fontWeight={700}
+                  fontFamily="poppins"
+                  color="bule.100"
+                  lineHeight="1.1"
+                >
+                  Adelaide Exterior Cleaning
+                </Text>
+                <Box
+                  my={["25px", "25px", "25px", "25px", "25px", "25px"]}
+                  w={["100%", "100%", "100%", "600px", "600px", "600px"]}
+                  borderWidth={"1px"}
+                ></Box>
+              </VStack>
+              </Box>
       <Box maxW="7xl" mx="auto" px={{ base: "4", md: "8" }}>
         {/* Header Section */}
         <VStack spacing="8" mb="10">
@@ -120,7 +154,8 @@ const ReviewSection = () => {
               </Text>
             </HStack>
 
-            <Box
+            <Box 
+            // send them to google
               as="button"
               px="8"
               py="3"

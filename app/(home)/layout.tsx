@@ -1,12 +1,12 @@
-import Navbar from "@/components/globalComponents/Navbar";
+// import Navbar from "@/components/globalComponents/Navbar";
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <>
-<Navbar />
-      <div className="">{children}</div>
-    </>
-  );
-};
+// const Layout = ({ children }: { children: React.ReactNode }) => {
+//   return (
+//     <>
+// <Navbar />
+//       <div className="">{children}</div>
+//     </>
+//   );
+// };
 
-export default Layout;
+// export default Layout;
