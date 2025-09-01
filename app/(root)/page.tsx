@@ -9,8 +9,16 @@ import FreeQuote from "@/components/comp/FreeQuote";
 import HeroText from "@/components/comp/HeroText";
 import ImageCompareSlider from "@/components/comp/ImageCompareSlider";
 import router from "next/router";
-import ServicesBox from "@/components/comp/ServicesBox";
+import ServicesBox from "@/components/comp/compsDeep/ServicesBox";
 import ReviewSection from "@/components/comp/ReviewSection";
+
+// ✅ NEW: import your de-dupe components
+import QuoteButton from "@/components/comp/compsDeep/QuoteButton";
+import BadgeItem from "@/components/comp/compsDeep/BadgeItem";
+import PromiseItem from "@/components/comp/compsDeep/PromiseItem";
+import SectionHeading from "@/components/comp/compsDeep/SectionHeading";
+import ServiceLayout from "@/components/comp/ServiceLayout";
+
 const Page = () => {
   const services = [
     {
@@ -62,6 +70,24 @@ const Page = () => {
       desc: "Remove oil spots and tire marks for a fresh, even finish.",
     },
   ];
+
+  // ✅ NEW: small data arrays to map the repeated items
+  const badges = [
+    "100% Satisfaction",
+    "Fully Insured",
+    "Locally Owned &",
+    "ECO Friendly",
+  ];
+
+  const promises = [
+    "100% Satisfaction Guarantee – Or We Will Fix It!",
+    "We’ll Be On Time",
+    "We Leave Things CLEAN",
+    "All Our Quotes Are Clear, Fast and No Obligation",
+    "We Are Fully Insured and Police Cheaked",
+    "Only Professional Equipment",
+  ];
+
   return (
     <Box>
       <Box
@@ -73,23 +99,22 @@ const Page = () => {
         backgroundAttachment="fixed"
         zIndex={-1}
         w={"100%"}
-        h={["500px", "500px", "500px", "500px", "850px", "850px"]}
+        h={["850px", "850px", "850px", "850px", "850px", "850px"]}
         opacity={0.5}
       ></Box>
       <Box
         position={"absolute"}
         zIndex={-1}
         w={"100%"}
-        h={["500px", "500px", "500px", "500px", "850px", "850px"]}
+        h={["850px", "850px", "850px", "850px", "850px", "850px"]}
         bg="blue.800"
         opacity={0.7}
       ></Box>
 
       <HStack
         // data-aos="fade-up"
-
         zIndex={4}
-        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+        px={["0%", "3%", "6%", "6%", "6%", "10%"]}
         justify={"center"} // !!
         align={"center"}
         w={"100%"}
@@ -104,10 +129,11 @@ const Page = () => {
           gap={["15px", "15px", "15px", "50px", "50px", "50px"]}
           wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
         >
-          <Box w={["95%", "95%", "95%", "600px", "600px", "600px"]}>
+          <Box w={["100%", "100%", "100%", "600px", "600px", "600px"]}>
             <HeroText />
 
             <HStack
+              px={["0%", "0%", "6%", "6%", "6%", "10%"]}
               w={"100%"}
               justify={[
                 "center",
@@ -123,63 +149,22 @@ const Page = () => {
                 mt={"20px"}
                 bg={"white"}
                 h={"100%"}
-                px={"20px"}
-                w={"fit-content"}
-                borderRadius={"18px"}
+                p={["0px", "0px", "20px", "20px", "20px", "20px"]}
+                w={[
+                  "100%",
+                  "100%",
+                  "fit-content",
+                  "fit-content",
+                  "fit-content",
+                  "fit-content",
+                ]}
+                borderRadius={["0px", "30px", "30px", "30px", "30px", "30px"]}
               >
                 <HStack justify={"center"} align={"center"} gap={"0px"}>
-                  <VStack p={4} w={"100px"}>
-                    <Box bg={"red"} p={4}>
-                      <Image src={Google} alt="Google" width="50" />
-                    </Box>
-                    <Text
-                      textAlign={"center"}
-                      fontSize={"12px"}
-                      fontWeight={"500"}
-                      fontFamily={"poppins"}
-                    >
-                      100% Satisfaction
-                    </Text>
-                  </VStack>
-                  <VStack p={4} w={"100px"}>
-                    <Box bg={"red"} p={4}>
-                      <Image src={Google} alt="Google" width="50" />
-                    </Box>
-                    <Text
-                      textAlign={"center"}
-                      fontSize={"12px"}
-                      fontWeight={"500"}
-                      fontFamily={"poppins"}
-                    >
-                      Fully Insured
-                    </Text>
-                  </VStack>
-                  <VStack p={4} w={"100px"}>
-                    <Box bg={"red"} p={4}>
-                      <Image src={Google} alt="Google" width="50" />
-                    </Box>
-                    <Text
-                      textAlign={"center"}
-                      fontSize={"12px"}
-                      fontWeight={"500"}
-                      fontFamily={"poppins"}
-                    >
-                      Locally Owned &
-                    </Text>
-                  </VStack>
-                  <VStack p={4} w={"100px"}>
-                    <Box bg={"red"} p={4}>
-                      <Image src={Google} alt="Google" width="50" />
-                    </Box>
-                    <Text
-                      textAlign={"center"}
-                      fontSize={"12px"}
-                      fontWeight={"500"}
-                      fontFamily={"poppins"}
-                    >
-                      ECO Friendly
-                    </Text>
-                  </VStack>
+                  {/* ✅ NEW: map your BadgeItem instead of 4 copies */}
+                  {badges.map((label) => (
+                    <BadgeItem key={label} label={label} />
+                  ))}
                 </HStack>
               </Box>
             </HStack>
@@ -189,6 +174,7 @@ const Page = () => {
       </HStack>
 
       <Box mt={["100px", "100px", "100px", "100px", "100px", "300px"]}>
+        {/* ✅ Example of using SectionHeading where styling matches */}
         <VStack
           justify={"center"}
           align={"center"}
@@ -196,29 +182,12 @@ const Page = () => {
           textAlign={"center"}
           px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         >
-          <Text
-            color={"blue.400"}
-            fontSize={["16px", "18px", "24px"]}
-            fontFamily="poppins"
-            fontWeight={700}
-            lineHeight="1.6"
-          >
-            You'll be amazed at how good your property can look!
-          </Text>
-          <Text
-            fontSize={["36px", "48px", "56px"]}
-            fontWeight={700}
-            fontFamily="poppins"
-            color="bule.100"
-            lineHeight="1.1"
-          >
-            Adelaide Exterior Cleaning
-          </Text>
-          <Box
-            my={["25px", "25px", "25px", "25px", "25px", "25px"]}
-            w={["100%", "100%", "100%", "600px", "600px", "600px"]}
-            borderWidth={"1px"}
-          ></Box>
+          <SectionHeading
+            eyebrow={`You'll be amazed at how good your property can look!`}
+            title="Restoring Your Most
+Valuable Asset"
+            color="bule.400"
+          />
         </VStack>
 
         <HStack
@@ -228,7 +197,7 @@ const Page = () => {
           align={"center"}
           w={"100%"}
           h={"100%"}
-          my={["50px", "50px", "50px", "50px", "50px", "100px"]}
+          my={["0px", "50px", "50px", "50px", "50px", "100px"]}
         >
           <HStack
             justify={"center"}
@@ -238,68 +207,41 @@ const Page = () => {
             gap={["15px", "15px", "15px", "50px", "50px", "50px"]}
             wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
           >
-            <Box w={["95%", "95%", "95%", "600px", "600px", "600px"]}>
-              <Text fontSize="lg" color="#4a5568" mb="6" lineHeight="1.8">
-                At Luxe Managements, we believe that exceptional spaces are born
-                from a perfect balance of aesthetics and functionality. Our
-                furnishing and styling service transforms properties into
-                captivating environments that resonate with discerning guests.
+            <Box w={["100%", "100%", "100%", "600px", "600px", "600px"]}>
+              <Text fontSize="lg" color="black" mb="6" lineHeight="1.8">
+                Your home works hard, facing Adelaide’s harsh sun, heavy rains,
+                and winter winds. Over time, dirt, mould, and grime build up on
+                walls, roofs, driveways, and gutters.
               </Text>
-              <Text fontSize="lg" color="#4a5568" mb="8" lineHeight="1.8">
-                Each project is approached with meticulous attention to detail,
-                from the selection of statement furniture pieces to the curation
-                of bespoke accessories that tell a cohesive story.
+              <Text fontSize="lg" color="black" mb="8" lineHeight="1.8">
+                At EverBright Pressure Washing Adelaide, we provide professional
+                pressure washing, gutter cleaning, roof washing, and solar panel
+                cleaning to restore your property’s beauty and protect it for
+                years to come. We don’t just wash away mess — we restore pride,
+                protect your investment, and bring back that “wow” factor every
+                time you pull into your driveway.
+              </Text>
+
+              <Text fontSize="lg" color="black" mb="8" lineHeight="1.8">
+                Regular exterior cleaning isn’t just about curb appeal — it
+                prevents damage, avoids costly repairs, and keeps your home
+                strong for years.
+              </Text>
+
+              <Text fontSize="lg" color="black" mb="8" lineHeight="1.8">
+                We’re fast, reliable, and eco-friendly — tough on stains, gentle
+                on your property. When you choose EverBright, you’re not just
+                getting a clean — you’re giving your home the care it deserves.
               </Text>
               <Box display="flex" alignItems="center" gap="3" mb="6">
-                <Box w="30px" h="2px" bg="#0a0f29"></Box>
-                <Text fontSize="lg" fontWeight="medium" color="#0a0f29">
-                  Elevating spaces. Creating experiences.
+                <Text fontSize="lg" fontWeight="700" color="#0a0f29">
+                  Call today for a FREE QUOTE and see why Adelaide homeowners
+                  trust EverBright Pressure Washing for remarkable results.
                 </Text>
               </Box>
               <Box display="flex" justifyContent="start" width="100%">
-                <HStack
-                  justify={[
-                    "center",
-                    "center",
-                    "center",
-                    "start",
-                    "start",
-                    "start",
-                  ]}
-                  align={"start"}
-                  w={"100%"}
-                  transition={"all 0.2s ease-in-out"}
-                  zIndex={4}
-                >
-                  <Box
-                    w={["100%", "100%", "100%", "100", "100", "100"]}
-                    bg={"cyan.500"}
-                    my={"25px"}
-                    display={"flex"}
-                    alignItems={"center"}
-                    justifyContent={["center"]}
-                    gap={"15px"}
-                    fontFamily={"poppins"}
-                    transition={"all 0.2s ease-in-out"}
-                    cursor={"pointer"}
-                    _hover={{
-                      transition: "all 0.2s ease-in-out",
-                      scale: 1.1,
-                      fontWeight: "700",
-                      px: "80px",
-                      bg: "black",
-                    }}
-                    p={4}
-                    color={"white"}
-                    rounded={"30px"}
-                    px={"12"}
-                    fontWeight={"500"}
-                    onClick={() => router.push("/services")}
-                  >
-                    Call for a Quote!
-                    {/* <Icon as={ArrowRight}> </Icon> */}
-                  </Box>
-                </HStack>
+                {/* ✅ Replace big Box CTA with the component */}
+                <QuoteButton />
               </Box>
             </Box>
 
@@ -310,13 +252,10 @@ const Page = () => {
               borderRadius="30px"
               bgPos="center"
               bgSize="cover"
-              // Change this to any background you want
-              // Change this to any background you want
               overflow="hidden"
               display={"flex"}
               justifyContent={"end"}
             >
-              {/* Horizontal line for crosshair */}
               <Box
                 position="relative"
                 h={["350px", "350px", "350px", "500px", "500px", "500px"]}
@@ -333,72 +272,10 @@ const Page = () => {
       </Box>
 
       <Box pt={["50px", "50px", "50px", "100px", "100px", "100px"]}>
-        <Box
-          backgroundImage={` url('/images/aerial-city-adelaide.jpeg')`}
-          backgroundRepeat="no-repeat"
-          backgroundPosition="center"
-          backgroundSize="cover"
-          position={"absolute"}
-          backgroundAttachment="fixed"
-          zIndex={-1}
-          w={"100%"}
-          h={["500px", "500px", "500px", "500px", "1450px", "1450px"]}
-          opacity={0.5}
-        ></Box>
-        <Box
-          position={"absolute"}
-          zIndex={-1}
-          w={"100%"}
-          h={["500px", "500px", "500px", "500px", "1450px", "1450px"]}
-          bg="blue.800"
-          opacity={0.7}
-        ></Box>
-        <VStack
-          mt={"50px"}
-          justify={"center"}
-          align={"center"}
-          w={"100%"}
-          textAlign={"center"}
-          px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-        >
-          <Text
-            fontSize={["16px", "18px", "24px"]}
-            fontFamily="poppins"
-            fontWeight={700}
-            lineHeight="1.6"
-            color={"blue.200"}
-          >
-            You'll be amazed at how good your property can look!
-          </Text>
-          <Text
-            fontSize={["36px", "48px", "56px"]}
-            fontWeight={700}
-            fontFamily="poppins"
-            color="white"
-            lineHeight="1.1"
-          >
-            How Can We Help Restore Your Property?
-          </Text>
-          <Box
-            my={["25px", "25px", "25px", "25px", "25px", "25px"]}
-            w={["100%", "100%", "100%", "600px", "600px", "600px"]}
-            borderWidth={"1px"}
-          ></Box>
-        </VStack>
-
-        <HStack
-          wrap={"wrap"}
-          justify={"center"}
-          align={"center"}
-          py={"50px"}
-          px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-        >
-          {services.map((s) => (
-            <ServicesBox key={s.title} title={s.title} image={s.image} />
-          ))}
-        </HStack>
+        <ServiceLayout />
 
         <Box mt={["100px", "100px", "100px", "100px", "100px", "300px"]}>
+          {/* Another spot where SectionHeading matches your style */}
           <VStack
             justify={"center"}
             align={"center"}
@@ -406,29 +283,11 @@ const Page = () => {
             textAlign={"center"}
             px={["4%", "4%", "6%", "6%", "6%", "10%"]}
           >
-            <Text
-              color={"blue.400"}
-              fontSize={["16px", "18px", "24px"]}
-              fontFamily="poppins"
-              fontWeight={700}
-              lineHeight="1.6"
-            >
-              You'll be amazed at how good your property can look!
-            </Text>
-            <Text
-              fontSize={["36px", "48px", "56px"]}
-              fontWeight={700}
-              fontFamily="poppins"
+            <SectionHeading
+              eyebrow={`You'll be amazed at how good your property can look!`}
+              title="Adelaide Exterior Cleaning"
               color="bule.100"
-              lineHeight="1.1"
-            >
-              Adelaide Exterior Cleaning
-            </Text>
-            <Box
-              my={["25px", "25px", "25px", "25px", "25px", "25px"]}
-              w={["100%", "100%", "100%", "600px", "600px", "600px"]}
-              borderWidth={"1px"}
-            ></Box>
+            />
           </VStack>
 
           <HStack
@@ -464,90 +323,22 @@ const Page = () => {
                 <Box display="flex" alignItems="center" gap="3" mb="6">
                   <Box w="30px" h="2px" bg="#0a0f29"></Box>
                   <Text fontSize="lg" fontWeight="medium" color="#0a0f29">
-                    Elevating spaces. Creating experiences.
+                    Shayal - Owner
                   </Text>
                 </Box>
                 <Box display="flex" justifyContent="start" width="100%">
-                  <HStack
-                    justify={[
-                      "center",
-                      "center",
-                      "center",
-                      "start",
-                      "start",
-                      "start",
-                    ]}
-                    align={"start"}
-                    w={"100%"}
-                    transition={"all 0.2s ease-in-out"}
-                    zIndex={4}
-                  >
-                    <Box
-                      w={["100%", "100%", "100%", "100", "100", "100"]}
-                      bg={"cyan.500"}
-                      my={"25px"}
-                      display={"flex"}
-                      alignItems={"center"}
-                      justifyContent={["center"]}
-                      gap={"15px"}
-                      fontFamily={"poppins"}
-                      transition={"all 0.2s ease-in-out"}
-                      cursor={"pointer"}
-                      _hover={{
-                        transition: "all 0.2s ease-in-out",
-                        scale: 1.1,
-                        fontWeight: "700",
-                        px: "80px",
-                        bg: "black",
-                      }}
-                      p={4}
-                      color={"white"}
-                      rounded={"30px"}
-                      px={"12"}
-                      fontWeight={"500"}
-                      onClick={() => router.push("/services")}
-                    >
-                      Call for a Quote!
-                      {/* <Icon as={ArrowRight}> </Icon> */}
-                    </Box>
-                  </HStack>
+                  {/* ✅ Use the same CTA component again */}
+                  <QuoteButton />
                 </Box>
-              </Box>
-
-              <Box
-                position="relative"
-                h={["350px", "350px", "350px", "500px", "500px", "600px"]}
-                w={["95%", "95%", "95%", "600px", "600px", "600px"]}
-                borderRadius="30px"
-                bgPos="center"
-                bgSize="cover"
-                // Change this to any background you want
-                // Change this to any background you want
-                overflow="hidden"
-                display={"flex"}
-                justifyContent={"end"}
-              >
-                {/* Horizontal line for crosshair */}
-                <Box
-                  position="relative"
-                  h={["350px", "350px", "350px", "500px", "500px", "500px"]}
-                  w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-                  borderRadius="30px"
-                  bg="gray.200" // fallback background color
-                  overflow="hidden" // clip the Image to the rounded corners
-                ></Box>
               </Box>
             </HStack>
           </HStack>
         </Box>
       </Box>
+
       <ReviewSection />
 
-      <HStack
-        bg={"blue.100"}
-        mt={["100px", "100px", "100px", "100px", "100px", "300px"]}
-        py={"25px"}
-      >
+      <HStack bg={"blue.700"} py={"25px"}>
         <VStack
           justify={"center"}
           align={"center"}
@@ -556,22 +347,13 @@ const Page = () => {
           px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         >
           <Text
-            color={"blue.400"}
-            fontSize={["16px", "18px", "24px"]}
-            fontFamily="poppins"
-            fontWeight={700}
-            lineHeight="1.6"
-          >
-            You'll be amazed at how good your property can look!
-          </Text>
-          <Text
-            fontSize={["36px", "48px", "56px"]}
+            fontSize={["30px", "48px", "56px"]}
             fontWeight={700}
             fontFamily="poppins"
-            color="bule.100"
+            color="white"
             lineHeight="1.1"
           >
-            Adelaide Exterior Cleaning
+            Ready to bring your home back to life
           </Text>
 
           <Box display="flex" justifyContent="center" h={"100%"} width="100%">
@@ -589,39 +371,14 @@ const Page = () => {
               transition={"all 0.2s ease-in-out"}
               zIndex={4}
             >
-              <Box
-                w={["100%", "100%", "100%", "300px", "300px", "300px"]}
-                bg={"cyan.500"}
-                my={"25px"}
-                display={"flex"}
-                alignItems={"center"}
-                justifyContent={["center"]}
-                gap={"15px"}
-                fontFamily={"poppins"}
-                transition={"all 0.2s ease-in-out"}
-                cursor={"pointer"}
-                _hover={{
-                  transition: "all 0.2s ease-in-out",
-                  scale: 1.1,
-                  fontWeight: "700",
-                  px: "80px",
-                  bg: "black",
-                }}
-                p={4}
-                color={"white"}
-                rounded={"30px"}
-                px={"12"}
-                fontWeight={"500"}
-                onClick={() => router.push("/services")}
-              >
-                Call for a Quote!
-                {/* <Icon as={ArrowRight}> </Icon> */}
-              </Box>
+              {/* ✅ CTA again */}
+              <QuoteButton />
             </HStack>
           </Box>
         </VStack>
       </HStack>
-      <Box mt={["100px", "100px", "100px", "100px", "100px", "300px"]}>
+
+      <Box bg={"blue.800"} py={"100px"}>
         <VStack
           justify={"center"}
           align={"center"}
@@ -629,23 +386,15 @@ const Page = () => {
           textAlign={"center"}
           px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         >
-          <Text
-            color={"blue.400"}
-            fontSize={["16px", "18px", "24px"]}
-            fontFamily="poppins"
-            fontWeight={700}
-            lineHeight="1.6"
-          >
-            You'll be amazed at how good your property can look!
-          </Text>
+          {/* This heading differs (no eyebrow), so we keep as-is */}
           <Text
             fontSize={["36px", "48px", "56px"]}
             fontWeight={700}
             fontFamily="poppins"
-            color="bule.100"
+            color="white"
             lineHeight="1.1"
           >
-            Adelaide Exterior Cleaning
+            What We Promise
           </Text>
           <Box
             my={["25px", "25px", "25px", "25px", "25px", "25px"]}
@@ -661,7 +410,7 @@ const Page = () => {
           align={"center"}
           w={"100%"}
           h={"100%"}
-          my={["50px", "50px", "50px", "50px", "50px", "100px"]}
+          my={["25px", "50px", "50px", "50px", "50px", "100px"]}
         >
           <HStack
             justify={"center"}
@@ -671,56 +420,17 @@ const Page = () => {
             gap={["15px", "15px", "15px", "50px", "50px", "50px"]}
             wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
           >
-            <Box w={["95%", "95%", "95%", "600px", "600px", "600px"]}>
+            <Box w={["100%", "100%", "100%", "600px", "600px", "600px"]}>
               <VStack
                 fontFamily={"poppins"}
-                justify={["center", "center", "center", "start", "start"]}
-                align={["center", "center", "center", "start", "start"]}
+                justify={["start", "start", "start", "start", "start"]}
+                align={["start", "start", "start", "start", "start"]}
+                gap={"8px"}
               >
-                <Text color="green.300" fontSize="34px" fontWeight={"700"}>
-                  ✓{" "}
-                  <Span color="black" fontSize={"20px"} fontWeight={"400"}>
-                    {" "}
-                100% Satisfaction Guarantee – Or We Will Fix It!
-                  </Span>
-                </Text>
-                <Text color="green.300" fontSize="34px" fontWeight={"700"}>
-                  ✓{" "}
-                  <Span color="black" fontSize={"20px"} fontWeight={"400"}>
-                    {" "}
-                  We’ll Be On Time
-                  </Span>
-                </Text>
-
-                 <Text color="green.300" fontSize="34px" fontWeight={"700"}>
-                  ✓{" "}
-                  <Span color="black" fontSize={"20px"} fontWeight={"400"}>
-                    {" "}
-                  We Leave Things CLEAN
-                  </Span>
-                </Text>
-                <Text color="green.300" fontSize="34px" fontWeight={"700"}>
-                  ✓{" "}
-                  <Span color="black" fontSize={"20px"} fontWeight={"400"}>
-                    {" "}
-                  All Our Quotes Are Clear, Fast and No Obligation
-                  </Span>
-                </Text>
-                    <Text color="green.300" fontSize="34px" fontWeight={"700"}>
-                  ✓{" "}
-                  <Span color="black" fontSize={"20px"} fontWeight={"400"}>
-                    {" "}
-                 We Are Fully Insured and Police Cheaked
-                  </Span>
-                </Text>
-                    <Text color="green.300" fontSize="34px" fontWeight={"700"}>
-                  ✓{" "}
-                  <Span color="black" fontSize={"20px"} fontWeight={"400"}>
-                    {" "}
-                 Only Professional Equipment
-                  </Span>
-                </Text>
-                   
+                {/* ✅ Map promise lines instead of repeating */}
+                {promises.map((p) => (
+                  <PromiseItem key={p} text={p} />
+                ))}
               </VStack>
 
               <Box display="flex" justifyContent="start" width="100%">
@@ -738,60 +448,10 @@ const Page = () => {
                   transition={"all 0.2s ease-in-out"}
                   zIndex={4}
                 >
-                  <Box
-                    w={["100%", "100%", "100%", "100", "100", "100"]}
-                    bg={"cyan.500"}
-                    my={"25px"}
-                    display={"flex"}
-                    alignItems={"center"}
-                    justifyContent={["center"]}
-                    gap={"15px"}
-                    fontFamily={"poppins"}
-                    transition={"all 0.2s ease-in-out"}
-                    cursor={"pointer"}
-                    _hover={{
-                      transition: "all 0.2s ease-in-out",
-                      scale: 1.1,
-                      fontWeight: "700",
-                      px: "80px",
-                      bg: "black",
-                    }}
-                    p={4}
-                    color={"white"}
-                    rounded={"30px"}
-                    px={"12"}
-                    fontWeight={"500"}
-                    onClick={() => router.push("/services")}
-                  >
-                    Call for a Quote!
-                    {/* <Icon as={ArrowRight}> </Icon> */}
-                  </Box>
+                  {/* ✅ Final CTA */}
+                  <QuoteButton />
                 </HStack>
               </Box>
-            </Box>
-
-            <Box
-              position="relative"
-              h={["350px", "350px", "350px", "500px", "500px", "600px"]}
-              w={["95%", "95%", "95%", "600px", "600px", "600px"]}
-              borderRadius="30px"
-              bgPos="center"
-              bgSize="cover"
-              // Change this to any background you want
-              // Change this to any background you want
-              overflow="hidden"
-              display={"flex"}
-              justifyContent={"end"}
-            >
-              {/* Horizontal line for crosshair */}
-              <Box
-                position="relative"
-                h={["350px", "350px", "350px", "500px", "500px", "500px"]}
-                w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-                borderRadius="30px"
-                bg="gray.200" // fallback background color
-                overflow="hidden" // clip the Image to the rounded corners
-              ></Box>
             </Box>
           </HStack>
         </HStack>

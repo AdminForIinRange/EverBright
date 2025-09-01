@@ -77,8 +77,8 @@ const ReviewCard = ({ name, date, reviewText, stars, platform, avatar, verified 
 const ReviewSection = () => {
   return (
     
-    <Box bgGradient="linear(180deg, #f7fafc, #edf2f7)" py={{ base: "10", md: "16" }}>
-       <Box mt={["100px", "100px", "100px", "100px", "100px", "300px"]}>
+    <Box bg={"blue.800"} bgGradient="linear(180deg, #f7fafc, #edf2f7)" py={{ base: "10", md: "16" }}>
+       <Box mt={["50px", "100px", "100px", "100px", "100px", "300px"]}>
               <VStack
                 justify={"center"}
                 align={"center"}
@@ -86,23 +86,15 @@ const ReviewSection = () => {
                 textAlign={"center"}
                 px={["4%", "4%", "6%", "6%", "6%", "10%"]}
               >
-                <Text
-                  color={"blue.400"}
-                  fontSize={["16px", "18px", "24px"]}
-                  fontFamily="poppins"
-                  fontWeight={700}
-                  lineHeight="1.6"
-                >
-                  You'll be amazed at how good your property can look!
-                </Text>
+          
                 <Text
                   fontSize={["36px", "48px", "56px"]}
                   fontWeight={700}
                   fontFamily="poppins"
-                  color="bule.100"
+                  color="white"
                   lineHeight="1.1"
                 >
-                  Adelaide Exterior Cleaning
+        Read some of our reviews
                 </Text>
                 <Box
                   my={["25px", "25px", "25px", "25px", "25px", "25px"]}
@@ -113,7 +105,7 @@ const ReviewSection = () => {
               </Box>
       <Box maxW="7xl" mx="auto" px={{ base: "4", md: "8" }}>
         {/* Header Section */}
-        <VStack spacing="8" mb="10">
+        <VStack spacing="8" mb="10" display={["none", "flex", "flex", "flex", "flex", "flex"]}>
           {/* Tab Navigation */}
    
         
@@ -146,12 +138,7 @@ const ReviewSection = () => {
                   />
                 ))}
               </HStack>
-              <Text fontSize="xl" fontWeight="800" color="gray.800">
-                5.0
-              </Text>
-              <Text fontSize="md" color="gray.500" fontWeight="600">
-                | 197 reviews
-              </Text>
+            
             </HStack>
 
             <Box 
@@ -208,40 +195,35 @@ const ReviewSection = () => {
               reviewText="The Calibre team was excellent. Polite and on time service before and after photos that clearly showed the results. Very happy"
               stars={5}
               platform="google"
-              verified={true}
-            />
+              verified={true} avatar={undefined}            />
             <ReviewCard
               name="Trevor Smith"
               date="26 June 2025"
               reviewText="Caleb was a very hard-working deliverer of a great service...hard to believe the before and after photos highly recommend this pressure clean service."
               stars={5}
               platform="google"
-              verified={true}
-            />
+              verified={true} avatar={undefined}            />
             <ReviewCard
               name="Robert Swann"
               date="11 January 2025"
               reviewText="Great job done cleaning Solar panels and Gutters. Fantastic, prompt and friendly service. Highly recommend them for jobs."
               stars={5}
               platform="facebook"
-              verified={false}
-            />
+              verified={false} avatar={undefined}            />
             <ReviewCard
               name="Sarah Johnson"
               date="15 June 2025"
               reviewText="Outstanding service! The team was professional, punctual, and delivered exceptional results. Will definitely use again."
               stars={5}
               platform="google"
-              verified={true}
-            />
+              verified={true} avatar={undefined}            />
             <ReviewCard
               name="Mike Wilson"
               date="8 June 2025"
               reviewText="Excellent work on our driveway cleaning. The difference is remarkable. Highly recommend their services!"
               stars={5}
               platform="facebook"
-              verified={false}
-            />
+              verified={false} avatar={undefined}            />
           </Flex>
         </Box>
       </Box>
