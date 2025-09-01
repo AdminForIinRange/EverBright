@@ -48,7 +48,6 @@ function ServicesBox({ title, image }: { title: string; image: string }) {
 
           <Box position="absolute" bottom="0" left="0" right="0" p="4">
             <Text
-           
               color="white"
               fontSize={{ base: "lg", md: "25px" }}
               fontWeight="700"
@@ -62,7 +61,6 @@ function ServicesBox({ title, image }: { title: string; image: string }) {
               py={"10px"}
               color="white"
               fontSize={{ base: "lg", md: "md" }}
-            
               textAlign="START"
               textShadow="0 2px 4px rgba(0,0,0,0.3)"
               fontFamily="poppins"

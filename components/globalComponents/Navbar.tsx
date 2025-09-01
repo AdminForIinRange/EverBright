@@ -44,7 +44,6 @@ const Navbar = () => {
         transform="translateX(-50%)"
         bg="#05204A"
         boxShadow="0 8px 24px rgba(0, 0, 0, 0.08)"
-      
         borderRadius="8px"
         w={{ base: "280px", md: "320px" }}
         zIndex={10}
@@ -72,7 +71,12 @@ const Navbar = () => {
                 index !== items.length - 1 ? "1px solid #F5F5F5" : "none"
               }
             >
-              <Text textStyle={"smallText"} color="#F5F5F5" fontWeight="500" mb="4px">
+              <Text
+                textStyle={"smallText"}
+                color="#F5F5F5"
+                fontWeight="500"
+                mb="4px"
+              >
                 {item.label}
               </Text>
               {item.description && (
@@ -96,7 +100,7 @@ const Navbar = () => {
           </Text>
         </Box>
       </Box>
-    )
+    ),
   );
   Dropdown.displayName = "Dropdown";
 
@@ -152,7 +156,7 @@ const Navbar = () => {
           </Text>
         </Box>
       </Box>
-    )
+    ),
   );
   MobileDropdown.displayName = "MobileDropdown";
 
@@ -183,7 +187,7 @@ const Navbar = () => {
       router.push(path);
       setMobileMenuOpen(false);
     },
-    [router]
+    [router],
   );
 
   const toggleMobileDropdown = useCallback((name: string) => {
@@ -196,10 +200,26 @@ const Navbar = () => {
       path: "/about",
       hasDropdown: true,
       items: [
-        { label: "Our Story", link: "/about/#story", description: "Learn about our journey and values" },
-        { label: "Our Team", link: "/about/#team", description: "Meet the experts behind EverBright" },
-        { label: "Testimonials", link: "/about/#testimonials", description: "What our clients say about us" },
-        { label: "Our Journey", link: "/about/journey", description: "See how EverBright has evolved" },
+        {
+          label: "Our Story",
+          link: "/about/#story",
+          description: "Learn about our journey and values",
+        },
+        {
+          label: "Our Team",
+          link: "/about/#team",
+          description: "Meet the experts behind EverBright",
+        },
+        {
+          label: "Testimonials",
+          link: "/about/#testimonials",
+          description: "What our clients say about us",
+        },
+        {
+          label: "Our Journey",
+          link: "/about/journey",
+          description: "See how EverBright has evolved",
+        },
       ],
     },
     {
@@ -207,10 +227,26 @@ const Navbar = () => {
       path: "/services",
       hasDropdown: true,
       items: [
-        { label: "Property Management", link: "/services/property-management", description: "Full-service management for luxury properties" },
-        { label: "Cleaning & Linen", link: "/services/cleaning-and-linen", description: "Premium cleaning and linen services" },
-        { label: "Furnishing & Styling", link: "/services/furnishing-and-styling", description: "Expert interior design and furnishing" },
-        { label: "Photography", link: "/services/photography", description: "Professional property photography" },
+        {
+          label: "Property Management",
+          link: "/services/property-management",
+          description: "Full-service management for luxury properties",
+        },
+        {
+          label: "Cleaning & Linen",
+          link: "/services/cleaning-and-linen",
+          description: "Premium cleaning and linen services",
+        },
+        {
+          label: "Furnishing & Styling",
+          link: "/services/furnishing-and-styling",
+          description: "Expert interior design and furnishing",
+        },
+        {
+          label: "Photography",
+          link: "/services/photography",
+          description: "Professional property photography",
+        },
       ],
     },
     { name: "Pricing", path: "/pricing", hasDropdown: false },
@@ -219,13 +255,31 @@ const Navbar = () => {
   ];
 
   return (
-    <Box w="100%" position="sticky" top="0" zIndex="100" bg={"#05204A"} backdropFilter="blur(10px)" >
+    <Box
+      w="100%"
+      position="sticky"
+      top="0"
+      zIndex="100"
+      bg={"#05204A"}
+      backdropFilter="blur(10px)"
+    >
       {/* Top Bar */}
-     
+
       {/* Main Nav */}
-      <Box w="100%" py="10px" borderBottom="1px solid #F0F0F0" transition="all 0.3s ease">
-        <Box display="flex" justifyContent="space-between" alignItems="center" maxW="1400px" mx="auto" px={{ base: "20px", lg: "40px" }}>
-          
+      <Box
+        w="100%"
+        py="10px"
+        borderBottom="1px solid #F0F0F0"
+        transition="all 0.3s ease"
+      >
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          maxW="1400px"
+          mx="auto"
+          px={{ base: "20px", lg: "40px" }}
+        >
           {/* Hamburger (mobile only) */}
           <Box
             display={{ base: "block", md: "block", lg: "none" }}
@@ -236,21 +290,40 @@ const Navbar = () => {
               setMobileMenuOpen((prev) => !prev);
             }}
           >
-            {mobileMenuOpen ? <X size={24} color="#F0F0F0" /> : <Menu size={24} color="#F0F0F0" />}
+            {mobileMenuOpen ? (
+              <X size={24} color="#F0F0F0" />
+            ) : (
+              <Menu size={24} color="#F0F0F0" />
+            )}
           </Box>
 
           {/* Logo */}
-          <Box display="flex" alignItems="center" cursor="pointer" onClick={() => handleNavigate("/")} position="relative">
+          <Box
+            display="flex"
+            alignItems="center"
+            cursor="pointer"
+            onClick={() => handleNavigate("/")}
+            position="relative"
+          >
             <VStack>
               <Image src={Presure} alt="logo" width={100} height={100} />
             </VStack>
           </Box>
 
           {/* Phone icon */}
-          <Box display={{ base: "block", md: "block", lg: "none" }} textAlign={"center"}><Phone size={24} color="#F0F0F0" /></Box>
+          <Box
+            display={{ base: "block", md: "block", lg: "none" }}
+            textAlign={"center"}
+          >
+            <Phone size={24} color="#F0F0F0" />
+          </Box>
 
           {/* Desktop Nav */}
-          <Box display={{ base: "none", md: "none", lg: "flex" }} alignItems="center" justifyContent="flex-end">
+          <Box
+            display={{ base: "none", md: "none", lg: "flex" }}
+            alignItems="center"
+            justifyContent="flex-end"
+          >
             {navigationItems.map((item) => (
               <Box
                 key={item.name}
@@ -265,7 +338,12 @@ const Navbar = () => {
                   if (item.hasDropdown) handleLeave();
                 }}
               >
-                <Box cursor="pointer" onClick={() => handleNavigate(item.path)} position="relative" pb="4px">
+                <Box
+                  cursor="pointer"
+                  onClick={() => handleNavigate(item.path)}
+                  position="relative"
+                  pb="4px"
+                >
                   <Text
                     textStyle={"smallText"}
                     fontWeight={activePage === item.path ? "600" : "500"}
@@ -275,8 +353,8 @@ const Navbar = () => {
                       activePage === item.path
                         ? "white"
                         : hoveredItem === item.name.toLowerCase()
-                        ? "white"
-                        : "white"
+                          ? "white"
+                          : "white"
                     }
                     letterSpacing="0.3px"
                     whiteSpace="nowrap"
@@ -291,8 +369,8 @@ const Navbar = () => {
                       activePage === item.path
                         ? "100%"
                         : hoveredItem === item.name.toLowerCase()
-                        ? "70%"
-                        : "0%"
+                          ? "70%"
+                          : "0%"
                     }
                     height="2px"
                     bg={activePage === item.path ? "#000000" : "#555555"}
@@ -300,7 +378,10 @@ const Navbar = () => {
                   />
                 </Box>
                 {item.hasDropdown && (
-                  <Dropdown items={item.items || []} category={item.name.toLowerCase()} />
+                  <Dropdown
+                    items={item.items || []}
+                    category={item.name.toLowerCase()}
+                  />
                 )}
               </Box>
             ))}
@@ -316,12 +397,18 @@ const Navbar = () => {
               cursor="pointer"
               _hover={{ bg: "#000" }}
               onClick={() => handleNavigate("/contact")}
-              
             >
               <HStack>
-
-               <Box textAlign={"center"}><Phone /></Box>
-              <Text textStyle={"smallText"} fontFamily="poppins" fontWeight="500">Get a Quote</Text>
+                <Box textAlign={"center"}>
+                  <Phone />
+                </Box>
+                <Text
+                  textStyle={"smallText"}
+                  fontFamily="poppins"
+                  fontWeight="500"
+                >
+                  Get a Quote
+                </Text>
               </HStack>
             </Box>
           </Box>
@@ -371,7 +458,11 @@ const Navbar = () => {
                 </Text>
                 {item.hasDropdown && (
                   <Box
-                    transform={mobileDropdown === item.name.toLowerCase() ? "rotate(180deg)" : "rotate(0)"}
+                    transform={
+                      mobileDropdown === item.name.toLowerCase()
+                        ? "rotate(180deg)"
+                        : "rotate(0)"
+                    }
                     transition="transform 0.3s ease"
                   >
                     <Text textStyle={"smallText"}>↓</Text>
@@ -400,13 +491,19 @@ const Navbar = () => {
             onClick={() => handleNavigate("/contact")}
             textAlign="center"
           >
-            <Text textStyle={"smallText"} fontWeight="500">Get a Quote</Text>
+            <Text textStyle={"smallText"} fontWeight="500">
+              Get a Quote
+            </Text>
           </Box>
 
           {/* Mobile Contact Info */}
           <Box mt="32px" pt="20px" borderTop="1px solid #eee">
-            <Text textStyle={"smallText"} color="#666" mb="12px">luxemanagemnets.info@gmail.com</Text>
-            <Text textStyle={"smallText"} color="#666" mb="12px">+61 406 631 461</Text>
+            <Text textStyle={"smallText"} color="#666" mb="12px">
+              luxemanagemnets.info@gmail.com
+            </Text>
+            <Text textStyle={"smallText"} color="#666" mb="12px">
+              +61 406 631 461
+            </Text>
             <Text
               textStyle={"smallText"}
               fontWeight="500"

@@ -6,7 +6,11 @@ interface SectionHeadingProps {
   color?: string;
 }
 
-const SectionHeading = ({ eyebrow, title, color = "white" }: SectionHeadingProps) => (
+const SectionHeading = ({
+  eyebrow,
+  title,
+  color = "white",
+}: SectionHeadingProps) => (
   <VStack justify="center" align="center" textAlign="center" w="100%">
     <Text
       fontSize={["16px", "18px", "24px"]}

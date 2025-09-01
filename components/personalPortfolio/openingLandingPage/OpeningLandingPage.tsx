@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const OpeningLandingPage = () => {
-  return (
-    <>
-    
-    </>
-  )
-}
+  return <></>;
+};
 
-export default OpeningLandingPage
+export default OpeningLandingPage;

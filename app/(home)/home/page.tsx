@@ -135,7 +135,7 @@
 //             </HStack>
 //           </Box>
 //           <FreeQuote />
-          
+
 //         </HStack>
 //       </HStack>
 
@@ -155,8 +155,7 @@
 //             fontWeight={700}
 //             fontFamily="poppins"
 //             color="bule.400"
-            
-          
+
 //             lineHeight="1.1"
 //           >
 //             Adelaide Exterior Cleaning

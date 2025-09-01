@@ -401,8 +401,6 @@ const Hero = () => {
             </Box>
           </HStack>
 
-          
-
           <VStack px={["4%", "4%", "6%", "6%", "6%", "10%"]}>
             <Text
               mt={"50px"}

@@ -47,19 +47,16 @@ const SideBar = () => {
 
   return (
     <Box
-    position={"fixed"}
-    bg={"blackAlpha.900"}
-    
-    borderRight={"1px solid"}
+      position={"fixed"}
+      bg={"blackAlpha.900"}
+      borderRight={"1px solid"}
       width={isCollapsed ? "80px" : "280px"}
       height="90vh"
       m="10px"
       p="8px"
       rounded="xl"
-
       display="flex"
       flexDirection="column"
-    
       left="0"
       top="0"
       zIndex="1000"
@@ -74,9 +71,14 @@ const SideBar = () => {
         justifyContent={isCollapsed ? "center" : "space-between"}
       >
         {!isCollapsed && (
-          <Box bg={"red.400"}   p="16px" rounded={"8px"}  textStyle={"smallText"} fontWeight="bold" color="white">
-    
-          </Box>
+          <Box
+            bg={"red.400"}
+            p="16px"
+            rounded={"8px"}
+            textStyle={"smallText"}
+            fontWeight="bold"
+            color="white"
+          ></Box>
         )}
         <Box
           cursor="pointer"
@@ -138,7 +140,7 @@ const SideBar = () => {
                         color={isActive ? "white" : "#9CA3AF"}
                       />
                       <Text
-                   textStyle={"tinyText"}
+                        textStyle={"tinyText"}
                         fontWeight={isActive ? "semibold" : "medium"}
                         color={isActive ? "white" : "gray.300"}
                       >
@@ -155,7 +157,6 @@ const SideBar = () => {
           );
         })}
       </Box>
-    
     </Box>
   );
 };

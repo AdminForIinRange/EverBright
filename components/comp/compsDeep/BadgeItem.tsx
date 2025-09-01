@@ -7,7 +7,12 @@ const BadgeItem = ({ label }: { label: string }) => (
     <Box bg="red" p={4}>
       <Image src={Google} alt="Google" width={50} />
     </Box>
-    <Text textAlign="center" fontSize="12px" fontWeight="500" fontFamily="poppins">
+    <Text
+      textAlign="center"
+      fontSize="12px"
+      fontWeight="500"
+      fontFamily="poppins"
+    >
       {label}
     </Text>
   </VStack>

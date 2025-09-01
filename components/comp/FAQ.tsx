@@ -196,7 +196,7 @@ const FAQ = ({ type }: { type: string }) => {
         {/* FAQ Title Section */}
         <Box textAlign="center" mb={16} position="relative">
           <Text
-              textStyle={"title"}
+            textStyle={"title"}
             fontWeight="800"
             color="#0A1029"
             mb={3}
@@ -220,7 +220,7 @@ const FAQ = ({ type }: { type: string }) => {
           </Text>
           <Text
             as="h3"
-   textStyle={"basicText"}
+            textStyle={"basicText"}
             color="#4B5563"
             fontWeight="400"
             maxWidth="1200px"
@@ -262,7 +262,7 @@ const FAQ = ({ type }: { type: string }) => {
               transition="all 0.2s"
               textTransform="capitalize"
               fontWeight={activeCategory === category ? "600" : "400"}
-textStyle={"basicText"}
+              textStyle={"basicText"}
             >
               {category}
             </Box>
@@ -308,14 +308,13 @@ textStyle={"basicText"}
                   {/* Icon indicator */}
 
                   <Text
-                 
                     fontWeight="600"
                     color={openIndex === index ? "#0A1029" : "#111827"}
                     pr={10}
                     flex="1"
                     transition="all 0.2s"
                     as={"p"}
-               textStyle={"basicText"}
+                    textStyle={"basicText"}
                   >
                     {faq.question}
                   </Text>
@@ -347,8 +346,8 @@ textStyle={"basicText"}
                   position="relative"
                 >
                   <Text
-                  as={"p"}
-                 textStyle={"basicText"}
+                    as={"p"}
+                    textStyle={"basicText"}
                     color="#4B5563"
                     lineHeight="1.8"
                     position="relative"
@@ -388,18 +387,29 @@ textStyle={"basicText"}
           border="1px solid #E5E7EB"
         >
           <Box flex="1">
-            <Text textStyle={"basicText"} fontWeight="700" color="#0A1029" mb={2} as={'h3'}>
+            <Text
+              textStyle={"basicText"}
+              fontWeight="700"
+              color="#0A1029"
+              mb={2}
+              as={"h3"}
+            >
               Still have questions?
             </Text>
-            <Text textStyle={"basicText"} color="#4B5563" lineHeight="1.6" as={"p"}>
+            <Text
+              textStyle={"basicText"}
+              color="#4B5563"
+              lineHeight="1.6"
+              as={"p"}
+            >
               Our team is ready to provide personalized answers to all your
               questions about AirBnB management and how we can help maximize
               your property's potential.
             </Text>
           </Box>
           <Box
-          aria-label="Contact us"
-          as={"button"}
+            aria-label="Contact us"
+            as={"button"}
             display="flex"
             alignItems="center"
             justifyContent="center"
@@ -409,7 +419,6 @@ textStyle={"basicText"}
             px={6}
             borderRadius="full"
             fontWeight="600"
-           
             cursor="pointer"
             _hover={{ bg: "#1A2142", transform: "translateY(-2px)" }}
             transition="all 0.3s"
@@ -417,7 +426,9 @@ textStyle={"basicText"}
             whiteSpace="nowrap"
             onClick={() => router.push("/contact")}
           >
-            <Text mr={2} textStyle={"basicText"}>Contact us</Text>
+            <Text mr={2} textStyle={"basicText"}>
+              Contact us
+            </Text>
             <ArrowRight size={16} />
           </Box>
         </Box>

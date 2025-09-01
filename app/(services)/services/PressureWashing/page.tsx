@@ -36,21 +36,7 @@ const PressureWashing = () => {
         </Box>
       </Box>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-   <HStack
-      
+      <HStack
         zIndex={3}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         justify={"center"} // !!
@@ -68,8 +54,7 @@ const PressureWashing = () => {
           wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
         >
           <Box w={["95%", "95%", "95%", "600px", "600px", "100%"]}>
-      
-                     <Text
+            <Text
               color="#FFC107"
               mt={{ base: "8px", md: "0" }}
               textAlign="start"
@@ -79,9 +64,8 @@ const PressureWashing = () => {
               High Pressure Cleaning Adelaide
             </Text>
             <Text
-                          fontSize={{ base: "22px", md: "38px", lg: "42px" }}
+              fontSize={{ base: "22px", md: "38px", lg: "42px" }}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-            
               fontWeight={600}
               fontFamily={"arial"}
               bgClip="text"
@@ -89,10 +73,9 @@ const PressureWashing = () => {
               color={"black"}
               bgGradient="linear(to-r, teal, blue)"
             >
-    Expert Pressure Cleaning Services in Adelaide
+              Expert Pressure Cleaning Services in Adelaide
             </Text>
 
-       
             <Text
               fontFamily="poppins"
               w="100%"
@@ -101,7 +84,6 @@ const PressureWashing = () => {
               lineHeight={{ base: "1.7", md: "1.85" }}
               mt={{ base: "6px", md: "10px" }}
             >
-           
               <br />
               With a deep understanding of Adelaide’s unique climate and
               environment, we ensure the highest quality results while
@@ -119,7 +101,7 @@ const PressureWashing = () => {
               </Span>
             </Text>
 
-                   <VStack
+            <VStack
               fontFamily="poppins"
               gap="4px"
               justify="start"
@@ -145,12 +127,10 @@ const PressureWashing = () => {
                   </Span>
                 </Text>
               ))}
-
-              
             </VStack>
 
             {/* desktop-friendly media/cta panel */}
-    
+
             <HStack
               justify={[
                 "center",
@@ -189,12 +169,10 @@ const PressureWashing = () => {
                 fontWeight={"500"}
                 onClick={() => router.push("/about/journey")}
               >
-         Arrange a Free Quote Today!
+                Arrange a Free Quote Today!
                 {/* <Icon as={ArrowRight}> </Icon> */}
               </Box>
             </HStack>
-
-            
           </Box>
 
           <Box
@@ -237,12 +215,7 @@ const PressureWashing = () => {
         </HStack>
       </HStack>
 
-<FAQ type={""} />
-
-
-
-
-
+      <FAQ type={""} />
     </Box>
   );
 };

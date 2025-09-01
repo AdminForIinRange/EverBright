@@ -150,7 +150,7 @@ const FAQ = ({ type }: { type: string }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [animatedItems, setAnimatedItems] = useState<boolean[]>(
-    Array(selectedFaqs.length).fill(false)
+    Array(selectedFaqs.length).fill(false),
   );
 
   // Staggered animation for FAQ items
@@ -193,146 +193,147 @@ const FAQ = ({ type }: { type: string }) => {
     >
       {/* Decorative elements */}
       <Box position="relative">
-        <HStack justify={"space-between"} align={"start"} w="100%" h={"100%"} >
-        {/* FAQ Title Section */}
-        <VStack justify={"start"} align={"start"} w={"150%"} h={"100%"} mb={16} position="relative">
-          <Text
-            textStyle={"title"}
-            fontWeight="800"
-            color="#0A1029"
-            mb={3}
-            letterSpacing="-0.03em"
+        <HStack justify={"space-between"} align={"start"} w="100%" h={"100%"}>
+          {/* FAQ Title Section */}
+          <VStack
+            justify={"start"}
+            align={"start"}
+            w={"150%"}
+            h={"100%"}
+            mb={16}
             position="relative"
-            display="inline-block"
-          
-            as={"h2"}
-            borderBottom={"2px solid #4B5563"}
           >
-            FAQ
-          </Text>
-          <Text
-            as="h3"
-            textStyle={"basicText"}
-            color="#4B5563"
-            fontWeight="400"
+            <Text
+              textStyle={"title"}
+              fontWeight="800"
+              color="#0A1029"
+              mb={3}
+              letterSpacing="-0.03em"
+              position="relative"
+              display="inline-block"
+              as={"h2"}
+              borderBottom={"2px solid #4B5563"}
+            >
+              FAQ
+            </Text>
+            <Text
+              as="h3"
+              textStyle={"basicText"}
+              color="#4B5563"
+              fontWeight="400"
+              maxWidth="1200px"
+              mx="auto"
+              mt={6}
+              lineHeight="1.6"
+            >
+              Frequently Asked Questions about our premium AirBnB management
+              services
+            </Text>
+          </VStack>
+
+          {/* Category filters */}
+
+          {/* FAQ Items */}
+          <Box
             maxWidth="1200px"
             mx="auto"
-            mt={6}
-            lineHeight="1.6"
+            px={["0", "20px", "40px"]}
+            position="relative"
           >
-            Frequently Asked Questions about our premium AirBnB management
-            services
-          </Text>
-        </VStack>
+            {filteredFaqs.map((faq, index) => {
+              const IconComponent = faq.icon || CheckCircle;
 
-        {/* Category filters */}
-        
-
-        {/* FAQ Items */}
-        <Box
-          maxWidth="1200px"
-          mx="auto"
-          px={["0", "20px", "40px"]}
-          position="relative"
-        >
-
-
-
-
-          {filteredFaqs.map((faq, index) => {
-            const IconComponent = faq.icon || CheckCircle;
-
-            return (
-              <Box
-                key={index}
-                borderBottom="1px solid #E5E7EB"
-                py={5}
-                opacity={animatedItems[index] ? 1 : 0}
-                transform={
-                  animatedItems[index] ? "translateY(0)" : "translateY(20px)"
-                }
-                transition="all 0.4s"
-              >
+              return (
                 <Box
-                  display="flex"
-                  justifyContent="space-between"
-                  alignItems="flex-start"
-                  cursor="pointer"
-                  onClick={() =>
-                    setOpenIndex(openIndex === index ? null : index)
+                  key={index}
+                  borderBottom="1px solid #E5E7EB"
+                  py={5}
+                  opacity={animatedItems[index] ? 1 : 0}
+                  transform={
+                    animatedItems[index] ? "translateY(0)" : "translateY(20px)"
                   }
-                  py={3}
-                  px={4}
-                  _hover={{ bg: "#F9FAFB" }}
-                  transition="all 0.2s"
-                  borderRadius="8px"
-                  position="relative"
+                  transition="all 0.4s"
                 >
-                  {/* Icon indicator */}
-
-                  <Text
-                    fontWeight="600"
-                    color={openIndex === index ? "#0A1029" : "#111827"}
-                    pr={10}
-                    flex="1"
-                    transition="all 0.2s"
-                    as={"p"}
-                    textStyle={"basicText"}
-                  >
-                    {faq.question}
-                  </Text>
                   <Box
-                    color="#6B7280"
-                    bg={openIndex === index ? "#F3F4F6" : "transparent"}
-                    p={2}
-                    borderRadius="full"
+                    display="flex"
+                    justifyContent="space-between"
+                    alignItems="flex-start"
+                    cursor="pointer"
+                    onClick={() =>
+                      setOpenIndex(openIndex === index ? null : index)
+                    }
+                    py={3}
+                    px={4}
+                    _hover={{ bg: "#F9FAFB" }}
                     transition="all 0.2s"
+                    borderRadius="8px"
+                    position="relative"
                   >
-                    {openIndex === index ? (
-                      <ChevronUp size={20} />
-                    ) : (
-                      <ChevronDown size={20} />
-                    )}
+                    {/* Icon indicator */}
+
+                    <Text
+                      fontWeight="600"
+                      color={openIndex === index ? "#0A1029" : "#111827"}
+                      pr={10}
+                      flex="1"
+                      transition="all 0.2s"
+                      as={"p"}
+                      textStyle={"basicText"}
+                    >
+                      {faq.question}
+                    </Text>
+                    <Box
+                      color="#6B7280"
+                      bg={openIndex === index ? "#F3F4F6" : "transparent"}
+                      p={2}
+                      borderRadius="full"
+                      transition="all 0.2s"
+                    >
+                      {openIndex === index ? (
+                        <ChevronUp size={20} />
+                      ) : (
+                        <ChevronDown size={20} />
+                      )}
+                    </Box>
+                  </Box>
+
+                  {/* Answer */}
+                  <Box
+                    height={openIndex === index ? "auto" : "0px"}
+                    overflow="hidden"
+                    transition="all 0.4s"
+                    opacity={openIndex === index ? 1 : 0}
+                    mt={openIndex === index ? 3 : 0}
+                    mb={openIndex === index ? 4 : 0}
+                    pl={[4, 4, 6]}
+                    pr={[4, 4, 10]}
+                    position="relative"
+                  >
+                    <Text
+                      as={"p"}
+                      textStyle={"basicText"}
+                      color="#4B5563"
+                      lineHeight="1.8"
+                      position="relative"
+                      _before={{
+                        content: '""',
+                        position: "absolute",
+                        left: "-20px",
+                        top: "12px",
+                        width: "12px",
+                        height: "1px",
+                        background: "#CBD5E1",
+                        display: ["none", "none", "block"],
+                      }}
+                    >
+                      {faq.answer}
+                    </Text>
                   </Box>
                 </Box>
-
-                {/* Answer */}
-                <Box
-                  height={openIndex === index ? "auto" : "0px"}
-                  overflow="hidden"
-                  transition="all 0.4s"
-                  opacity={openIndex === index ? 1 : 0}
-                  mt={openIndex === index ? 3 : 0}
-                  mb={openIndex === index ? 4 : 0}
-                  pl={[4, 4, 6]}
-                  pr={[4, 4, 10]}
-                  position="relative"
-                >
-                  <Text
-                    as={"p"}
-                    textStyle={"basicText"}
-                    color="#4B5563"
-                    lineHeight="1.8"
-                    position="relative"
-                    _before={{
-                      content: '""',
-                      position: "absolute",
-                      left: "-20px",
-                      top: "12px",
-                      width: "12px",
-                      height: "1px",
-                      background: "#CBD5E1",
-                      display: ["none", "none", "block"],
-                    }}
-                  >
-                    {faq.answer}
-                  </Text>
-                </Box>
-              </Box>
-            );
-          })}
-        </Box>
-</HStack>
+              );
+            })}
+          </Box>
+        </HStack>
         {/* Still have questions section */}
         <Box
           mt={20}

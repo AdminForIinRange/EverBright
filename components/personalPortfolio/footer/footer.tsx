@@ -1,16 +1,12 @@
-import { Box, Text } from 'lucide-react'
-import React from 'react'
+import { Box, Text } from "lucide-react";
+import React from "react";
 
 const Footer = () => {
   return (
     <Box>
-        <Text>
-
-        </Text>
-
-
+      <Text></Text>
     </Box>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
