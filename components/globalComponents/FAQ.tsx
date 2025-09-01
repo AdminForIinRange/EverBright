@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import ScheduleConsultation from "./luxeComponents/scheduleConsultation";
+import SectionHeading from "../comp/compsDeep/SectionHeading";
 const faqs = [
   {
     question: "What services does your AirBnB management offer?",
@@ -193,43 +194,29 @@ const FAQ = ({ type }: { type: string }) => {
     >
       {/* Decorative elements */}
       <Box position="relative">
-        <HStack justify={"space-between"} align={"start"} w="100%" h={"100%"}>
+        <VStack justify={"space-between"} align={"Center"} w="100%" h={"100%"}>
           {/* FAQ Title Section */}
-          <VStack
-            justify={"start"}
-            align={"start"}
-            w={"150%"}
-            h={"100%"}
-            mb={16}
-            position="relative"
-          >
-            <Text
-              textStyle={"title"}
-              fontWeight="800"
-              color="#0A1029"
-              mb={3}
-              letterSpacing="-0.03em"
-              position="relative"
-              display="inline-block"
-              as={"h2"}
-              borderBottom={"2px solid #4B5563"}
-            >
-              FAQ
-            </Text>
-            <Text
-              as="h3"
-              textStyle={"basicText"}
-              color="#4B5563"
-              fontWeight="400"
-              maxWidth="1200px"
-              mx="auto"
-              mt={6}
-              lineHeight="1.6"
-            >
-              Frequently Asked Questions about our premium AirBnB management
-              services
-            </Text>
-          </VStack>
+       <VStack justify="center" align="center" textAlign="center" w="100%">
+    <Text
+      fontSize={["16px", "18px", "24px"]}
+      fontFamily="poppins"
+      fontWeight={700}
+      lineHeight="1.6"
+     color={"black"}
+    >
+    Frequently Asked Questions
+    </Text>
+    <Text
+      fontSize={["36px", "48px", "56px"]}
+      fontWeight={700}
+      fontFamily="poppins"
+      lineHeight="1.1"
+        color={"black"}
+    >
+      FAQ
+    </Text>
+    <Box my="25px" w={["100%", "600px"]} borderWidth="1px" />
+  </VStack>
 
           {/* Category filters */}
 
@@ -333,7 +320,7 @@ const FAQ = ({ type }: { type: string }) => {
               );
             })}
           </Box>
-        </HStack>
+        </VStack>
         {/* Still have questions section */}
         <Box
           mt={20}

@@ -107,7 +107,7 @@ const Page = () => {
         zIndex={-1}
         w={"100%"}
         h={["850px", "850px", "850px", "850px", "850px", "850px"]}
-        bg="blue.800"
+        bg="blue.900"
         opacity={0.7}
       ></Box>
 

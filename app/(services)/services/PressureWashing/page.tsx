@@ -1,4 +1,5 @@
 "use client";
+import QuoteButton from "@/components/comp/compsDeep/QuoteButton";
 import FreeQuote from "@/components/comp/FreeQuote";
 import FAQ from "@/components/globalComponents/FAQ";
 import { Box, HStack, Span, Text, VStack } from "@chakra-ui/react";
@@ -19,7 +20,7 @@ const PressureWashing = () => {
             textAlign="start"
             fontWeight="700"
             fontFamily="poppins"
-            fontSize={{ base: "20px", md: "36px", lg: "48px" }}
+                fontSize={["30px", "30px", "30px"]}
           >
             A Clean Home Feels Like a New Home
           </Text>
@@ -64,18 +65,21 @@ const PressureWashing = () => {
               High Pressure Cleaning Adelaide
             </Text>
             <Text
-              fontSize={{ base: "22px", md: "38px", lg: "42px" }}
+       fontSize={["30px", "30px", "30px"]}
+      fontWeight={700}
+      fontFamily="poppins"
+      lineHeight="1.1"
+      color="blue.700"
+      py={"10px"}
+
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-              fontWeight={600}
-              fontFamily={"arial"}
-              bgClip="text"
-              textAlign={["center", "center", "center", "left", "left", "left"]}
-              color={"black"}
-              bgGradient="linear(to-r, teal, blue)"
+
+              textAlign={["left", "left", "left", "left", "left", "left"]}
+   
+        
             >
               Expert Pressure Cleaning Services in Adelaide
             </Text>
-
             <Text
               fontFamily="poppins"
               w="100%"
@@ -84,21 +88,17 @@ const PressureWashing = () => {
               lineHeight={{ base: "1.7", md: "1.85" }}
               mt={{ base: "6px", md: "10px" }}
             >
-              <br />
-              With a deep understanding of Adelaide’s unique climate and
-              environment, we ensure the highest quality results while
-              protecting your property’s structural integrity. Trust in our
-              no-hassle satisfaction guarantee and let Calibre Exterior Cleaning
-              bring new life to your home or business. Request a quote today and
+              Our Adelaide pressure washing services are designed to provide
+              you with a sparkling clean finish that will leave your home or
+              business looking like new. We specialise in removing dirt, grime,
+              and other contaminants from exterior surfaces using high pressure
+              water jets, ensuring a clean and safe result every time. Trust in
+              our no-hassle satisfaction guarantee and let Calibre Exterior
+              Cleaning bring new life to your property. Request a quote today and
               uncover the unparalleled benefits of Adelaide’s leading pressure
-              cleaning experts!
+              washing experts!
               <br />
-              <br />
-              <Span fontWeight="700">
-                Bring new life to your home or business. Request a quote today
-                and uncover the unparalleled benefits of Adelaide’s leading
-                pressure cleaning experts!
-              </Span>
+                            <br />
             </Text>
 
             <VStack
@@ -145,33 +145,7 @@ const PressureWashing = () => {
               transition={"all 0.2s ease-in-out"}
               zIndex={3}
             >
-              <Box
-                my={"25px"}
-                display={"flex"}
-                alignItems={"center"}
-                justifyContent={["center"]}
-                gap={"15px"}
-                fontFamily={"arial"}
-                transition={"all 0.2s ease-in-out"}
-                cursor={"pointer"}
-                _hover={{
-                  transition: "all 0.2s ease-in-out",
-                  scale: 1.1,
-                  fontWeight: "700",
-                  px: "80px",
-                  bg: "black",
-                }}
-                p={4}
-                bg={"black"}
-                color={"white"}
-                rounded={"30px"}
-                px={"12"}
-                fontWeight={"500"}
-                onClick={() => router.push("/about/journey")}
-              >
-                Arrange a Free Quote Today!
-                {/* <Icon as={ArrowRight}> </Icon> */}
-              </Box>
+             <QuoteButton />
             </HStack>
           </Box>
 

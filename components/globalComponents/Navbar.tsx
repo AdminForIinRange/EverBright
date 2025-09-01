@@ -260,7 +260,7 @@ const Navbar = () => {
       position="sticky"
       top="0"
       zIndex="100"
-      bg={"#05204A"}
+  bg="cyan.500"
       backdropFilter="blur(10px)"
     >
       {/* Top Bar */}
