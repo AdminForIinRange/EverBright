@@ -3,7 +3,8 @@ import { Box, VStack, Text, HStack, Span, Link } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
 import Google from "@/public/Google.png";
-import Adl from "@/public/images/aerial-city-adelaide.jpeg";
+import Adl from "@/public/Shayal.png";
+import Shayal from "@/public/Shayal.png"; // <-- Add this line (update path/filename as needed)
 import { FaStar } from "react-icons/fa";
 import FreeQuote from "@/components/comp/FreeQuote";
 import HeroText from "@/components/comp/HeroText";
@@ -239,10 +240,13 @@ Valuable Asset"
                   trust EverBright Pressure Washing for remarkable results.
                 </Text>
               </Box>
-              <Box display="flex" justifyContent="start" width="100%">
-                {/* ✅ Replace big Box CTA with the component */}
+             
+              
+              <HStack alignItems="center" w={"100%"}  justifyContent={["center", "center", "center", "start", "start", "start"]} >
+
                 <QuoteButton />
-              </Box>
+              </HStack>
+        
             </Box>
 
             <Box
@@ -325,11 +329,18 @@ Valuable Asset"
                   <Text fontSize="lg" fontWeight="medium" color="#0a0f29">
                     Shayal - Owner
                   </Text>
+
+                    <Box position="absolute" >
+                  <Image src={Shayal} alt="Shayal" />
                 </Box>
-                <Box display="flex" justifyContent="start" width="100%">
-                  {/* ✅ Use the same CTA component again */}
-                  <QuoteButton />
                 </Box>
+
+              
+           <HStack alignItems="center" w={"100%"}  justifyContent={["center", "center", "center", "start", "start", "start"]} >
+
+                <QuoteButton />
+              </HStack>
+        
               </Box>
             </HStack>
           </HStack>
@@ -425,7 +436,7 @@ Valuable Asset"
                 fontFamily={"poppins"}
                 justify={["start", "start", "start", "start", "start"]}
                 align={["start", "start", "start", "start", "start"]}
-                gap={"8px"}
+                gap={"16px"}
               >
                 {/* ✅ Map promise lines instead of repeating */}
                 {promises.map((p) => (

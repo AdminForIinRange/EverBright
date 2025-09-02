@@ -14,7 +14,7 @@ const HeroText = () => {
         as={"h2"}
         w={["100%", "100%", "100%", "100%", "100%", "100%"]}
         mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-        fontSize={{ base: "32px", md: "42px", lg: "62px" }}
+        fontSize={{ base: "42px", md: "42px", lg: "62px" }}
         fontWeight={600}
         fontFamily={"poppins"}
         bgClip="text"

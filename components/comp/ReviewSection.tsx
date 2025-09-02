@@ -119,69 +119,7 @@ const ReviewSection = () => {
       </Box>
       <Box maxW="7xl" mx="auto" px={{ base: "4", md: "8" }}>
         {/* Header Section */}
-        <VStack
-          spacing="8"
-          mb="10"
-          display={["none", "flex", "flex", "flex", "flex", "flex"]}
-        >
-          {/* Tab Navigation */}
 
-          {/* Rating Summary */}
-          <Flex
-            justify="space-between"
-            align="center"
-            w="full"
-            flexDirection={{ base: "column", md: "row" }}
-            gap={{ base: "6", md: "0" }}
-            bg="white"
-            p="6"
-            borderRadius="2xl"
-            boxShadow="0 4px 20px rgba(0, 0, 0, 0.06)"
-            border="1px solid"
-            borderColor="gray.50"
-          >
-            <HStack spacing="5">
-              <Text fontSize="xl" fontWeight="800" color="gray.800">
-                Excellent
-              </Text>
-              <HStack spacing="1">
-                {[...Array(5)].map((_, index) => (
-                  <FaStar
-                    key={index}
-                    size={20}
-                    color="#F6AD55"
-                    style={{
-                      filter: "drop-shadow(0 1px 2px rgba(246, 173, 85, 0.3))",
-                    }}
-                  />
-                ))}
-              </HStack>
-            </HStack>
-
-            <Box
-              // send them to google
-              as="button"
-              px="8"
-              py="3"
-              border="2px solid"
-              borderColor="blue.400"
-              borderRadius="xl"
-              bg="white"
-              fontSize="md"
-              fontWeight="700"
-              color="blue.500"
-              transition="all 0.3s ease"
-              _hover={{
-                bgGradient: "linear(135deg, #4299E1, #3182CE)",
-                color: "white",
-                transform: "translateY(-1px)",
-                boxShadow: "0 6px 20px rgba(66, 153, 225, 0.4)",
-              }}
-            >
-              Write a review
-            </Box>
-          </Flex>
-        </VStack>
 
         {/* Reviews Grid/Scroll */}
         <Box position="relative">
