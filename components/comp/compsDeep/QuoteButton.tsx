@@ -8,7 +8,7 @@ const QuoteButton = () => {
     <Box
       w={["100%", "100%"]}
       bg="cyan.500"
-      my="25px"
+   
       display="flex"
       alignItems="center"
       justifyContent="center"

@@ -9,15 +9,21 @@ import FreeQuote from "@/components/comp/FreeQuote";
 const HeroText = () => {
   return (
     <>
-      <HStack w={"fit-content"} px={6} py={4} bg="white" borderRadius="full">
-        <Text
-          fontSize="xs"
-          fontWeight="600"
-          color="cyan.900"
-          fontFamily={"poppins"}
-        >
-          Adelaide’s #1 Choice for Remarkable Exterior Cleaning!
-        </Text>
+      <HStack
+        justify={["center", "center", "center", "start", "start", "start"]}
+        align={["center", "center", "center", "start", "start", "start"]}
+      >
+        <Box p={3} bg="white" borderRadius="full" w={"fit-content"}>
+          <Text
+            textAlign={"center"}
+            fontSize="xs"
+            fontWeight="600"
+            color="cyan.900"
+            fontFamily={"poppins"}
+          >
+            Adelaide’s #1 Choice for Remarkable Exterior Cleaning!
+          </Text>
+        </Box>
       </HStack>{" "}
       <Text
         as={"h2"}
@@ -57,16 +63,11 @@ const HeroText = () => {
             justify={["center", "center", "center", "start", "start"]}
             align={["center", "center", "center", "start", "start"]}
           >
-            <Text
-              color="green.300"
-              fontSize="24px"
-              fontWeight={"700"}
-              textStyle={"subheading"}
-            >
+            <Text color="green.300" fontWeight={"700"} textStyle={"subheading"}>
               ✓{" "}
               <Span
+                fontSize={["16px", "16px", "16px", "20px", "20px", "20px"]}
                 fontFamily={"poppins"}
-                textStyle={"basicText"}
                 color="white"
                 fontWeight={"500"}
               >
@@ -77,8 +78,8 @@ const HeroText = () => {
             <Text color="green.300" fontSize="24px" fontWeight={"700"}>
               ✓{" "}
               <Span
+                fontSize={["16px", "16px", "16px", "20px", "20px", "20px"]}
                 fontFamily={"poppins"}
-                textStyle={"basicText"}
                 color="white"
                 fontWeight={"500"}
               >
@@ -99,8 +100,8 @@ const HeroText = () => {
             <Text color="green.300" fontSize="24px" fontWeight={"700"}>
               ✓{" "}
               <Span
+                fontSize={["16px", "16px", "16px", "20px", "20px", "20px"]}
                 fontFamily={"poppins"}
-                textStyle={"basicText"}
                 color="white"
                 fontWeight={"500"}
               >
@@ -111,8 +112,8 @@ const HeroText = () => {
             <Text color="green.300" fontSize="24px" fontWeight={"700"}>
               ✓{" "}
               <Span
+                fontSize={["16px", "16px", "16px", "20px", "20px", "20px"]}
                 fontFamily={"poppins"}
-                textStyle={"basicText"}
                 color="white"
                 fontWeight={"500"}
               >

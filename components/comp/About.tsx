@@ -6,7 +6,7 @@ import SectionHeading from "./compsDeep/SectionHeading";
 
 const About = () => {
   return (
-    <Box as="section" mt={{ base: "100px", xl: "300px" }} aria-label="About">
+    <Box as="section" mt={{ base: "100px", xl: "180px" }} aria-label="About">
       {/* Heading */}
       <VStack
         justify="center"
@@ -44,8 +44,8 @@ const About = () => {
           {/* Copy card */}
           <Box w={{ base: "100%", md: "100%" }}>
             <VStack
+            h={"100%"}
               align="start"
-              spacing={6}
               color="gray.800"
               fontSize="lg"
               lineHeight="1.8"
@@ -80,7 +80,7 @@ const About = () => {
                   Get a FREE QUOTE today and see why Adelaide homeowners trust
                   EverBright for remarkable results.
                 </Text>
-                <HStack justify={{ base: "center", md: "start" }}>
+                <HStack mt={"50px"}  justify={{ base: "center", md: "start" }}>
                   <QuoteButton />
                 </HStack>
               </Box>

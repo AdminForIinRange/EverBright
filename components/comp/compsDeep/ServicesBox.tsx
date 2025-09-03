@@ -13,16 +13,16 @@ function ServicesBox({ title, image }: { title: string; image: string }) {
     >
       <Box
         bg="white"
-        rounded="xl"
+       borderRadius={"25px"}
         overflow="hidden"
-        boxShadow="0 4px 20px rgba(0,0,0,0.08)"
-        border="1px solid"
+        boxShadow="0 0px 50px rgba(0,0,0,0.2)"
+        
         borderColor="Blue.500"
         transition="all 0.3s ease"
       >
         <Box
           position="relative"
-          h={{ base: "180px", md: "260px" }}
+          h={{ base: "280px", md: "460px" }}
           w="100%"
           overflow="hidden"
         >
@@ -43,16 +43,16 @@ function ServicesBox({ title, image }: { title: string; image: string }) {
             left="0"
             right="0"
             bottom="0"
-            bg="linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%)"
+         
           />
 
           <Box position="absolute" bottom="0" left="0" right="0" p="4">
             <Text
               color="white"
-              fontSize={{ base: "lg", md: "25px" }}
+              fontSize={{ base: "25px", md: "25px" }}
               fontWeight="700"
               textAlign="START"
-              textShadow="0 2px 4px rgba(0,0,0,0.3)"
+              textShadow="0 0px 10px black"
               fontFamily="poppins"
             >
               {title}
@@ -60,15 +60,16 @@ function ServicesBox({ title, image }: { title: string; image: string }) {
             <Text
               py={"10px"}
               color="white"
-              fontSize={{ base: "lg", md: "md" }}
+              fontSize={{ base: "sm", md: "md" }}
               textAlign="START"
-              textShadow="0 2px 4px rgba(0,0,0,0.3)"
+                textShadow="0 0px 10px black"
               fontFamily="poppins"
+              
             >
               Comprehensive management service including all our offerings.
             </Text>
 
-            <HStack spacing="3" w="300px" position="RELATIVE">
+            <HStack gap={"10px"} w="100%" position="RELATIVE">
               <Link
                 href={"/services/PressureWashing"}
                 flex="1"

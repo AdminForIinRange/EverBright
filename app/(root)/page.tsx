@@ -116,21 +116,21 @@ const Page = () => {
           position={"absolute"}
           backgroundAttachment="fixed"
           zIndex={-1}
-          w={"98%"}
+          w={["100%", "100%", "98%", "98%", "98%", "98%"]}
           h={["1650px", "1650px", "1650px", "1650px", "1650px", "1650px"]}
           opacity={1}
-borderBottomRadius={"100px"}
+ borderBottomRadius={[ "50px", "150px0px", "100px", "100px", "100px", "100px"]}
         ></Box>
         <Box
 
           
           position={"absolute"}
           zIndex={-1}
-          w={"98%"}
+          w={["100%", "100%", "98%", "98%", "98%", "98%"]}
           h={["1650px", "1650px", "1650px", "1650px", "1650px", "1650px"]}
           bg="cyan.700"
           opacity={0.6}
-          borderBottomRadius={"100px"}
+          borderBottomRadius={[ "50px", "50px", "100px", "100px", "100px", "100px"]}
         ></Box>
 
 
@@ -140,7 +140,7 @@ borderBottomRadius={"100px"}
         // data-aos="fade-up"
 
         zIndex={4}
-        px={["0%", "3%", "6%", "6%", "6%", "15%"]}
+        px={["3%", "3%", "6%", "6%", "6%", "15%"]}
         justify={"center"} // !!
         align={"center"}
         w={"100%"}
@@ -202,7 +202,7 @@ borderBottomRadius={"100px"}
       <Box pt={["50px", "50px", "50px", "100px", "100px", "100px"]}>
         <ServiceLayout />
 
-        <Box mt={["100px", "100px", "100px", "100px", "100px", "300px"]}>
+        <Box mt={["100px", "100px", "100px", "100px", "100px", "100px"]}>
           {/* Another spot where SectionHeading matches your style */}
           <VStack
             justify={"center"}

@@ -39,33 +39,13 @@ const services = [
     image: "https://images.pexels.com/photos/4894655/pexels-photo-4894655.jpeg",
     desc: "Clear debris to prevent overflow, leaks, and foundation damage.",
   },
-  {
-    title: "Window Cleaning",
-    image: "https://images.pexels.com/photos/5852922/pexels-photo-5852922.jpeg",
-    desc: "Crystal-clear glass inside and out for a brighter home.",
-  },
-  {
-    title: "Softwashing",
-    image: "https://images.pexels.com/photos/5691505/pexels-photo-5691505.jpeg",
-    desc: "Low-pressure wash with eco detergents—safe for siding and paint.",
-  },
-  {
-    title: "Commercial Jobs",
-    image: "https://images.pexels.com/photos/3768894/pexels-photo-3768894.jpeg",
-    desc: "Reliable large-scale cleaning tailored to business schedules.",
-  },
-  {
-    title: "Driveway & Concrete",
-    image: "https://images.pexels.com/photos/4870704/pexels-photo-4870704.jpeg",
-    desc: "Remove oil spots and tire marks for a fresh, even finish.",
-  },
 ];
 
 function ServiceLayout() {
   return (
     <>
       {" "}
-      <Box
+      {/* <Box
         backgroundImage={` url('/images/aerial-city-adelaide.jpeg')`}
         backgroundRepeat="no-repeat"
         backgroundPosition="center"
@@ -73,55 +53,56 @@ function ServiceLayout() {
         position={"absolute"}
         backgroundAttachment="fixed"
         zIndex={-1}
-        w={"100%"}
-        h={["1900px", "1900px", "1900px", "1450px", "1450px", "1450px"]}
-        opacity={0.5}
+        w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+       h={["1900px", "1650px", "1650px", "1650px", "1650px", "1150px"]}
+        opacity={1}
+        borderRadius={["0px", "0px", "100px", "100px", "100px", "100px"]}
       ></Box>
       <Box
         position={"absolute"}
         zIndex={-1}
-        w={"100%"}
-        h={["1900px", "1900px", "1900px", "1450px", "1450px", "1450px"]}
-        bg="blue.800"
-        opacity={0.7}
-      ></Box>
+        w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+        h={["1900px", "1650px", "1650px", "1650px", "1650px", "1150px"]}
+        bg="cyan.700"
+        opacity={0.6}
+        borderRadius={["0px", "0px", "100px", "100px", "100px", "100px"]}
+      ></Box> */}
       <VStack
-        mt={"50px"}
-        justify={"center"}
-        align={"center"}
-        w={"100%"}
-        textAlign={"center"}
-        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+        justify="center"
+        align="center"
+        w="100%"
+        textAlign="center"
+        px={{ base: "4%", md: "6%", xl: "10%" }}
+    
       >
-        {/* Keeping this heading inline because eyebrow color differs in this section */}
-        <Text
-          fontSize={["16px", "18px", "24px"]}
-          fontFamily="poppins"
-          fontWeight={700}
-          lineHeight="1.6"
-          color={"blue.200"}
-        >
-          You'll be amazed at how good your property can look!
-        </Text>
-        <Text
-          fontSize={["36px", "48px", "56px"]}
-          fontWeight={700}
-          fontFamily="poppins"
-          color="white"
-          lineHeight="1.1"
-        >
-          How Can We Help Restore Your Property?
-        </Text>
-        <Box
-          my={["25px", "25px", "25px", "25px", "25px", "25px"]}
-          w={["100%", "100%", "100%", "600px", "600px", "600px"]}
-          borderWidth={"1px"}
-        ></Box>
+        <VStack 
+        py={"50px"} borderRadius={["50px", "50px", "50px", "50px", "50px", "50px"]}   bg={"cyan.500"} justify="center" align="center" textAlign="center" w="100%">
+          <Text
+            fontSize={["16px", "18px", "24px"]}
+            fontFamily="poppins"
+            fontWeight={700}
+            lineHeight="1.6"
+            color={"black"}
+          >
+            You'll be amazed at how good your property can look!
+          </Text>
+          <Text
+            fontSize={["36px", "48px", "56px"]}
+            fontWeight={700}
+            fontFamily="poppins"
+            lineHeight="1.1"
+ color={"white"}
+          >
+            Restoring Your Most Valuable Asset
+          </Text>
+
+        </VStack>
       </VStack>
       <HStack
         wrap={"wrap"}
         justify={"center"}
         align={"center"}
+        gap={["20px", "20px", "20px", "20px", "20px", "20px"]}
         py={"50px"}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
       >
