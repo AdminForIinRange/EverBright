@@ -9,12 +9,22 @@ import FreeQuote from "@/components/comp/FreeQuote";
 const HeroText = () => {
   return (
     <>
-      {" "}
+      <HStack w={"fit-content"} px={6} py={4} bg="white" borderRadius="full">
+        <Text
+          fontSize="xs"
+          fontWeight="600"
+          color="cyan.900"
+          fontFamily={"poppins"}
+        >
+          Adelaide’s #1 Choice for Remarkable Exterior Cleaning!
+        </Text>
+      </HStack>{" "}
       <Text
         as={"h2"}
+        textShadow={"0px 0px 1000px black"}
         w={["100%", "100%", "100%", "100%", "100%", "100%"]}
         mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-        fontSize={{ base: "42px", md: "42px", lg: "62px" }}
+        fontSize={{ base: "42px", md: "42px", lg: "72px" }}
         fontWeight={600}
         fontFamily={"poppins"}
         bgClip="text"
@@ -26,12 +36,13 @@ const HeroText = () => {
         Because a Clean Home Feels Like a New Home
       </Text>
       <Text
+        textShadow={"0px 0px 100px black"}
         as={"p"}
         textStyle={"subheading"}
         mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
         textAlign={["center", "center", "center", "left", "left", "left"]}
         fontFamily={"poppins"}
-        color={"blue.200"}
+        color={"cyan.100"}
         w={["100%", "100%", "100%", "100%", "100%", "100%"]}
         fontWeight={"700"}
       >
@@ -53,14 +64,24 @@ const HeroText = () => {
               textStyle={"subheading"}
             >
               ✓{" "}
-              <Span textStyle={"basicText"} color="white" fontWeight={"normal"}>
+              <Span
+                fontFamily={"poppins"}
+                textStyle={"basicText"}
+                color="white"
+                fontWeight={"500"}
+              >
                 {" "}
                 Pressure Cleaning
               </Span>
             </Text>
             <Text color="green.300" fontSize="24px" fontWeight={"700"}>
               ✓{" "}
-              <Span textStyle={"basicText"} color="white" fontWeight={"normal"}>
+              <Span
+                fontFamily={"poppins"}
+                textStyle={"basicText"}
+                color="white"
+                fontWeight={"500"}
+              >
                 {" "}
                 Pressure Cleaning
               </Span>
@@ -77,14 +98,24 @@ const HeroText = () => {
           >
             <Text color="green.300" fontSize="24px" fontWeight={"700"}>
               ✓{" "}
-              <Span textStyle={"basicText"} color="white" fontWeight={"normal"}>
+              <Span
+                fontFamily={"poppins"}
+                textStyle={"basicText"}
+                color="white"
+                fontWeight={"500"}
+              >
                 {" "}
                 Pressure Cleaning
               </Span>
             </Text>
             <Text color="green.300" fontSize="24px" fontWeight={"700"}>
               ✓{" "}
-              <Span textStyle={"basicText"} color="white" fontWeight={"normal"}>
+              <Span
+                fontFamily={"poppins"}
+                textStyle={"basicText"}
+                color="white"
+                fontWeight={"500"}
+              >
                 {" "}
                 Pressure Cleaning
               </Span>
@@ -101,7 +132,7 @@ const HeroText = () => {
       >
         <Box
           bg={"cyan.500"}
-          my={"25px"}
+          my={"15px"}
           display={"flex"}
           alignItems={"center"}
           justifyContent={["center"]}
@@ -135,80 +166,7 @@ const HeroText = () => {
         textAlign={["center", "center", "center", "start", "start", "start"]}
         justify={["center", "center", "center", "start", "start", "start"]}
         position="relative"
-      >
-        <Box fontSize={{ base: "24px", md: "26px" }}>
-          <Image src={Google} alt="Google" width="50" />
-        </Box>
-        <Box
-          color={"white"}
-          fontSize={{ base: "24px", md: "26px" }}
-          fontWeight={"500"}
-          fontFamily={"poppins"}
-        >
-          5.0
-        </Box>
-        <Box
-          display="flex"
-          h={"100%"}
-          alignContent={[
-            "center",
-            "center",
-            "center",
-            "start",
-            "start",
-            "start",
-          ]}
-          justifyContent={[
-            "center",
-            "center",
-            "center",
-            "start",
-            "start",
-            "start",
-          ]}
-        >
-          <Box
-            as={FaStar}
-            color={"yellow.400"}
-            display="inline-block"
-            fontSize={{ base: "18px", md: "26px" }}
-          />
-          <Box
-            as={FaStar}
-            color={"yellow.400"}
-            display="inline-block"
-            fontSize={{ base: "18px", md: "26px" }}
-          />
-          <Box
-            as={FaStar}
-            color={"yellow.400"}
-            display="inline-block"
-            fontSize={{ base: "18px", md: "26px" }}
-          />
-          <Box
-            as={FaStar}
-            color={"yellow.400"}
-            display="inline-block"
-            fontSize={{ base: "18px", md: "26px" }}
-          />
-          <Box
-            as={FaStar}
-            color={"yellow.400"}
-            display="inline-block"
-            fontSize={{ base: "18px", md: "26px" }}
-          />
-        </Box>
-      </HStack>
-      <Text
-        textAlign={["center", "center", "center", "start", "start", "start"]}
-        color={"white"}
-        fontSize={{ base: "18px", md: "26px" }}
-        fontWeight={"500"}
-        fontFamily={"poppins"}
-        mt={"8px"}
-      >
-        Verified 5 stars on Google!
-      </Text>
+      ></HStack>
     </>
   );
 };

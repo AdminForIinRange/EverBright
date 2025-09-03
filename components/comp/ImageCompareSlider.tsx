@@ -52,7 +52,7 @@ const ImageCompareSlider = () => {
       ref={containerRef}
       position="relative"
       width="100%"
-      height="500px"
+      height="100%"
       overflow="hidden"
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
@@ -77,6 +77,7 @@ const ImageCompareSlider = () => {
 
       {/* Overlay image with vertical clipping */}
       <Box
+      
         as="img"
         src={bottomImage}
         position="absolute"

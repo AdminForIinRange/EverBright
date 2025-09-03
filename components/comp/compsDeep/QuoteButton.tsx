@@ -18,7 +18,7 @@ const QuoteButton = () => {
       cursor="pointer"
       _hover={{
         transition: "all 0.2s ease-in-out",
-        transform: "scale(1.1)",
+   
         fontWeight: "700",
         px: "80px",
         bg: "black",

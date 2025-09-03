@@ -19,6 +19,8 @@ import BadgeItem from "@/components/comp/compsDeep/BadgeItem";
 import PromiseItem from "@/components/comp/compsDeep/PromiseItem";
 import SectionHeading from "@/components/comp/compsDeep/SectionHeading";
 import ServiceLayout from "@/components/comp/ServiceLayout";
+import { Shield, Home, Leaf } from "lucide-react";
+import About from "@/components/comp/About";
 
 const Page = () => {
   const services = [
@@ -74,10 +76,22 @@ const Page = () => {
 
   // ✅ NEW: small data arrays to map the repeated items
   const badges = [
-    "100% Satisfaction",
-    "Fully Insured",
-    "Locally Owned &",
-    "ECO Friendly",
+    {
+      text: "100% Guarantee",
+      icon: <Shield />,
+    },
+    {
+      text: "Fully Insured",
+      icon: <Shield />,
+    },
+    {
+      text: "Locally Owned &",
+      icon: <Home />,
+    },
+    {
+      text: "ECO Friendly",
+      icon: <Leaf />,
+    },
   ];
 
   const promises = [
@@ -90,51 +104,62 @@ const Page = () => {
   ];
 
   return (
-    <Box>
-      <Box
-        backgroundImage={` url('/images/aerial-city-adelaide.jpeg')`}
-        backgroundRepeat="no-repeat"
-        backgroundPosition="center"
-        backgroundSize="cover"
-        position={"absolute"}
-        backgroundAttachment="fixed"
-        zIndex={-1}
-        w={"100%"}
-        h={["850px", "850px", "850px", "850px", "850px", "850px"]}
-        opacity={0.5}
-      ></Box>
-      <Box
-        position={"absolute"}
-        zIndex={-1}
-        w={"100%"}
-        h={["850px", "850px", "850px", "850px", "850px", "850px"]}
-        bg="blue.900"
-        opacity={0.7}
-      ></Box>
+    <Box mt={"-100px"}>
+      <HStack justifyContent={"center"} align={"center"} >
+        
+        <Box
+          borderRadius={"50px"}
+          backgroundImage={` url('/images/aerial-city-adelaide.jpeg')`}
+          backgroundRepeat="no-repeat"
+          backgroundPosition="center"
+          backgroundSize="cover"
+          position={"absolute"}
+          backgroundAttachment="fixed"
+          zIndex={-1}
+          w={"98%"}
+          h={["1650px", "1650px", "1650px", "1650px", "1650px", "1650px"]}
+          opacity={1}
+borderBottomRadius={"100px"}
+        ></Box>
+        <Box
+
+          
+          position={"absolute"}
+          zIndex={-1}
+          w={"98%"}
+          h={["1650px", "1650px", "1650px", "1650px", "1650px", "1650px"]}
+          bg="cyan.700"
+          opacity={0.6}
+          borderBottomRadius={"100px"}
+        ></Box>
+
+
+      </HStack>
 
       <HStack
         // data-aos="fade-up"
+
         zIndex={4}
-        px={["0%", "3%", "6%", "6%", "6%", "10%"]}
+        px={["0%", "3%", "6%", "6%", "6%", "15%"]}
         justify={"center"} // !!
         align={"center"}
         w={"100%"}
         h={"100%"}
       >
         <HStack
-          mt={"100px"}
+          mt={"150px"}
           justify={"center"}
           align={["center", "center", "center", "start", "start", "start"]}
           w={"100%"}
           h={"100%"}
-          gap={["15px", "15px", "15px", "50px", "50px", "50px"]}
+          gap={["15px", "15px", "15px", "50px", "50px", "100px"]}
           wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
         >
-          <Box w={["100%", "100%", "100%", "600px", "600px", "600px"]}>
+          <Box w={["100%", "100%", "100%", "100%", "100%", "100%"]}>
             <HeroText />
 
             <HStack
-              px={["0%", "0%", "6%", "6%", "6%", "10%"]}
+              p={["5px", "5px", "0px", "0px", "0px", "0px"]}
               w={"100%"}
               justify={[
                 "center",
@@ -148,23 +173,21 @@ const Page = () => {
             >
               <Box
                 mt={"20px"}
-                bg={"white"}
+                rounded={"10px"}
                 h={"100%"}
-                p={["0px", "0px", "20px", "20px", "20px", "20px"]}
-                w={[
-                  "100%",
-                  "100%",
-                  "fit-content",
-                  "fit-content",
-                  "fit-content",
-                  "fit-content",
-                ]}
-                borderRadius={["0px", "30px", "30px", "30px", "30px", "30px"]}
+                p={["5px", "5px", "10px", "10px", "10px", "10px"]}
+                w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+                borderRadius={["30px", "30px", "30px", "30px", "30px", "30px"]}
+                bg={["white", "white", "none", "none", "none", "none"]}
               >
-                <HStack justify={"center"} align={"center"} gap={"0px"}>
-                  {/* ✅ NEW: map your BadgeItem instead of 4 copies */}
-                  {badges.map((label) => (
-                    <BadgeItem key={label} label={label} />
+                <HStack
+                  justify="start"
+                  align="start"
+                  gap={["0px", "8px", "8px", "8px", "8px", "8px"]}
+                  w={"100%"}
+                >
+                  {badges.map((badge, idx) => (
+                    <BadgeItem key={idx} text={badge.text} icon={badge.icon} />
                   ))}
                 </HStack>
               </Box>
@@ -174,106 +197,7 @@ const Page = () => {
         </HStack>
       </HStack>
 
-      <Box mt={["100px", "100px", "100px", "100px", "100px", "300px"]}>
-        {/* ✅ Example of using SectionHeading where styling matches */}
-        <VStack
-          justify={"center"}
-          align={"center"}
-          w={"100%"}
-          textAlign={"center"}
-          px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-        >
-          <SectionHeading
-            eyebrow={`You'll be amazed at how good your property can look!`}
-            title="Restoring Your Most
-Valuable Asset"
-            color="bule.400"
-          />
-        </VStack>
-
-        <HStack
-          zIndex={3}
-          px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-          justify={"center"} // !!
-          align={"center"}
-          w={"100%"}
-          h={"100%"}
-          my={["0px", "50px", "50px", "50px", "50px", "100px"]}
-        >
-          <HStack
-            justify={"center"}
-            align={["center", "center", "start", "start", "start", "start"]}
-            w={"100%"}
-            h={"100%"}
-            gap={["15px", "15px", "15px", "50px", "50px", "50px"]}
-            wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
-          >
-            <Box w={["100%", "100%", "100%", "600px", "600px", "600px"]}>
-              <Text fontSize="lg" color="black" mb="6" lineHeight="1.8">
-                Your home works hard, facing Adelaide’s harsh sun, heavy rains,
-                and winter winds. Over time, dirt, mould, and grime build up on
-                walls, roofs, driveways, and gutters.
-              </Text>
-              <Text fontSize="lg" color="black" mb="8" lineHeight="1.8">
-                At EverBright Pressure Washing Adelaide, we provide professional
-                pressure washing, gutter cleaning, roof washing, and solar panel
-                cleaning to restore your property’s beauty and protect it for
-                years to come. We don’t just wash away mess — we restore pride,
-                protect your investment, and bring back that “wow” factor every
-                time you pull into your driveway.
-              </Text>
-
-              <Text fontSize="lg" color="black" mb="8" lineHeight="1.8">
-                Regular exterior cleaning isn’t just about curb appeal — it
-                prevents damage, avoids costly repairs, and keeps your home
-                strong for years.
-              </Text>
-
-              <Text fontSize="lg" color="black" mb="8" lineHeight="1.8">
-                We’re fast, reliable, and eco-friendly — tough on stains, gentle
-                on your property. When you choose EverBright, you’re not just
-                getting a clean — you’re giving your home the care it deserves.
-              </Text>
-              <Box display="flex" alignItems="center" gap="3" mb="6">
-                <Text fontSize="lg" fontWeight="700" color="#0a0f29">
-                  Call today for a FREE QUOTE and see why Adelaide homeowners
-                  trust EverBright Pressure Washing for remarkable results.
-                </Text>
-              </Box>
-             
-              
-              <HStack alignItems="center" w={"100%"}  justifyContent={["center", "center", "center", "start", "start", "start"]} >
-
-                <QuoteButton />
-              </HStack>
-        
-            </Box>
-
-            <Box
-              position="relative"
-              h={["350px", "350px", "350px", "500px", "500px", "600px"]}
-              w={["95%", "95%", "95%", "600px", "600px", "600px"]}
-              borderRadius="30px"
-              bgPos="center"
-              bgSize="cover"
-              overflow="hidden"
-              display={"flex"}
-              justifyContent={"end"}
-            >
-              <Box
-                position="relative"
-                h={["350px", "350px", "350px", "500px", "500px", "500px"]}
-                w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-                borderRadius="30px"
-                bg="gray.200" // fallback background color
-                overflow="hidden" // clip the Image to the rounded corners
-              >
-                <ImageCompareSlider />
-              </Box>
-            </Box>
-          </HStack>
-        </HStack>
-      </Box>
+      <About />
 
       <Box pt={["50px", "50px", "50px", "100px", "100px", "100px"]}>
         <ServiceLayout />
@@ -330,17 +254,25 @@ Valuable Asset"
                     Shayal - Owner
                   </Text>
 
-                    <Box position="absolute" >
-                  <Image src={Shayal} alt="Shayal" />
-                </Box>
+                  <Box position="absolute">
+                    <Image src={Shayal} alt="Shayal" />
+                  </Box>
                 </Box>
 
-              
-           <HStack alignItems="center" w={"100%"}  justifyContent={["center", "center", "center", "start", "start", "start"]} >
-
-                <QuoteButton />
-              </HStack>
-        
+                <HStack
+                  alignItems="center"
+                  w={"100%"}
+                  justifyContent={[
+                    "center",
+                    "center",
+                    "center",
+                    "start",
+                    "start",
+                    "start",
+                  ]}
+                >
+                  <QuoteButton />
+                </HStack>
               </Box>
             </HStack>
           </HStack>

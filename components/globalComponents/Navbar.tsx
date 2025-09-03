@@ -256,11 +256,12 @@ const Navbar = () => {
 
   return (
     <Box
+
       w="100%"
       position="sticky"
       top="0"
       zIndex="100"
-  bg="cyan.500"
+
       backdropFilter="blur(10px)"
     >
       {/* Top Bar */}
@@ -269,7 +270,7 @@ const Navbar = () => {
       <Box
         w="100%"
         py="10px"
-        borderBottom="1px solid #F0F0F0"
+      
         transition="all 0.3s ease"
       >
         <Box
