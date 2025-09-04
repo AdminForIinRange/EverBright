@@ -120,28 +120,7 @@ const pricingFaqs = [
 ];
 
 // Benefits data
-const benefits = [
-  {
-    icon: Award,
-    title: "Premium Service",
-    description: "Five-star hospitality standards for every guest, every time",
-  },
-  {
-    icon: Shield,
-    title: "Property Protection",
-    description: "24/7 monitoring and rapid response to any issues",
-  },
-  {
-    icon: Star,
-    title: "Maximized Revenue",
-    description: "Dynamic pricing and multi-platform exposure",
-  },
-  {
-    icon: Clock,
-    title: "Time Saving",
-    description: "Completely hands-off management solution",
-  },
-];
+
 
 const FAQ = ({ type }: { type: string }) => {
   const router = useRouter();
@@ -396,7 +375,7 @@ const FAQ = ({ type }: { type: string }) => {
             >
               Still have questions?
             </Text>
-            <Text
+         <Text
               textStyle={"basicText"}
               color="#4B5563"
               lineHeight="1.6"

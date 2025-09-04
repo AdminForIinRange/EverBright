@@ -18,129 +18,67 @@ import ScheduleConsultation from "./luxeComponents/scheduleConsultation";
 import SectionHeading from "../comp/compsDeep/SectionHeading";
 const faqs = [
   {
-    question: "What services does your AirBnB management offer?",
+    question: "Is pressure washing safe for my home?",
     answer:
-      "At Luxe Managements, we offer end-to-end AirBnB and short-stay property management. From creating standout listings and handling all guest communication, to dynamic pricing, professional cleaning, hotel-quality linen, and round-the-clock maintenance — we take care of everything so you can enjoy stress-free passive income. Our service is tailored to deliver a seamless, high-end hosting experience.",
-    category: "services",
-    icon: Star,
+      "Yes—when done correctly. We adjust PSI and nozzles for each surface and use soft-wash (low pressure + detergents) on delicate areas like render, painted exteriors, roofs and timber. We pre-soak, protect nearby plants, and finish with a thorough rinse. Fully insured for your peace of mind.",
+    category: "safety",
+  
   },
   {
-    question: "How do you help maximize rental income?",
+    question: "What surfaces can you clean?",
     answer:
-      "We use real-time market data and advanced pricing tools to ensure your property is always listed at the optimal rate. Combined with high-converting listings, professional photography, and multi-platform exposure across AirBnB, Booking.com, and more, our strategies regularly boost income by up to 40%. Higher occupancy, better reviews, and premium nightly rates that's the Luxe difference.",
+      "Driveways, paths, pavers and concrete; brick and retaining walls; house exteriors (soft-wash for render/painted surfaces); roofs (Colorbond and tile via soft-wash), gutters and fascias; decks, pergolas and fences; plus solar panels (streak-free, no harsh chemicals).",
     category: "services",
-    icon: Award,
+
   },
   {
-    question: "What types of properties do you manage?",
+    question: "How often should I book exterior cleaning in Adelaide?",
     answer:
-      "Luxe specializes in managing a diverse portfolio of short-term rental properties, including stylish city apartments, family homes, luxury holiday stays, and boutique accommodations. Whether you're in Adelaide or surrounding regions, we tailor our service to suit your property type and investment goals.",
-    category: "services",
-    icon: CheckCircle,
-  },
-  {
-    question: "How does the linen and amenity service work?",
-    answer:
-      "We provide premium linen and amenity packages for every guest stay. Think crisp white sheets, plush towels, high-thread-count bedding, and luxury toiletries — all refreshed and professionally laundered between bookings. Our goal is to elevate the guest experience to five-star hotel standards, every time.",
-    category: "services",
-    icon: Star,
-  },
-  {
-    question: "How can I get started with your services?",
-    answer:
-      "Getting started with Luxe is simple. Book a free consultation with our team — we'll inspect your property, provide income projections, and walk you through the onboarding process. From there, we handle everything: staging, photography, listings, guest communication, and ongoing operations. You relax — we do the work.",
+      "Most homes benefit from a house wash every 12–18 months. High-traffic areas like driveways/pavers: every 6–12 months. Gutters: 1–2 times per year. Coastal or hills locations may need more frequent cleans due to salt, pollen and moisture. Ask us for a free, tailored schedule.",
     category: "getting-started",
-    icon: Calendar,
+  
   },
   {
-    question: "What happens if there's an emergency at my property?",
+    question: "Will pressure washing remove oil stains and mould?",
     answer:
-      "We offer 24/7 incident response and property oversight. Whether it's a late-night lockout or a maintenance issue, our local team is on-call and ready to act immediately. With Luxe, your property is always protected — and your guests are always looked after.",
-    category: "support",
-    icon: Shield,
+      "Yes. We use hot water units, specialty degreasers, and mould-killing detergents to break down tough oil spots, grease, moss and algae. Some older or deep-set stains may lighten rather than disappear completely, but we always achieve the best possible result.",
+    category: "results",
+  
   },
   {
-    question: "Do you handle property marketing?",
+    question: "Do you need access to water and power?",
     answer:
-      "Absolutely. First impressions matter, and our in-house marketing team ensures your property stands out with professional photography, compelling copywriting, and strategic placement across high-traffic platforms. We showcase your home's best features to attract premium bookings and enhance long-term visibility.",
+      "In most cases, yes—we connect to an outdoor tap and power point. For properties without easy access, we can bring portable water tanks and generators (additional fee). We’ll confirm setup during your free quote so there are no surprises.",
+    category: "requirements",
+
+  },
+  {
+    question: "How long does a typical job take?",
+    answer:
+      "It depends on size and condition. A standard driveway usually takes 1–2 hours. A full house wash can be 3–5 hours. Larger commercial or multi-surface cleans may take a full day. We always provide an estimated timeframe upfront.",
     category: "services",
-    icon: Star,
+  
   },
-];
-
-const pricingFaqs = [
   {
-    question: "How does your pricing model work?",
+    question: "Is pressure washing environmentally friendly?",
     answer:
-      "We charge 18% of booking profit — calculated as total revenue minus platform fees, cleaning, and utilities. This means we only succeed when you do. There are no hidden fees or lock-in contracts — just performance-based pricing designed to maximize your income.",
-    category: "pricing",
-    icon: CheckCircle,
+      "We use eco-safe detergents that break down quickly, capture run-off when needed, and adjust water use for efficiency. Pressure washing uses less water than hosing, because it’s faster and more effective. Safe for your garden, pets, and the environment.",
+    category: "safety",
+    
   },
   {
-    question: "What's included in the 18% management fee?",
+    question: "Do you work on commercial properties as well?",
     answer:
-      "Our 18% fee covers full-service management: expert listing creation, dynamic pricing, 24/7 guest communication, professional photography, styling advice, review optimization, and ongoing maintenance coordination. It's a hands-off solution designed to elevate your earnings and guest experience.",
-    category: "pricing",
-    icon: CheckCircle,
+      "Absolutely. We clean shopfronts, carparks, warehouses, schools, strata and council facilities. We can schedule after-hours or weekends to minimise disruption and provide ongoing maintenance plans for businesses.",
+    category: "services",
+   
   },
   {
-    question: "How much can I expect to earn?",
+    question: "What does it cost to pressure wash a driveway?",
     answer:
-      "Properties managed by Luxe see an average revenue increase of 40% through better pricing, occupancy, and reviews. Every property is different — we offer a custom income projection during your free consultation to give you a clear idea of your earning potential.",
+      "Pricing depends on size, condition, and access. As a guide, a standard single driveway in Adelaide starts around $180–$250. Larger or heavily stained areas may cost more. We provide clear, no-obligation quotes before starting.",
     category: "pricing",
-    icon: Award,
-  },
-  {
-    question: "Are there any upfront costs?",
-    answer:
-      "If your property needs photography, styling, or furnishing, we offer premium services at competitive rates. Photography starts at $250, while furnishing is calculated at 8% of the total item value. All costs are discussed transparently before any commitments.",
-    category: "pricing",
-    icon: CheckCircle,
-  },
-  {
-    question: "Can I choose a different management plan?",
-    answer:
-      "Yes — we offer tiered plans (Essential, Standard, Premium) with varying levels of service and pricing, starting as low as 12%. Each plan offers different levels of support, marketing, and discounts, so you can choose what fits your goals and budget.",
-    category: "pricing",
-    icon: CheckCircle,
-  },
-  {
-    question: "Do I have to pay for cleaning services?",
-    answer:
-      "Guests cover the basic cleaning fee as part of their booking. For owners, we offer premium cleaning (including linen and quality checks) with a 30% discount for managed properties. This ensures your space is spotless and always guest-ready.",
-    category: "pricing",
-    icon: CheckCircle,
-  },
-  {
-    question: "How do I get a custom quote?",
-    answer:
-      "Simple — book a free consultation with our team. We'll assess your property, walk you through potential earnings, and provide a tailored quote based on your specific needs and the level of service you're after.",
-    category: "pricing",
-    icon: Calendar,
-  },
-];
-
-// Benefits data
-const benefits = [
-  {
-    icon: Award,
-    title: "Premium Service",
-    description: "Five-star hospitality standards for every guest, every time",
-  },
-  {
-    icon: Shield,
-    title: "Property Protection",
-    description: "24/7 monitoring and rapid response to any issues",
-  },
-  {
-    icon: Star,
-    title: "Maximized Revenue",
-    description: "Dynamic pricing and multi-platform exposure",
-  },
-  {
-    icon: Clock,
-    title: "Time Saving",
-    description: "Completely hands-off management solution",
+  
   },
 ];
 
