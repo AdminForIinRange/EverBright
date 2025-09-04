@@ -282,12 +282,7 @@ const Page = () => {
                     >
                       Shayal - Owner
                     </Text>
-                    <HStack
-                      mt={"50px"}
-                      justify={{ base: "center", md: "start" }}
-                    >
-                      <QuoteButton />
-                    </HStack>
+                   
                   </Box>
                 </VStack>
               </Box>
@@ -295,7 +290,7 @@ const Page = () => {
               {/* Image area with decorative frame */}
               <Box
                 position="relative"
-                h={{ base: "550px", md: "100%", xl: "100%" }}
+                h={{ base: "100%", md: "100%", xl: "100%" }}
                 w={{ base: "100%", md: "100%" }}
                 display="flex"
                 justifyContent="end"

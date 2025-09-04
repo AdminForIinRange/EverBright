@@ -42,7 +42,7 @@ const Footer = () => {
               fontFamily="arial"
             >
              EverBright Pressure Washing
-            </Text>
+Shayal - Owner            </Text>
             
           </Box>
         </Box>

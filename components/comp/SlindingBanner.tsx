@@ -3,7 +3,7 @@ import { Box, VStack, Text, HStack, Span, Link } from "@chakra-ui/react";
 const SlindingBanner = () => {
   return (
     <>
-      <Box px={["4%", "4%", "6%", "6%", "6%", "10%"]}>
+      <Box my={"50px"} px={["4%", "4%", "6%", "6%", "6%", "10%"]}>
         <Box
           position="relative"
           h={{ base: "550px", md: "100%", xl: "100%" }}
@@ -26,7 +26,7 @@ const SlindingBanner = () => {
               backgroundRepeat="no-repeat"
               backgroundPosition="center"
               backgroundSize="cover"
-              h="400px"
+              h={["100%", "100%", "100%", "400px", "400px", "400px"]}
               w="100%"
               overflow="hidden"
             ></Box>

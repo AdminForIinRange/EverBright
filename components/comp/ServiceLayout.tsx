@@ -44,39 +44,23 @@ const services = [
 function ServiceLayout() {
   return (
     <>
-      {" "}
-      {/* <Box
-        backgroundImage={` url('/images/aerial-city-adelaide.jpeg')`}
-        backgroundRepeat="no-repeat"
-        backgroundPosition="center"
-        backgroundSize="cover"
-        position={"absolute"}
-        backgroundAttachment="fixed"
-        zIndex={-1}
-        w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-       h={["1900px", "1650px", "1650px", "1650px", "1650px", "1150px"]}
-        opacity={1}
-        borderRadius={["0px", "0px", "100px", "100px", "100px", "100px"]}
-      ></Box>
-      <Box
-        position={"absolute"}
-        zIndex={-1}
-        w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-        h={["1900px", "1650px", "1650px", "1650px", "1650px", "1150px"]}
-        bg="cyan.700"
-        opacity={0.6}
-        borderRadius={["0px", "0px", "100px", "100px", "100px", "100px"]}
-      ></Box> */}
       <VStack
         justify="center"
         align="center"
         w="100%"
         textAlign="center"
         px={{ base: "4%", md: "6%", xl: "10%" }}
-    
       >
-        <VStack 
-        py={"50px"} borderRadius={["50px", "50px", "50px", "50px", "50px", "50px"]}   bg={"cyan.500"} justify="center" align="center" textAlign="center" w="100%">
+        <VStack
+          py={"50px"}
+          borderRadius={["25px", "25px", "25px", "25px", "25px", "25px"]}
+          bg={"cyan.500"}
+          justify="center"
+          align="center"
+          textAlign="center"
+          px={"4%"}
+          w="100%"
+        >
           <Text
             fontSize={["16px", "18px", "24px"]}
             fontFamily="poppins"
@@ -84,18 +68,17 @@ function ServiceLayout() {
             lineHeight="1.6"
             color={"black"}
           >
-            You'll be amazed at how good your property can look!
+           Be amazed at how good your property can look!
           </Text>
           <Text
             fontSize={["36px", "48px", "56px"]}
             fontWeight={700}
             fontFamily="poppins"
             lineHeight="1.1"
- color={"white"}
+            color={"white"}
           >
             Restoring Your Most Valuable Asset
           </Text>
-
         </VStack>
       </VStack>
       <HStack
