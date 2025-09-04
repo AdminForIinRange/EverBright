@@ -116,7 +116,7 @@ const Page = () => {
           position={"absolute"}
           backgroundAttachment="fixed"
           zIndex={-1}
-          w={["100%", "100%", "98%", "98%", "98%", "98%"]}
+          w={["100%", "100%", "100%", "100%", "100%", "100%"]}
           h={["1650px", "1650px", "1650px", "1650px", "1650px", "1650px"]}
           opacity={1}
  borderBottomRadius={[ "50px", "150px0px", "100px", "100px", "100px", "100px"]}
@@ -126,7 +126,7 @@ const Page = () => {
           
           position={"absolute"}
           zIndex={-1}
-          w={["100%", "100%", "98%", "98%", "98%", "98%"]}
+  w={["100%", "100%", "100%", "100%", "100%", "100%"]}
           h={["1650px", "1650px", "1650px", "1650px", "1650px", "1650px"]}
           bg="cyan.700"
           opacity={0.6}
@@ -218,64 +218,100 @@ const Page = () => {
             />
           </VStack>
 
-          <HStack
-            zIndex={3}
-            px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-            justify={"center"} // !!
-            align={"center"}
-            w={"100%"}
-            h={"100%"}
-            my={["50px", "50px", "50px", "50px", "50px", "100px"]}
-          >
-            <HStack
-              justify={"center"}
-              align={["center", "center", "start", "start", "start", "start"]}
-              w={"100%"}
+           <HStack
+        zIndex={3}
+        px={{ base: "4%", md: "6%", xl: "10%" }}
+        justify="center"
+        align="center"
+        w="100%"
+        my={{ base: "0px", md: "50px", xl: "100px" }}
+      >
+        <HStack
+          justify="center"
+          align={{ base: "center", md: "start" }}
+          w="100%"
+          gap={{ base: "15px", md: "50px" }}
+          flexWrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
+        >
+          {/* Copy card */}
+          <Box w={{ base: "100%", md: "100%" }}>
+            <VStack
               h={"100%"}
-              gap={["15px", "15px", "15px", "50px", "50px", "50px"]}
-              wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
+              align="start"
+              color="gray.800"
+              fontSize="lg"
+              lineHeight="1.8"
+              fontFamily={"poppins"}
             >
-              <Box w={["95%", "95%", "95%", "600px", "600px", "600px"]}>
-                <Text fontSize="lg" color="#4a5568" mb="6" lineHeight="1.8">
-                  At Luxe Managements, we believe that exceptional spaces are
-                  born from a perfect balance of aesthetics and functionality.
-                  Our furnishing and styling service transforms properties into
-                  captivating environments that resonate with discerning guests.
-                </Text>
-                <Text fontSize="lg" color="#4a5568" mb="8" lineHeight="1.8">
-                  Each project is approached with meticulous attention to
-                  detail, from the selection of statement furniture pieces to
-                  the curation of bespoke accessories that tell a cohesive
-                  story.
-                </Text>
-                <Box display="flex" alignItems="center" gap="3" mb="6">
-                  <Box w="30px" h="2px" bg="#0a0f29"></Box>
-                  <Text fontSize="lg" fontWeight="medium" color="#0a0f29">
-                    Shayal - Owner
-                  </Text>
+              <Text>
+                EverBright Pressure Washing Adelaide restores your property’s
+                beauty with professional pressure washing, gutter cleaning, roof
+                washing, and solar panel cleaning. We protect your investment
+                and bring back that “wow” factor every time you arrive home.
+              </Text>
 
-                  <Box position="absolute">
-                    <Image src={Shayal} alt="Shayal" />
-                  </Box>
-                </Box>
+              <Text>
+                Regular exterior cleaning isn’t just about looks — it prevents
+                damage, saves on repairs, and keeps your home strong for years.
+              </Text>
 
-                <HStack
-                  alignItems="center"
-                  w={"100%"}
-                  justifyContent={[
-                    "center",
-                    "center",
-                    "center",
-                    "start",
-                    "start",
-                    "start",
-                  ]}
+              <Text>
+                We’re fast, reliable, and eco-friendly — tough on stains but
+                gentle on your property. With EverBright, your home gets the
+                care it deserves.
+              </Text>
+
+              {/* quick-hit trust chips */}
+
+              {/* CTA line */}
+              <Box pt={2}>
+                <Text
+                  fontFamily={"poppins"}
+                  fontWeight="700"
+                  color="#0a0f29"
+                  mb={3}
                 >
+                  Get a FREE QUOTE today and see why Adelaide homeowners trust
+                  EverBright for remarkable results.
+                </Text>
+                <HStack mt={"50px"} justify={{ base: "center", md: "start" }}>
                   <QuoteButton />
                 </HStack>
               </Box>
-            </HStack>
-          </HStack>
+            </VStack>
+          </Box>
+
+          {/* Image area with decorative frame */}
+          <Box
+            position="relative"
+            h={{ base: "550px", md: "100%", xl: "100%" }}
+            w={{ base: "100%", md: "100%" }}
+            display="flex"
+            justifyContent="end"
+          >
+            <Box
+              position="relative"
+              h={{ base: "100%", md: "100%" }}
+              w={{ base: "100%", md: "100%" }}
+              // subtle gradient border frame
+              p="2"
+              borderRadius="30px"
+              bgGradient="linear(to-br, blue.100, white)"
+              boxShadow="0 10px 30px rgba(10,15,41,0.12)"
+            >
+              <Box
+                h="100%"
+                w="100%"
+                borderRadius="24px"
+                overflow="hidden"
+                bg="gray.200" // fallback
+              >
+                
+              </Box>
+            </Box>
+          </Box>
+        </HStack>
+      </HStack>
         </Box>
       </Box>
 

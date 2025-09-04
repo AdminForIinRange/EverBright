@@ -425,10 +425,10 @@ const Hero = () => {
               <br />
               With a deep understanding of Adelaide’s unique climate and
               environment, we ensure the highest quality results while
-              protecting your property’s structural integrity. Trust in our
+              protecting youdr property’s structural integrity. Trust in our
               no-hassle satisfaction guarantee and let Calibre Exterior Cleaning
               bring new life to your home or business. Request a quote today and
-              uncover the unparalleled benefits of Adelaide’s leading pressure
+              uncover the unparalleled  of Adelaide’s leading pressure
               cleaning experts!
               <br />
               <br />
@@ -437,8 +437,9 @@ const Hero = () => {
           </VStack>
 
           <VStack bg={"blue.200"}>
-            <Box>
+            <Box >
               <Text
+
                 mt={"50px"}
                 justifyContent={"start"}
                 alignContent={"start"}

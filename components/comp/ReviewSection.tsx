@@ -93,7 +93,7 @@ const ReviewSection = () => {
       bgGradient="linear(180deg, #f7fafc, #edf2f7)"
       py={{ base: "10", md: "16" }}
     >
-      <Box mt={["50px", "100px", "100px", "100px", "100px", "300px"]}>
+      <Box >
         <VStack
           justify={"center"}
           align={"center"}
