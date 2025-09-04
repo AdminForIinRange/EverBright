@@ -10,6 +10,7 @@ const HeroText = () => {
   return (
     <>
       <HStack
+
         justify={["center", "center", "center", "start", "start", "start"]}
         align={["center", "center", "center", "start", "start", "start"]}
       >

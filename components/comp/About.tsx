@@ -7,8 +7,13 @@ import SectionHeading from "./compsDeep/SectionHeading";
 const About = () => {
   return (
     <Box as="section" mt={{ base: "100px", xl: "180px" }} aria-label="About">
+
+
+
+          
       {/* Heading */}
       <VStack
+      
         justify="center"
         align="center"
         w="100%"

@@ -15,8 +15,21 @@ const Navbar = () => {
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const timeoutRef = useRef<any>(null);
 
+  // NEW: track scroll state
+  const [scrolled, setScrolled] = useState(false);
+
   // Simulate active page for demo purposes
   const activePage = `/`;
+
+  // NEW: toggle background when user scrolls
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    onScroll(); // initialize on mount
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Close mobile menu on large screen
   useEffect(() => {
@@ -200,26 +213,10 @@ const Navbar = () => {
       path: "/about",
       hasDropdown: true,
       items: [
-        {
-          label: "Our Story",
-          link: "/about/#story",
-          description: "Learn about our journey and values",
-        },
-        {
-          label: "Our Team",
-          link: "/about/#team",
-          description: "Meet the experts behind EverBright",
-        },
-        {
-          label: "Testimonials",
-          link: "/about/#testimonials",
-          description: "What our clients say about us",
-        },
-        {
-          label: "Our Journey",
-          link: "/about/journey",
-          description: "See how EverBright has evolved",
-        },
+        { label: "Our Story", link: "/about/#story", description: "Learn about our journey and values" },
+        { label: "Our Team", link: "/about/#team", description: "Meet the experts behind EverBright" },
+        { label: "Testimonials", link: "/about/#testimonials", description: "What our clients say about us" },
+        { label: "Our Journey", link: "/about/journey", description: "See how EverBright has evolved" },
       ],
     },
     {
@@ -227,26 +224,10 @@ const Navbar = () => {
       path: "/services",
       hasDropdown: true,
       items: [
-        {
-          label: "Property Management",
-          link: "/services/property-management",
-          description: "Full-service management for luxury properties",
-        },
-        {
-          label: "Cleaning & Linen",
-          link: "/services/cleaning-and-linen",
-          description: "Premium cleaning and linen services",
-        },
-        {
-          label: "Furnishing & Styling",
-          link: "/services/furnishing-and-styling",
-          description: "Expert interior design and furnishing",
-        },
-        {
-          label: "Photography",
-          link: "/services/photography",
-          description: "Professional property photography",
-        },
+        { label: "Property Management", link: "/services/property-management", description: "Full-service management for luxury properties" },
+        { label: "Cleaning & Linen", link: "/services/cleaning-and-linen", description: "Premium cleaning and linen services" },
+        { label: "Furnishing & Styling", link: "/services/furnishing-and-styling", description: "Expert interior design and furnishing" },
+        { label: "Photography", link: "/services/photography", description: "Professional property photography" },
       ],
     },
     { name: "Pricing", path: "/pricing", hasDropdown: false },
@@ -256,23 +237,17 @@ const Navbar = () => {
 
   return (
     <Box
-
       w="100%"
       position="sticky"
       top="0"
       zIndex="100"
-
-      backdropFilter="blur(10px)"
+      /* NEW: background changes when scrolled */
+      bg={scrolled ? "rgba(85, 151, 255, 0.7)" : "transparent"}
+      backdropFilter={scrolled ? "blur(10px)" : "none"}
+      transition="background-color 200ms ease"
     >
-      {/* Top Bar */}
-
       {/* Main Nav */}
-      <Box
-        w="100%"
-        py="10px"
-      
-        transition="all 0.3s ease"
-      >
+      <Box w="100%" py="10px" transition="all 0.3s ease">
         <Box
           display="flex"
           justifyContent="space-between"
@@ -311,20 +286,13 @@ const Navbar = () => {
             </VStack>
           </Box>
 
-          {/* Phone icon */}
-          <Box
-            display={{ base: "block", md: "block", lg: "none" }}
-            textAlign={"center"}
-          >
+          {/* Phone icon (mobile) */}
+          <Box display={{ base: "block", md: "block", lg: "none" }} textAlign={"center"}>
             <Phone size={24} color="#F0F0F0" />
           </Box>
 
           {/* Desktop Nav */}
-          <Box
-            display={{ base: "none", md: "none", lg: "flex" }}
-            alignItems="center"
-            justifyContent="flex-end"
-          >
+          <Box display={{ base: "none", md: "none", lg: "flex" }} alignItems="center" justifyContent="flex-end">
             {navigationItems.map((item) => (
               <Box
                 key={item.name}
@@ -339,24 +307,13 @@ const Navbar = () => {
                   if (item.hasDropdown) handleLeave();
                 }}
               >
-                <Box
-                  cursor="pointer"
-                  onClick={() => handleNavigate(item.path)}
-                  position="relative"
-                  pb="4px"
-                >
+                <Box cursor="pointer" onClick={() => handleNavigate(item.path)} position="relative" pb="4px">
                   <Text
                     textStyle={"smallText"}
                     fontWeight={activePage === item.path ? "600" : "500"}
                     fontFamily="poppins"
                     transition="all 0.2s ease"
-                    color={
-                      activePage === item.path
-                        ? "white"
-                        : hoveredItem === item.name.toLowerCase()
-                          ? "white"
-                          : "white"
-                    }
+                    color="white"
                     letterSpacing="0.3px"
                     whiteSpace="nowrap"
                   >
@@ -370,8 +327,8 @@ const Navbar = () => {
                       activePage === item.path
                         ? "100%"
                         : hoveredItem === item.name.toLowerCase()
-                          ? "70%"
-                          : "0%"
+                        ? "70%"
+                        : "0%"
                     }
                     height="2px"
                     bg={activePage === item.path ? "#000000" : "#555555"}
@@ -379,10 +336,7 @@ const Navbar = () => {
                   />
                 </Box>
                 {item.hasDropdown && (
-                  <Dropdown
-                    items={item.items || []}
-                    category={item.name.toLowerCase()}
-                  />
+                  <Dropdown items={item.items || []} category={item.name.toLowerCase()} />
                 )}
               </Box>
             ))}
@@ -403,11 +357,7 @@ const Navbar = () => {
                 <Box textAlign={"center"}>
                   <Phone />
                 </Box>
-                <Text
-                  textStyle={"smallText"}
-                  fontFamily="poppins"
-                  fontWeight="500"
-                >
+                <Text textStyle={"smallText"} fontFamily="poppins" fontWeight="500">
                   Get a Quote
                 </Text>
               </HStack>

@@ -12,7 +12,7 @@ const FreeQuote = () => {
     
       w={["100%", "100%", "600px"]}
       bg="white"
-      borderRadius={["40px", "40px"]}
+      borderRadius={["20px", "20px"]}
       boxShadow="0 8px 24px rgba(0,0,0,0.08)"
       p={6}
       textAlign="center"
@@ -22,6 +22,7 @@ const FreeQuote = () => {
         Get Your No-Obligation
       </Text>
       <Text
+      fontFamily={"poppins"}
         fontSize={["28px", "36px"]}
         fontWeight="900"
         color="blue.900"

@@ -6,6 +6,8 @@ import Image from "next/image";
 
 import onePieceOFbackground from "@/public/ProjectAssets/onePieceOFbackground.svg";
 import SideBar from "@/components/globalComponents/SideBar";
+import FAQ from "@/components/globalComponents/FAQ";
+import Footer from "@/components/personalPortfolio/footer/footer";
 export const dynamic = "force-dynamic";
 const Layout = async ({ children }: { children: React.ReactNode }) => {
   return (
@@ -13,6 +15,9 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
       <Navbar />
 
       <div className="">{children}</div>
+      <FAQ type={""} />
+      <Footer />
+      
     </>
   );
 };

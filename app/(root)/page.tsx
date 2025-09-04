@@ -21,6 +21,8 @@ import SectionHeading from "@/components/comp/compsDeep/SectionHeading";
 import ServiceLayout from "@/components/comp/ServiceLayout";
 import { Shield, Home, Leaf } from "lucide-react";
 import About from "@/components/comp/About";
+import SlidingCard from "@/components/comp/SlidingCard";
+import SlindingBanner from "@/components/comp/SlindingBanner";
 
 const Page = () => {
   const services = [
@@ -104,9 +106,8 @@ const Page = () => {
   ];
 
   return (
-    <Box mt={"-100px"}>
-      <HStack justifyContent={"center"} align={"center"} >
-        
+    <Box mt={"-70px"}>
+      <HStack justifyContent={"center"} align={"center"}>
         <Box
           borderRadius={"50px"}
           backgroundImage={` url('/images/aerial-city-adelaide.jpeg')`}
@@ -119,21 +120,31 @@ const Page = () => {
           w={["100%", "100%", "100%", "100%", "100%", "100%"]}
           h={["1650px", "1650px", "1650px", "1650px", "1650px", "1650px"]}
           opacity={1}
- borderBottomRadius={[ "50px", "150px0px", "100px", "100px", "100px", "100px"]}
+          borderBottomRadius={[
+            "50px",
+            "150px0px",
+            "100px",
+            "100px",
+            "100px",
+            "100px",
+          ]}
         ></Box>
         <Box
-
-          
           position={"absolute"}
           zIndex={-1}
-  w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+          w={["100%", "100%", "100%", "100%", "100%", "100%"]}
           h={["1650px", "1650px", "1650px", "1650px", "1650px", "1650px"]}
           bg="cyan.700"
           opacity={0.6}
-          borderBottomRadius={[ "50px", "50px", "100px", "100px", "100px", "100px"]}
+          borderBottomRadius={[
+            "50px",
+            "50px",
+            "100px",
+            "100px",
+            "100px",
+            "100px",
+          ]}
         ></Box>
-
-
       </HStack>
 
       <HStack
@@ -199,6 +210,8 @@ const Page = () => {
 
       <About />
 
+      <SlindingBanner />
+
       <Box pt={["50px", "50px", "50px", "100px", "100px", "100px"]}>
         <ServiceLayout />
 
@@ -218,106 +231,105 @@ const Page = () => {
             />
           </VStack>
 
-           <HStack
-        zIndex={3}
-        px={{ base: "4%", md: "6%", xl: "10%" }}
-        justify="center"
-        align="center"
-        w="100%"
-        my={{ base: "0px", md: "50px", xl: "100px" }}
-      >
-        <HStack
-          justify="center"
-          align={{ base: "center", md: "start" }}
-          w="100%"
-          gap={{ base: "15px", md: "50px" }}
-          flexWrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
-        >
-          {/* Copy card */}
-          <Box w={{ base: "100%", md: "100%" }}>
-            <VStack
-              h={"100%"}
-              align="start"
-              color="gray.800"
-              fontSize="lg"
-              lineHeight="1.8"
-              fontFamily={"poppins"}
-            >
-              <Text>
-                EverBright Pressure Washing Adelaide restores your property’s
-                beauty with professional pressure washing, gutter cleaning, roof
-                washing, and solar panel cleaning. We protect your investment
-                and bring back that “wow” factor every time you arrive home.
-              </Text>
-
-              <Text>
-                Regular exterior cleaning isn’t just about looks — it prevents
-                damage, saves on repairs, and keeps your home strong for years.
-              </Text>
-
-              <Text>
-                We’re fast, reliable, and eco-friendly — tough on stains but
-                gentle on your property. With EverBright, your home gets the
-                care it deserves.
-              </Text>
-
-              {/* quick-hit trust chips */}
-
-              {/* CTA line */}
-              <Box pt={2}>
-                <Text
-                  fontFamily={"poppins"}
-                  fontWeight="700"
-                  color="#0a0f29"
-                  mb={3}
-                >
-                  Get a FREE QUOTE today and see why Adelaide homeowners trust
-                  EverBright for remarkable results.
-                </Text>
-                <HStack mt={"50px"} justify={{ base: "center", md: "start" }}>
-                  <QuoteButton />
-                </HStack>
-              </Box>
-            </VStack>
-          </Box>
-
-          {/* Image area with decorative frame */}
-          <Box
-            position="relative"
-            h={{ base: "550px", md: "100%", xl: "100%" }}
-            w={{ base: "100%", md: "100%" }}
-            display="flex"
-            justifyContent="end"
+          <HStack
+            zIndex={3}
+            px={{ base: "4%", md: "6%", xl: "10%" }}
+            justify="center"
+            align="center"
+            w="100%"
+            my={{ base: "0px", md: "50px", xl: "100px" }}
           >
-            <Box
-              position="relative"
-              h={{ base: "100%", md: "100%" }}
-              w={{ base: "100%", md: "100%" }}
-              // subtle gradient border frame
-              p="2"
-              borderRadius="30px"
-              bgGradient="linear(to-br, blue.100, white)"
-              boxShadow="0 10px 30px rgba(10,15,41,0.12)"
+            <HStack
+              justify="center"
+              align={{ base: "center", md: "start" }}
+              w="100%"
+              gap={{ base: "15px", md: "50px" }}
+              flexWrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
             >
-              <Box
-                h="100%"
-                w="100%"
-                borderRadius="24px"
-                overflow="hidden"
-                bg="gray.200" // fallback
-              >
-                
+              {/* Copy card */}
+              <Box w={{ base: "100%", md: "100%" }}>
+                <VStack
+                  h={"100%"}
+                  align="start"
+                  color="gray.800"
+                  fontSize="lg"
+                  lineHeight="1.8"
+                  fontFamily={"poppins"}
+                >
+                  <Text>
+                    I started EverBright Pressure Washing here in South
+                    Australia to help homeowners feel proud of their property. I
+                    treat every home as if it were my own, offering honest
+                    advice, paying close attention to detail, and making sure
+                    the job's done right the first time.
+                  </Text>
+
+                  <Text>
+                    My team shares that approach. We know life is busy, so we'll
+                    take care of the dirty work, giving you more time to enjoy
+                    what matters most.
+                  </Text>
+
+                  {/* quick-hit trust chips */}
+
+                  {/* CTA line */}
+                  <Box pt={2}>
+                    <Text
+                      fontFamily={"poppins"}
+                      fontWeight="700"
+                      color="#0a0f29"
+                      mb={3}
+                    >
+                      Shayal - Owner
+                    </Text>
+                    <HStack
+                      mt={"50px"}
+                      justify={{ base: "center", md: "start" }}
+                    >
+                      <QuoteButton />
+                    </HStack>
+                  </Box>
+                </VStack>
               </Box>
-            </Box>
-          </Box>
-        </HStack>
-      </HStack>
+
+              {/* Image area with decorative frame */}
+              <Box
+                position="relative"
+                h={{ base: "550px", md: "100%", xl: "100%" }}
+                w={{ base: "100%", md: "100%" }}
+                display="flex"
+                justifyContent="end"
+              >
+                <Box
+                  position="relative"
+                  h={{ base: "100%", md: "100%" }}
+                  w={{ base: "100%", md: "100%" }}
+                  // subtle gradient border frame
+                  p="2"
+                  borderRadius="30px"
+                  bgGradient="linear(to-br, blue.100, white)"
+                  boxShadow="0 10px 30px rgba(10,15,41,0.12)"
+                >
+                  <Box
+                    borderRadius={"50px"}
+                    backgroundImage={` url('/images/aerial-city-adelaide.jpeg')`}
+                    backgroundRepeat="no-repeat"
+                    backgroundPosition="center"
+                    backgroundSize="cover"
+                    h="400px"
+                    w="100%"
+                    overflow="hidden"
+                  ></Box>
+                </Box>
+              </Box>
+            </HStack>
+          </HStack>
         </Box>
       </Box>
 
       <ReviewSection />
 
-      <HStack bg={"blue.700"} py={"25px"}>
+      {/* <HStack bg={"blue.700"} py={"25px"}>
         <VStack
           justify={"center"}
           align={"center"}
@@ -350,91 +362,16 @@ const Page = () => {
               transition={"all 0.2s ease-in-out"}
               zIndex={4}
             >
-              {/* ✅ CTA again */}
+          
               <QuoteButton />
             </HStack>
           </Box>
         </VStack>
-      </HStack>
+      </HStack> */}
 
-      <Box bg={"blue.800"} py={"100px"}>
-        <VStack
-          justify={"center"}
-          align={"center"}
-          w={"100%"}
-          textAlign={"center"}
-          px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-        >
-          {/* This heading differs (no eyebrow), so we keep as-is */}
-          <Text
-            fontSize={["36px", "48px", "56px"]}
-            fontWeight={700}
-            fontFamily="poppins"
-            color="white"
-            lineHeight="1.1"
-          >
-            What We Promise
-          </Text>
-          <Box
-            my={["25px", "25px", "25px", "25px", "25px", "25px"]}
-            w={["100%", "100%", "100%", "600px", "600px", "600px"]}
-            borderWidth={"1px"}
-          ></Box>
-        </VStack>
+      {/* Floating geometric shapes */}
 
-        <HStack
-          zIndex={3}
-          px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-          justify={"center"} // !!
-          align={"center"}
-          w={"100%"}
-          h={"100%"}
-          my={["25px", "50px", "50px", "50px", "50px", "100px"]}
-        >
-          <HStack
-            justify={"center"}
-            align={["center", "center", "start", "start", "start", "start"]}
-            w={"100%"}
-            h={"100%"}
-            gap={["15px", "15px", "15px", "50px", "50px", "50px"]}
-            wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
-          >
-            <Box w={["100%", "100%", "100%", "600px", "600px", "600px"]}>
-              <VStack
-                fontFamily={"poppins"}
-                justify={["start", "start", "start", "start", "start"]}
-                align={["start", "start", "start", "start", "start"]}
-                gap={"16px"}
-              >
-                {/* ✅ Map promise lines instead of repeating */}
-                {promises.map((p) => (
-                  <PromiseItem key={p} text={p} />
-                ))}
-              </VStack>
-
-              <Box display="flex" justifyContent="start" width="100%">
-                <HStack
-                  justify={[
-                    "center",
-                    "center",
-                    "center",
-                    "start",
-                    "start",
-                    "start",
-                  ]}
-                  align={"start"}
-                  w={"100%"}
-                  transition={"all 0.2s ease-in-out"}
-                  zIndex={4}
-                >
-                  {/* ✅ Final CTA */}
-                  <QuoteButton />
-                </HStack>
-              </Box>
-            </Box>
-          </HStack>
-        </HStack>
-      </Box>
+      <SlidingCard />
     </Box>
   );
 };
