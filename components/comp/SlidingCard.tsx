@@ -93,6 +93,7 @@ const SlidingCard = () => {
       py={{ base: "80px", md: "100px", lg: "120px" }}
       position="relative"
       overflow="hidden"
+      
     >
       <VStack
         justify="center"
@@ -106,7 +107,7 @@ const SlidingCard = () => {
           align={"center"}
           w={"100%"}
           textAlign={"center"}
-          px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+        
         >
           <SectionHeading
             eyebrow={`You'll be amazed at how good your property can look!`}
@@ -185,14 +186,14 @@ const SlidingCard = () => {
               <Text
                 color="Black"
                 fontWeight="800"
-                fontSize={{ base: "lg", md: "xl" }}
+                fontSize={{ base: "md", md: "xl" }}
               >
                 {slide.title}
               </Text>
 
               <Text
                 color="BlackAlpha.900"
-                fontSize={{ base: "md", md: "lg" }}
+                fontSize={{ base: "sm", md: "lg" }}
                 lineHeight="1.7"
               >
                 {slide.body}

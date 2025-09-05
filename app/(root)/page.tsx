@@ -29,7 +29,7 @@ const Page = () => {
     {
       title: "Pressure Washing",
       image:
-        "https://images.pexels.com/photos/5652626/pexels-photo-5652626.jpeg",
+        "https://images.pexels.com/photos/14965464/pexels-photo-14965464.jpeg",
       desc: "Deep-clean hard surfaces to remove grime, algae, and stubborn stains.",
     },
     {
@@ -282,7 +282,6 @@ const Page = () => {
                     >
                       Shayal - Owner
                     </Text>
-                   
                   </Box>
                 </VStack>
               </Box>
@@ -300,10 +299,8 @@ const Page = () => {
                   h={{ base: "100%", md: "100%" }}
                   w={{ base: "100%", md: "100%" }}
                   // subtle gradient border frame
-                  p="2"
-                  borderRadius="30px"
-                  bgGradient="linear(to-br, blue.100, white)"
-                  boxShadow="0 10px 30px rgba(10,15,41,0.12)"
+             
+            
                 >
                   <Box
                     borderRadius={"50px"}
@@ -367,6 +364,10 @@ const Page = () => {
       {/* Floating geometric shapes */}
 
       <SlidingCard />
+      <Box my={"50px"} display={["block", "block", "none", "none", "none", "none"]}>
+      <FreeQuote />
+      </Box>
+
     </Box>
   );
 };
