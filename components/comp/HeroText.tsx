@@ -11,12 +11,12 @@ const HeroText = () => {
     <>
       <HStack
 
-        justify={["center", "center", "center", "start", "start", "start"]}
-        align={["center", "center", "center", "start", "start", "start"]}
+        justify={["start", "start", "start", "start", "start", "start"]}
+        align={["start", "start", "start", "start", "start", "start"]}
       >
         <Box p={3} bg="white" borderRadius="full" w={"fit-content"}>
           <Text
-            textAlign={"center"}
+            textAlign={"start"}
             fontSize="xs"
             fontWeight="600"
             color="cyan.900"
@@ -35,7 +35,7 @@ const HeroText = () => {
         fontWeight={600}
         fontFamily={"poppins"}
         bgClip="text"
-        textAlign={["center", "center", "center", "left", "left", "left"]}
+        textAlign={["left", "left", "left", "left", "left", "left"]}
         color={"white"}
         bgGradient="linear(to-r, teal, blue)"
         lineHeight={"0.9"}
@@ -47,7 +47,7 @@ const HeroText = () => {
         as={"p"}
         textStyle={"subheading"}
         mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
-        textAlign={["center", "center", "center", "left", "left", "left"]}
+   textAlign={["left", "left", "left", "left", "left", "left"]}
         fontFamily={"poppins"}
         color={"cyan.100"}
         w={["100%", "100%", "100%", "100%", "100%", "100%"]}
@@ -57,12 +57,12 @@ const HeroText = () => {
       </Text>
       <Box>
         <VStack
-          justify={["center", "center", "center", "start", "start"]}
-          align={["center", "center", "center", "start", "start"]}
+           textAlign={["left", "left", "left", "left", "left", "left"]}
+          align={["start", "start", "start", "start", "start"]}
         >
           <HStack
-            justify={["center", "center", "center", "start", "start"]}
-            align={["center", "center", "center", "start", "start"]}
+            justify={["start", "start", "start", "start", "start"]}
+            align={["start", "start", "start", "start", "start"]}
           >
             <Text color="green.300" fontWeight={"700"} textStyle={"subheading"}>
               ✓{" "}
@@ -91,12 +91,12 @@ const HeroText = () => {
           </HStack>
         </VStack>
         <VStack
-          justify={["center", "center", "center", "start", "start"]}
-          align={["center", "center", "center", "start", "start"]}
+          justify={["start", "start", "start", "start", "start"]}
+          align={["start", "start", "start", "start", "start"]}
         >
           <HStack
-            justify={["center", "center", "center", "start", "start"]}
-            align={["center", "center", "center", "start", "start"]}
+            justify={["start", "start", "start", "start", "start"]}
+            align={["start", "start", "start", "start", "start"]}
           >
             <Text color="green.300" fontSize="24px" fontWeight={"700"}>
               ✓{" "}
@@ -126,7 +126,7 @@ const HeroText = () => {
         </VStack>
       </Box>
       <HStack
-        justify={["center", "center", "center", "start", "start", "start"]}
+        justify={["start", "start", "start", "start", "start", "start"]}
         align={"start"}
         w={"100%"}
         transition={"all 0.2s ease-in-out"}

@@ -106,7 +106,7 @@ const Page = () => {
   ];
 
   return (
-    <Box mt={"-70px"}>
+    <Box mt={"-100px"}>
       <HStack justifyContent={"center"} align={"center"}>
         <Box
           borderRadius={"50px"}
