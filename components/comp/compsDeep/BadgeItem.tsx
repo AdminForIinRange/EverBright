@@ -10,7 +10,7 @@ interface BadgeItemProps {
 
 const BadgeItem = ({ text, image }: BadgeItemProps) => (
   <VStack
-    py={8}
+    py={4}
     w="100%"
     justify="start"
     align="center"
