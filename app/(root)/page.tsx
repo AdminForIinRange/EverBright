@@ -374,7 +374,7 @@ const Page = () => {
 
       {/* Floating geometric shapes */}
 
-      <SlidingCard />
+      {/* <SlidingCard /> */}
       <Box
         my={"50px"}
         display={["block", "block", "none", "none", "none", "none"]}

@@ -44,6 +44,46 @@ const services = [
 function ServiceLayout() {
   return (
     <>
+
+
+
+    <Box
+              borderRadius={"50px"}
+              backgroundImage={` url('/images/aerial-city-adelaide.jpeg')`}
+              backgroundRepeat="no-repeat"
+              backgroundPosition="center"
+              backgroundSize="cover"
+              position={"absolute"}
+              backgroundAttachment="fixed"
+              zIndex={-1}
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+              h={["1650px", "1650px", "1650px", "1650px", "1650px", "1650px"]}
+              opacity={1}
+              borderBottomRadius={[
+                "50px",
+                "150px0px",
+                "100px",
+                "100px",
+                "100px",
+                "100px",
+              ]}
+            ></Box>
+            <Box
+              position={"absolute"}
+              zIndex={-1}
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+              h={["1650px", "1650px", "1650px", "1650px", "1650px", "1650px"]}
+              bg="cyan.700"
+              opacity={0.6}
+              borderBottomRadius={[
+                "50px",
+                "50px",
+                "100px",
+                "100px",
+                "100px",
+                "100px",
+              ]}
+            ></Box>
       <VStack
         justify="center"
         align="center"
