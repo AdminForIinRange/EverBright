@@ -138,19 +138,24 @@ const Page = () => {
               ]}
               align={["center", "center", "center", "start", "start", "start"]}
             >
+          
+            </HStack>
+          </Box>
+          <FreeQuote />
               <Box
-                mt={"20px"}
+                mt={"-70px"}
                 rounded={"10px"}
                 h={"100%"}
-                p={["5px", "5px", "10px", "10px", "10px", "10px"]}
-                w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+                p={["0px", "0px", "10px", "10px", "10px", "10px"]}
+                  px={"10PX"}
+                w={["90%", "100%", "100%", "100%", "100%", "100%"]}
                 borderRadius={["30px", "30px", "30px", "30px", "30px", "30px"]}
                 bg={["#062042", "#062042", "none", "none", "none", "none"]}
               >
                 <HStack
                   justify="start"
                   align="start"
-                  gap={["0px", "8px", "8px", "8px", "8px", "8px"]}
+                  gap={["0px", "0px", "8px", "8px", "8px", "8px"]}
                   w={"100%"}
                 >
                   {badges.map((badge, idx) => (
@@ -162,9 +167,6 @@ const Page = () => {
                   ))}
                 </HStack>
               </Box>
-            </HStack>
-          </Box>
-          <FreeQuote />
         </HStack>
       </HStack>
 

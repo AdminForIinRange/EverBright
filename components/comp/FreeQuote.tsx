@@ -13,6 +13,7 @@ const FreeQuote = () => {
       bg="white"
       borderRadius={["20px", "20px"]}
       pt={8}
+      pb={14}
       textAlign="center"
       border={"10px solid #00B5E2"}
     >
@@ -75,16 +76,7 @@ const FreeQuote = () => {
             px={3}
             fontSize="sm"
           />
-          <Box
-            as="input"
-            placeholder="Suburb"
-            flex="1"
-            border="1px solid #e2e8f0"
-            borderRadius="md"
-            py={2}
-            px={3}
-            fontSize="sm"
-          />
+   
         </HStack>
         <Box
           as="input"
