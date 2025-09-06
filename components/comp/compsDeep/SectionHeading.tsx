@@ -22,7 +22,7 @@ const SectionHeading = ({
       {eyebrow}
     </Text>
     <Text
-      fontSize={["36px", "48px", "56px"]}
+      fontSize={["40px", "48px", "56px"]}
       fontWeight={700}
       fontFamily="poppins"
       lineHeight="1.1"
