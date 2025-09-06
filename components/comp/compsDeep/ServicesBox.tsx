@@ -54,7 +54,7 @@ function ServicesBox({ title, image }: { title: string; image: string }) {
             {title}
           </Text>
 
-          <HStack mt={"30px"}  gap={"10px"} w="100%" position="RELATIVE">
+          <HStack mt={"15px"}  gap={"10px"} w="100%" position="RELATIVE">
             <Link
               href={"/services/PressureWashing"}
               flex="1"
