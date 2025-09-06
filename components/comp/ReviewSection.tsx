@@ -466,7 +466,7 @@ export default function ReviewSection() {
      
    
         px={{ base: "4%", md: "6%", xl: "10%" }}
-        my={"100px"}
+        my={"50px"}
     
     >
       {/* header */}
