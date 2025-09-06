@@ -18,7 +18,7 @@ const HeroText = () => {
         as={"h2"}
         textShadow={"0px 0px 1000px black"}
         w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-        mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
+        mt={["0px", "0px", "15px", "15px", "15px", "15px"]}
         fontSize={{ base: "42px", md: "42px", lg: "72px" }}
         fontWeight={700}
         fontFamily={"poppins"}
@@ -51,9 +51,8 @@ const HeroText = () => {
           <HStack
             justify={["start", "start", "start", "start", "start"]}
             align={["start", "start", "start", "start", "start"]}
-          
           >
-            <Text  color="green.300" fontWeight={"700"} fontSize="24px">
+            <Text color="green.300" fontWeight={"700"} fontSize="24px">
               ✓{" "}
               <Span
                 fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
@@ -62,10 +61,10 @@ const HeroText = () => {
                 fontWeight={"500"}
               >
                 {" "}
-            Gutter Cleaning
+                Gutter Cleaning
               </Span>
             </Text>
-            <Text   color="green.300"  fontSize="24px" fontWeight={"700"}>
+            <Text color="green.300" fontSize="24px" fontWeight={"700"}>
               ✓{" "}
               <Span
                 fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
@@ -74,7 +73,7 @@ const HeroText = () => {
                 fontWeight={"500"}
               >
                 {" "}
-               Roof Washing
+                Roof Washing
               </Span>
             </Text>
           </HStack>
@@ -86,9 +85,8 @@ const HeroText = () => {
           <HStack
             justify={["start", "start", "start", "start", "start"]}
             align={["start", "start", "start", "start", "start"]}
-           
           >
-            <Text    color="green.300"  fontSize="24px" fontWeight={"700"}>
+            <Text color="green.300" fontSize="24px" fontWeight={"700"}>
               ✓{" "}
               <Span
                 fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
@@ -97,10 +95,10 @@ const HeroText = () => {
                 fontWeight={"500"}
               >
                 {" "}
-              Solar Cleaning
+                Solar Cleaning
               </Span>
             </Text>
-            <Text   color="green.300"  fontSize="24px" fontWeight={"700"}>
+            <Text color="green.300" fontSize="24px" fontWeight={"700"}>
               ✓{" "}
               <Span
                 fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
@@ -109,7 +107,7 @@ const HeroText = () => {
                 fontWeight={"500"}
               >
                 {" "}
-               Pressure Washing
+                Pressure Washing
               </Span>
             </Text>
           </HStack>
@@ -124,7 +122,7 @@ const HeroText = () => {
       >
         <Box
           bg={"cyan.500"}
-          my={"15px"}
+          mt={"15px"}
           display={"flex"}
           alignItems={"center"}
           justifyContent={["center"]}
@@ -146,19 +144,42 @@ const HeroText = () => {
           fontWeight={"500"}
           onClick={() => router.push("/services")}
         >
-         <Phone /> Call for a Quote!
+          <Phone /> Call for a Quote!
           {/* <Icon as={ArrowRight}> </Icon> */}
         </Box>
       </HStack>
       <HStack
+      mt={"15px"}
         rounded={"2xl"}
         // bg={"gray.50"}
         // border={"1px solid lightgray"}
         width={{ base: "100%", md: "100%" }}
-        textAlign={["center", "center", "center", "start", "start", "start"]}
-        justify={["center", "center", "center", "start", "start", "start"]}
+        textAlign={["start", "start", "start", "start", "start", "start"]}
+        justify={["start", "start", "start", "start", "start", "start"]}
         position="relative"
-      ></HStack>
+      >
+        <HStack
+          alignItems="center"
+          justifyContent="center"
+       
+          borderRadius="full"
+          spacing={2}
+        >
+          <Image src={Google} alt="Google" width={50} height={50} />
+          <HStack>
+            <Text fontSize="xl" fontWeight="600" color="#fbbf24">
+              5 / 5
+            </Text>
+            {Array.from({ length: 5 }).map((_, i) => (
+              <FaStar key={i} color="#fbbf24" size={30} />
+            ))}
+          </HStack>
+        </HStack>
+
+      
+      </HStack>
+
+        <Text mt={"`5px"} color={"white"} fontFamily={"poppins"} fontWeight={"600"} fontSize="xl">Verified 5-Stars Reviews</Text>
     </>
   );
 };
