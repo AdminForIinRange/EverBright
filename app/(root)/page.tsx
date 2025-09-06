@@ -227,7 +227,7 @@ const Page = () => {
             <SectionHeading
               eyebrow={`EVERBRIGHT PRESSURE WASHING`}
               title="A Local Business you can rely on"
-          color="blue.900"
+              color="blue.900"
             />
           </VStack>
 
@@ -261,12 +261,10 @@ const Page = () => {
                     Australia with one simple goal — to help homeowners feel
                     proud of their property, whether that means restoring it to
                     its best or keeping it looking great all year round.
-                           
                   </Text>
-          
 
                   <Text>
-                       <br />
+                    <br />
                     From day one, I’ve treated every home as if it were my own —
                     offering honest, transparent advice, paying close attention
                     to detail, and making sure the job’s done right the first
@@ -274,7 +272,7 @@ const Page = () => {
                   </Text>
 
                   <Text>
-                       <br />
+                    <br />
                     I’ve built a small, dedicated team who share that same
                     approach. We know life is busy — so let us take care of the
                     dirty work, giving you more time to enjoy the things that
@@ -376,28 +374,102 @@ const Page = () => {
 
       {/* <SlidingCard /> */}
 
+      <Box
+        bg={"cyan.500"}
+        py={"20px"}
+        px={["3%", "3%", "6%", "6%", "6%", "15%"]}
+      >
+        <VStack justify="left" align="left" textAlign="left" w="100%">
+          <Text
+            fontSize={["40px", "48px", "56px"]}
+            fontWeight={700}
+            fontFamily="poppins"
+            lineHeight="1.1"
+            color={"white"}
+          >
+            Ready To Bring Your Home Back To Life
+          </Text>
+        </VStack>
+      </Box>
 
+      <Box
+        bg={"cyan.600"}
+        py={"50px"}
+        px={["3%", "3%", "6%", "6%", "6%", "15%"]}
+      >
+        <VStack justify="left" align="left" textAlign="left" w="100%">
+          <Text
+            fontSize={["40px", "48px", "56px"]}
+            fontWeight={700}
+            fontFamily="poppins"
+            lineHeight="1.1"
+            color={"white"}
+          >
+            What we promise
+          </Text>
 
-
-
-<Box bg={"cyan.500"} py={"50px"}   px={["3%", "3%", "6%", "6%", "6%", "15%"]} >
-  <VStack justify="left" align="left" textAlign="left" w="100%">
-   
-    <Text
-      fontSize={["40px", "48px", "56px"]}
-      fontWeight={700}
-      fontFamily="poppins"
-      lineHeight="1.1"
-      color={"white"}
-    >
-Ready To Bring Your
-Home Back To Life
-    </Text>
-    
-  </VStack>
-
-  </Box>
-
+          <VStack
+          mt={"20px"}
+          fontWeight={"500"}
+            gap={"10px"}
+            justify={"start"}
+            align={"start"}
+            w={"100%"}
+            px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+            fontFamily={"poppins"}
+          >
+            <Text color={"cyan"}          fontWeight={"500"} fontSize="18px"  fontWeight={"700"}>
+              ✓{" "}
+              <Span color="white"  fontWeight={"500"} >
+                {" "}
+                100% Satisfaction Guarantee
+              </Span>
+            </Text>
+            <Text color={"cyan"}          fontWeight={"500"} fontSize="18px"  fontWeight={"700"}>
+              ✓{" "}
+              <Span color="white"  fontWeight={"500"} >
+                {" "}
+                Always On Time
+              </Span>
+            </Text>
+            <Text color={"cyan"}          fontWeight={"500"} fontSize="18px"  fontWeight={"700"}>
+              ✓{" "}
+              <Span color="white"  fontWeight={"500"} >
+                {" "}
+                Always On Time
+              </Span>
+            </Text>
+            <Text color={"cyan"}          fontWeight={"500"} fontSize="18px"  fontWeight={"700"}>
+              ✓{" "}
+              <Span color="white"  fontWeight={"500"} >
+                {" "}
+                Only Professional-Grade Equipment
+              </Span>
+            </Text>
+            <Text color={"cyan"}          fontWeight={"500"} fontSize="18px"  fontWeight={"700"}>
+              ✓{" "}
+              <Span color="white"  fontWeight={"500"} >
+                {" "}
+                Fully Insured
+              </Span>
+            </Text>
+            <Text color="cyan"          fontWeight={"500"} fontSize="18px"  fontWeight={"700"}>
+              ✓{" "}
+              <Span color="white"  fontWeight={"500"} >
+                {" "}
+                Professional, Reliable & Efficient Service
+              </Span>
+            </Text>
+            <Text color={"cyan"}          fontWeight={"500"} fontSize="18px"  fontWeight={"700"}>
+              ✓{" "}
+              <Span color="white"  fontWeight={"500"} >
+                {" "}
+                We Leave Things CLEAN
+              </Span>
+            </Text>
+          </VStack>
+        </VStack>
+      </Box>
 
       <Box
         my={"50px"}
@@ -405,11 +477,6 @@ Home Back To Life
       >
         <FreeQuote />
       </Box>
-
-
-
-
-
     </Box>
   );
 };
