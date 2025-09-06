@@ -215,7 +215,7 @@ const Page = () => {
       <Box pt={["50px", "50px", "50px", "100px", "100px", "100px"]}>
         <ServiceLayout />
 
-        <Box mt={["100px", "100px", "100px", "100px", "100px", "100px"]}>
+        <Box mt={["50px", "50px", "50px", "100px", "100px", "100px"]}>
           {/* Another spot where SectionHeading matches your style */}
           <VStack
             justify={"center"}
