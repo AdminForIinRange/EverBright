@@ -9,41 +9,37 @@ import { FaStar } from "react-icons/fa";
 const FreeQuote = () => {
   return (
     <Box
-    
       w={["100%", "100%", "600px"]}
       bg="white"
       borderRadius={["20px", "20px"]}
-
-      p={6}
+     
+      pt={8}
       textAlign="center"
     >
       {/* Heading */}
-      <Text fontSize="md" fontWeight="600" color="cyan.500" mb={1}>
-        Get Your No-Obligation
-      </Text>
+<VStack justify={"center"} align={"center"}>
+
+
       <Text
-      fontFamily={"poppins"}
-        fontSize={["28px", "36px"]}
+        fontFamily={"poppins"}
+        fontSize={["26px", "36px"]}
         fontWeight="900"
         color="blue.900"
-        lineHeight="1.1"
-        mb={4}
+
+
       >
-        FREE QUOTE <br /> TODAY!
+        Get Instant <Span color="cyan.500">FREE QUOTE</Span>
       </Text>
+      <Text  textAlign={"center"} fontSize="sm" w={["80%", "100%", "600px"]} fontWeight="600" color="blue.900" mb={1}>
+        30 Seconds to Your Free Quote No Commitments
+      </Text>
+</VStack>
 
       {/* Reviews Row */}
-      <HStack justify="center" spacing={4} mb={6} wrap="wrap">
-        {/* Google */}
-       
-
-        {/* Facebook */}
-       
-      </HStack>
-
+ 
       {/* Inputs (styled boxes only, since no Chakra Input) */}
-      <VStack spacing={3} align="stretch">
-        <HStack  wrap={"wrap"}  >
+      <VStack  p={4} spacing={3} align="stretch">
+        <HStack wrap={"wrap"}>
           <Box
             as="input"
             placeholder="Name"
@@ -65,7 +61,7 @@ const FreeQuote = () => {
             fontSize="sm"
           />
         </HStack>
-        <HStack  wrap={"wrap"}>
+        <HStack wrap={"wrap"}>
           <Box
             as="input"
             placeholder="Email"
@@ -105,24 +101,23 @@ const FreeQuote = () => {
           px={3}
           fontSize="sm"
         />
-              <Box
-        as="button"
-        w="100%"
-        mt={5}
-        py={3}
-        borderRadius="md"
-    bg="cyan.500"
-        color="white"
-        fontWeight="700"
-        fontSize="md"
-        _hover={{ opacity: 0.9 }}
-      >
-        Submit
-      </Box>
+        <Box
+          as="button"
+          w="100%"
+          mt={5}
+          py={3}
+          borderRadius="md"
+          bg="cyan.500"
+          color="white"
+          fontWeight="700"
+          fontSize="md"
+          _hover={{ opacity: 0.9 }}
+        >
+          Submit
+        </Box>
       </VStack>
 
       {/* CTA Button */}
-
     </Box>
   );
 };

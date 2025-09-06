@@ -254,9 +254,6 @@ const Page = () => {
                   </Box>
                   <Box
                     overflow={"hidden"}
-
-         
-              
                     top={4900}
                     left={-200}
                     bottom={0}
@@ -265,10 +262,7 @@ const Page = () => {
                     w={"1000px"}
                     h={"1000px"}
                     bg={"white"}
-            
-                    
- borderRadius={"full"}
-    
+                    borderRadius={"full"}
                   ></Box>
                 </VStack>
               </Box>
@@ -277,9 +271,7 @@ const Page = () => {
         </Box>
       </Box>
 
-<Box mt={["250px", "25px", "25px", "100px", "100px", "100px"]}>
-
-</Box>
+      <Box mt={["250px", "25px", "25px", "100px", "100px", "100px"]}></Box>
       <ReviewSection />
 
       <Box
