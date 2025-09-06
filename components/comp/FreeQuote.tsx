@@ -12,33 +12,36 @@ const FreeQuote = () => {
       w={["100%", "100%", "600px"]}
       bg="white"
       borderRadius={["20px", "20px"]}
-     
       pt={8}
       textAlign="center"
+      border={"10px solid #00B5E2"}
     >
       {/* Heading */}
-<VStack justify={"center"} align={"center"}>
-
-
-      <Text
-        fontFamily={"poppins"}
-        fontSize={["26px", "36px"]}
-        fontWeight="900"
-        color="blue.900"
-
-
-      >
-        Get Instant <Span color="cyan.500">FREE QUOTE</Span>
-      </Text>
-      <Text  textAlign={"center"} fontSize="sm" w={["80%", "100%", "600px"]} fontWeight="600" color="blue.900" mb={1}>
-        30 Seconds to Your Free Quote No Commitments
-      </Text>
-</VStack>
+      <VStack justify={"center"} align={"center"}>
+        <Text
+          fontFamily={"poppins"}
+          fontSize={["26px", "36px"]}
+          fontWeight="900"
+          color="blue.900"
+        >
+          Get Instant <Span color="cyan.500">FREE QUOTE</Span>
+        </Text>
+        <Text
+          textAlign={"center"}
+          fontSize="sm"
+          w={["80%", "100%", "600px"]}
+          fontWeight="600"
+          color="blue.900"
+          mb={1}
+        >
+          30 Seconds to Your Free Quote No Commitments
+        </Text>
+      </VStack>
 
       {/* Reviews Row */}
- 
+
       {/* Inputs (styled boxes only, since no Chakra Input) */}
-      <VStack  p={4} spacing={3} align="stretch">
+      <VStack p={4} spacing={3} align="stretch">
         <HStack wrap={"wrap"}>
           <Box
             as="input"
