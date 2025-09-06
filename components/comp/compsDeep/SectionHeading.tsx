@@ -11,7 +11,7 @@ const SectionHeading = ({
   title,
   color = "white",
 }: SectionHeadingProps) => (
-  <VStack justify="center" align="center" textAlign="center" w="100%">
+  <VStack justify="left" align="left" textAlign="left" w="100%">
     <Text
       fontSize={["16px", "18px", "24px"]}
       fontFamily="poppins"

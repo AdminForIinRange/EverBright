@@ -110,7 +110,7 @@ const SlidingCard = () => {
         
         >
           <SectionHeading
-            eyebrow={`You'll be amazed at how good your property can look!`}
+                  eyebrow={``}
             title="Adelaide Exterior Cleaning"
             color="white"
           />

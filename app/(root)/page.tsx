@@ -225,7 +225,7 @@ const Page = () => {
             px={["4%", "4%", "6%", "6%", "6%", "10%"]}
           >
             <SectionHeading
-              eyebrow={`You'll be amazed at how good your property can look!`}
+              eyebrow={``}
               title="Adelaide Exterior Cleaning"
               color="bule.100"
             />

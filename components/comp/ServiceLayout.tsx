@@ -61,15 +61,7 @@ function ServiceLayout() {
           px={"4%"}
           w="100%"
         >
-          <Text
-            fontSize={["16px", "18px", "24px"]}
-            fontFamily="poppins"
-            fontWeight={700}
-            lineHeight="1.6"
-            color={"black"}
-          >
-           Be amazed at how good your property can look!
-          </Text>
+     
           <Text
             fontSize={["36px", "48px", "56px"]}
             fontWeight={700}

@@ -21,7 +21,7 @@ const About = () => {
         px={{ base: "4%", md: "6%", xl: "10%" }}
       >
         <SectionHeading
-          eyebrow={`You'll be amazed at how good your property can look!`}
+          eyebrow={``}
           title={`Restoring Your Most\nValuable Asset`}
           color="blue.900"
         />
