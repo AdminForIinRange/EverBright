@@ -35,24 +35,7 @@ const FreeQuote = () => {
       {/* Reviews Row */}
       <HStack justify="center" spacing={4} mb={6} wrap="wrap">
         {/* Google */}
-        <HStack
-          px={3}
-          py={2}
-          bg="blue.50"
-          borderRadius="full"
-          border="1px solid #dbeafe"
-          spacing={2}
-        >
-          <Image src={Google} alt="Google" width={28} height={28} />
-          <HStack spacing={0.5}>
-            {Array.from({ length: 5 }).map((_, i) => (
-              <FaStar key={i} color="#fbbf24" size={15} />
-            ))}
-          </HStack>
-          <Text fontSize="md" fontWeight="600" color="blue.900">
-           5 / 5
-          </Text>
-        </HStack>
+       
 
         {/* Facebook */}
        

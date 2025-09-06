@@ -171,7 +171,7 @@ const HeroText = () => {
               5 / 5
             </Text>
             {Array.from({ length: 5 }).map((_, i) => (
-              <FaStar key={i} color="#fbbf24" size={30} />
+              <FaStar key={i} color="#fbbf24" size={20} />
             ))}
           </HStack>
         </HStack>
