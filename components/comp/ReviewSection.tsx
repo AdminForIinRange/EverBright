@@ -25,7 +25,10 @@ const srOnly = {
 
 function StarRating({ value }) {
   return (
-    <div aria-label={`${value} out of 5 stars`} style={{ display: "flex", gap: 4 }}>
+    <div
+      aria-label={`${value} out of 5 stars`}
+      style={{ display: "flex", gap: 4 }}
+    >
       {Array.from({ length: 5 }).map((_, i) => (
         <span
           key={i}
@@ -33,7 +36,10 @@ function StarRating({ value }) {
           style={{
             fontSize: 16,
             lineHeight: 1,
-            filter: i < value ? "drop-shadow(0 1px 2px rgba(246,173,85,.35))" : "none",
+            filter:
+              i < value
+                ? "drop-shadow(0 1px 2px rgba(246,173,85,.35))"
+                : "none",
             color: i < value ? "#F6AD55" : "#E2E8F0",
           }}
         >
@@ -48,7 +54,11 @@ function StarRating({ value }) {
 function ReviewCard({ name, date, reviewText, stars, platform, avatar }) {
   const initial = (name || "•").trim().charAt(0).toUpperCase();
   const platformLabel =
-    platform === "google" ? "Google" : platform === "facebook" ? "Facebook" : "Review";
+    platform === "google"
+      ? "Google"
+      : platform === "facebook"
+        ? "Facebook"
+        : "Review";
 
   return (
     <div
@@ -70,7 +80,14 @@ function ReviewCard({ name, date, reviewText, stars, platform, avatar }) {
       }}
     >
       {/* header */}
-      <div style={{ display: "flex", gap: 12, alignItems: "center", flexShrink: 0 }}>
+      <div
+        style={{
+          display: "flex",
+          gap: 12,
+          alignItems: "center",
+          flexShrink: 0,
+        }}
+      >
         <div
           style={{
             width: 44,
@@ -109,7 +126,9 @@ function ReviewCard({ name, date, reviewText, stars, platform, avatar }) {
               {name}
             </div>
           </div>
-          <div style={{ fontSize: 12, color: "#718096", fontWeight: 500 }}>{date}</div>
+          <div style={{ fontSize: 12, color: "#718096", fontWeight: 500 }}>
+            {date}
+          </div>
         </div>
       </div>
 
@@ -119,7 +138,9 @@ function ReviewCard({ name, date, reviewText, stars, platform, avatar }) {
       </div>
 
       {/* body */}
-      <div style={{ marginTop: 12, flex: 1, overflow: "hidden", display: "flex" }}>
+      <div
+        style={{ marginTop: 12, flex: 1, overflow: "hidden", display: "flex" }}
+      >
         <p
           style={{
             margin: 0,
@@ -269,30 +290,50 @@ export default function ReviewSection() {
   ];
 
   return (
-    <Box px={{ base: "4%", md: "6%", xl: "10%" }} my={"50px"}>
-      <SectionHeading
-        eyebrow={"What our customers say"}
-        title={"Read Some Of Our Reviews!"}
-        color="blue.900"
-      />
+    <>
+      <Box
+        overflow={"hidden"}
+        top={5400}
+        left={0}
+        bottom={0}
+        zIndex={-2}
+        pos={"absolute"}
+        w={"100%"}
+        h={"1000px"}
+        bg={"#062042"}
 
-      <HStack alignItems="center" justifyContent="center" py={"20px"} borderRadius="full" spacing={2}>
-        <Image src={Google} alt="Google" width={50} height={50} />
-        <HStack spacing={0.5}>
-          <Text fontSize="xl" fontWeight="600" color="#fbbf24">
-            5 / 5
-          </Text>
-          {Array.from({ length: 5 }).map((_, i) => (
-            <FaStar key={i} color="#fbbf24" size={30} />
-          ))}
+      ></Box>
+      <Box px={{ base: "4%", md: "6%", xl: "10%" }}  my={"50px"} >
+        <SectionHeading
+          eyebrow={"What our customers say"}
+          title={"Read Some Of Our Reviews!"}
+          color="white"
+        />
+
+        <HStack
+          alignItems="center"
+          justifyContent="center"
+          py={"20px"}
+          borderRadius="full"
+          spacing={2}
+        >
+          <Image src={Google} alt="Google" width={50} height={50} />
+          <HStack spacing={0.5}>
+            <Text fontSize="xl" fontWeight="600" color="#fbbf24">
+              5 / 5
+            </Text>
+            {Array.from({ length: 5 }).map((_, i) => (
+              <FaStar key={i} color="#fbbf24" size={30} />
+            ))}
+          </HStack>
         </HStack>
-      </HStack>
 
-      <div>
-        <ReviewsScroller reviews={reviews} />
-      </div>
+        <div>
+          <ReviewsScroller reviews={reviews} />
+        </div>
 
-      <span style={srOnly}>Scroll horizontally to explore review cards.</span>
-    </Box>
+        <span style={srOnly}>Scroll horizontally to explore review cards.</span>
+      </Box>
+    </>
   );
 }

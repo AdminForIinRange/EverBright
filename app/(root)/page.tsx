@@ -32,12 +32,8 @@ import icon4 from "@/public/images/Icons/4.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-
 const Page = () => {
-  
-
-
-    useEffect(() => {
+  useEffect(() => {
     Aos.init({
       duration: 1000,
       once: false,
@@ -256,6 +252,24 @@ const Page = () => {
                       Shayal - Owner
                     </Text>
                   </Box>
+                  <Box
+                    overflow={"hidden"}
+
+         
+              
+                    top={4990}
+                    left={-120}
+                    bottom={0}
+                    zIndex={-1}
+                    pos={"absolute"}
+                    w={"1000px"}
+                    h={"1000px"}
+                    bg={"white"}
+            
+                    
+ borderRadius={"full"}
+    
+                  ></Box>
                 </VStack>
               </Box>
             </HStack>
@@ -263,6 +277,9 @@ const Page = () => {
         </Box>
       </Box>
 
+<Box mt={["250px", "25px", "25px", "100px", "100px", "100px"]}>
+
+</Box>
       <ReviewSection />
 
       <Box
