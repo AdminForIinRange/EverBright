@@ -273,7 +273,6 @@ const Page = () => {
 
       <Box mt={["250px", "25px", "25px", "100px", "100px", "100px"]}></Box>
       <ReviewSection />
-
       <Box
         bg={"cyan.500"}
         py={"20px"}

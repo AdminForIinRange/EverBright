@@ -292,6 +292,7 @@ export default function ReviewSection() {
   return (
     <>
       <Box
+      
         overflow={"hidden"}
         top={5400}
         left={0}
@@ -299,18 +300,18 @@ export default function ReviewSection() {
         zIndex={-2}
         pos={"absolute"}
         w={"100%"}
-        h={"1300px"}
+        h={"1000px"}
         bg={"#062042"}
 
       ></Box>
-      <Box px={{ base: "4%", md: "6%", xl: "10%" }}  my={"50px"} >
+      <Box   bg={"#062042"} px={{ base: "4%", md: "6%", xl: "10%" }}  mt={"50px"} >
         <SectionHeading
           eyebrow={"What our customers say"}
           title={"Read Some Of Our Reviews!"}
           color="white"
         />
 
-        <HStack
+        <HStack   
           alignItems="center"
           justifyContent="center"
           py={"20px"}
