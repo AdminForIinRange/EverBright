@@ -49,7 +49,7 @@ function ServiceLayout() {
         align="center"
         w="100%"
         textAlign="center"
-        px={{ base: "4%", md: "6%", xl: "10%" }}
+       
       >
         <VStack
           py={"50px"}
@@ -63,13 +63,14 @@ function ServiceLayout() {
         >
      
           <Text
-            fontSize={["36px", "48px", "56px"]}
+          textAlign={"left"}
+         fontSize={["40px", "48px", "56px"]}
             fontWeight={700}
             fontFamily="poppins"
             lineHeight="1.1"
             color={"white"}
           >
-            Restoring Your Most Valuable Asset
+        How we can help your home
           </Text>
         </VStack>
       </VStack>

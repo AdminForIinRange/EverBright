@@ -60,7 +60,7 @@ const FreeQuote = () => {
 
       {/* Inputs (styled boxes only, since no Chakra Input) */}
       <VStack spacing={3} align="stretch">
-        <HStack>
+        <HStack  >
           <Box
             as="input"
             placeholder="Name"
