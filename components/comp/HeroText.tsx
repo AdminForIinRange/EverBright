@@ -54,7 +54,7 @@ const HeroText = () => {
             <Text color="green.300" fontWeight={"700"} fontSize="24px">
               ✓{" "}
               <Span
-                fontSize={["16px", "16px", "16px", "20px", "20px", "20px"]}
+                fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
                 fontFamily={"poppins"}
                 color="white"
                 fontWeight={"500"}
@@ -66,7 +66,7 @@ const HeroText = () => {
             <Text color="green.300" fontSize="24px" fontWeight={"700"}>
               ✓{" "}
               <Span
-                fontSize={["16px", "16px", "16px", "20px", "20px", "20px"]}
+                fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
                 fontFamily={"poppins"}
                 color="white"
                 fontWeight={"500"}
@@ -88,7 +88,7 @@ const HeroText = () => {
             <Text color="green.300" fontSize="24px" fontWeight={"700"}>
               ✓{" "}
               <Span
-                fontSize={["16px", "16px", "16px", "20px", "20px", "20px"]}
+                fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
                 fontFamily={"poppins"}
                 color="white"
                 fontWeight={"500"}
@@ -100,7 +100,7 @@ const HeroText = () => {
             <Text color="green.300" fontSize="24px" fontWeight={"700"}>
               ✓{" "}
               <Span
-                fontSize={["16px", "16px", "16px", "20px", "20px", "20px"]}
+                fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
                 fontFamily={"poppins"}
                 color="white"
                 fontWeight={"500"}

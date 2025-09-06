@@ -280,7 +280,7 @@ export default function ReviewSection() {
         <Image src={Google} alt="Google" width={50} height={50} />
         <HStack spacing={0.5}>
           <Text fontSize="xl" fontWeight="600" color="#fbbf24">
-            4.9 / 5
+            5 / 5
           </Text>
           {Array.from({ length: 5 }).map((_, i) => (
             <FaStar key={i} color="#fbbf24" size={30} />
