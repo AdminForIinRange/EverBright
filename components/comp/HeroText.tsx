@@ -14,17 +14,7 @@ const HeroText = () => {
         justify={["start", "start", "start", "start", "start", "start"]}
         align={["start", "start", "start", "start", "start", "start"]}
       >
-        <Box p={3} bg="white" borderRadius="full" w={"fit-content"}>
-          <Text
-            textAlign={"start"}
-            fontSize="xs"
-            fontWeight="600"
-            color="cyan.900"
-            fontFamily={"poppins"}
-          >
-            Adelaide’s #1 Choice for Remarkable Exterior Cleaning!
-          </Text>
-        </Box>
+       
       </HStack>{" "}
       <Text
         as={"h2"}
@@ -32,7 +22,7 @@ const HeroText = () => {
         w={["100%", "100%", "100%", "100%", "100%", "100%"]}
         mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
         fontSize={{ base: "42px", md: "42px", lg: "72px" }}
-        fontWeight={600}
+        fontWeight={700}
         fontFamily={"poppins"}
         bgClip="text"
         textAlign={["left", "left", "left", "left", "left", "left"]}
@@ -49,7 +39,7 @@ const HeroText = () => {
         mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
    textAlign={["left", "left", "left", "left", "left", "left"]}
         fontFamily={"poppins"}
-        color={"cyan.100"}
+        color={"cyan.300"}
         w={["100%", "100%", "100%", "100%", "100%", "100%"]}
         fontWeight={"700"}
       >
