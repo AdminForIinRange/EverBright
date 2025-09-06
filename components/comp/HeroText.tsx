@@ -10,12 +10,9 @@ const HeroText = () => {
   return (
     <>
       <HStack
-
         justify={["start", "start", "start", "start", "start", "start"]}
         align={["start", "start", "start", "start", "start", "start"]}
-      >
-       
-      </HStack>{" "}
+      ></HStack>{" "}
       <Text
         as={"h2"}
         textShadow={"0px 0px 1000px black"}
@@ -37,7 +34,7 @@ const HeroText = () => {
         as={"p"}
         textStyle={"subheading"}
         mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
-   textAlign={["left", "left", "left", "left", "left", "left"]}
+        textAlign={["left", "left", "left", "left", "left", "left"]}
         fontFamily={"poppins"}
         color={"cyan.300"}
         w={["100%", "100%", "100%", "100%", "100%", "100%"]}
@@ -45,16 +42,16 @@ const HeroText = () => {
       >
         Adelaide’s #1 Choice for Remarkable Exterior Cleaning!
       </Text>
-      <Box>
+      <Box mt={["20px", "20px", "20px", "20px", "20px", "20px"]}>
         <VStack
-           textAlign={["left", "left", "left", "left", "left", "left"]}
+          textAlign={["left", "left", "left", "left", "left", "left"]}
           align={["start", "start", "start", "start", "start"]}
         >
           <HStack
             justify={["start", "start", "start", "start", "start"]}
             align={["start", "start", "start", "start", "start"]}
           >
-            <Text color="green.300" fontWeight={"700"} textStyle={"subheading"}>
+            <Text color="green.300" fontWeight={"700"} fontSize="24px">
               ✓{" "}
               <Span
                 fontSize={["16px", "16px", "16px", "20px", "20px", "20px"]}

@@ -43,49 +43,19 @@ const FreeQuote = () => {
           border="1px solid #dbeafe"
           spacing={2}
         >
-          <Image src={Google} alt="Google" width={18} height={18} />
+          <Image src={Google} alt="Google" width={28} height={28} />
           <HStack spacing={0.5}>
             {Array.from({ length: 5 }).map((_, i) => (
-              <FaStar key={i} color="#fbbf24" size={12} />
+              <FaStar key={i} color="#fbbf24" size={15} />
             ))}
           </HStack>
-          <Text fontSize="xs" fontWeight="600" color="blue.900">
+          <Text fontSize="md" fontWeight="600" color="blue.900">
             4.9 / 5
           </Text>
         </HStack>
 
         {/* Facebook */}
-        <HStack
-          px={3}
-          py={2}
-          bg="blue.100"
-          borderRadius="full"
-          border="1px solid #bfdbfe"
-          spacing={2}
-        >
-          <Box
-            w="18px"
-            h="18px"
-            borderRadius="full"
-            bg="blue.600"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            color="white"
-            fontSize="xs"
-            fontWeight="bold"
-          >
-            f
-          </Box>
-          <HStack spacing={0.5}>
-            {Array.from({ length: 5 }).map((_, i) => (
-              <FaStar key={i} color="#fbbf24" size={12} />
-            ))}
-          </HStack>
-          <Text fontSize="xs" fontWeight="600" color="blue.900">
-            4.8 / 5
-          </Text>
-        </HStack>
+       
       </HStack>
 
       {/* Inputs (styled boxes only, since no Chakra Input) */}
