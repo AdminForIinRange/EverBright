@@ -313,7 +313,7 @@ export default function ReviewSection() {
 
         <HStack   
           alignItems="center"
-          justifyContent="center"
+          justifyContent="start"
           py={"20px"}
           borderRadius="full"
           spacing={2}

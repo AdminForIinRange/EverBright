@@ -293,14 +293,14 @@ const Page = () => {
         </VStack>
       </Box>
 
-      <Box py={"50px"} px={["3%", "3%", "6%", "6%", "6%", "15%"]}>
+      <Box pt="10px" pb={"50px"} bg={"#0a0f29"} px={["3%", "3%", "6%", "6%", "6%", "15%"]}>
         <VStack justify="left" align="left" textAlign="left" w="100%">
           <Text
             fontSize={["40px", "48px", "56px"]}
             fontWeight={700}
             fontFamily="arial"
             lineHeight="1.1"
-            color={"cyan.900"}
+            color={"white"}
           >
             What we promise
           </Text>
@@ -316,7 +316,7 @@ const Page = () => {
           >
             <Text color={"cyan.500"} fontWeight={"500"} fontSize="15px">
               ✓{" "}
-              <Span color={"black"} fontWeight={"600"}>
+              <Span color={"white"} fontWeight={"600"}>
                 {" "}
                 100% Satisfaction Guarantee
               </Span>
@@ -324,35 +324,35 @@ const Page = () => {
 
             <Text color={"cyan.500"} fontWeight={"500"} fontSize="15px">
               ✓{" "}
-              <Span color={"black"} fontWeight={"600"}>
+              <Span color={"white"} fontWeight={"600"}>
                 {" "}
                 Always On Time
               </Span>
             </Text>
             <Text color={"cyan.500"} fontWeight={"500"} fontSize="15px">
               ✓{" "}
-              <Span color={"black"} fontWeight={"600"}>
+              <Span color={"white"} fontWeight={"600"}>
                 {" "}
                 Only Professional-Grade Equipment
               </Span>
             </Text>
             <Text color={"cyan.500"} fontWeight={"500"} fontSize="15px">
               ✓{" "}
-              <Span color={"black"} fontWeight={"600"}>
+              <Span color={"white"} fontWeight={"600"}>
                 {" "}
                 Fully Insured
               </Span>
             </Text>
             <Text fontWeight={"500"} fontSize="15px" color={"cyan.500"}>
               ✓{" "}
-              <Span color={"black"} fontWeight={"600"}>
+              <Span color={"white"} fontWeight={"600"}>
                 {" "}
                 Professional, Reliable & Efficient Service
               </Span>
             </Text>
             <Text color={"cyan.500"} fontWeight={"500"} fontSize="15px">
               ✓{" "}
-              <Span color={"black"} fontWeight={"600"}>
+              <Span color={"white"} fontWeight={"600"}>
                 {" "}
                 We Leave Things CLEAN
               </Span>
@@ -362,7 +362,7 @@ const Page = () => {
       </Box>
 
       <Box
-        my={"50px"}
+        mt={"10px"}
         display={["block", "block", "none", "none", "none", "none"]}
       >
         <FreeQuote />
