@@ -299,7 +299,7 @@ export default function ReviewSection() {
         zIndex={-2}
         pos={"absolute"}
         w={"100%"}
-        h={"1000px"}
+        h={"1300px"}
         bg={"#062042"}
 
       ></Box>
