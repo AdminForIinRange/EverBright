@@ -46,23 +46,27 @@ function ServicesBox({ title, image }: { title: string; image: string }) {
          
           />
 
-          <Box position="absolute" bottom="0" left="0" right="0" p="4">
+        </Box>
+
+        
+          <Box bottom="0" left="0" right="0" p="4">
             <Text
-              color="white"
+     
               fontSize={{ base: "25px", md: "25px" }}
               fontWeight="700"
               textAlign="START"
-              textShadow="0 0px 10px black"
+
               fontFamily="poppins"
+                         color="black"
             >
               {title}
             </Text>
             <Text
               py={"10px"}
-              color="white"
+              color="black"
               fontSize={{ base: "sm", md: "md" }}
               textAlign="START"
-                textShadow="0 0px 10px black"
+             
               fontFamily="poppins"
               
             >
@@ -75,7 +79,7 @@ function ServicesBox({ title, image }: { title: string; image: string }) {
                 flex="1"
                 py="2"
                 px="2"
-                bg="white"
+                bg="gray.100"
                 color="black"
                 rounded="lg"
                 fontSize="sm"
@@ -83,6 +87,7 @@ function ServicesBox({ title, image }: { title: string; image: string }) {
                 textAlign="center"
                 textDecoration="none"
                 transition="all 0.2s ease"
+
                 _hover={{
                   bg: "cyan.600",
                   textDecoration: "none",
@@ -125,7 +130,6 @@ function ServicesBox({ title, image }: { title: string; image: string }) {
               </Link>
             </HStack>
           </Box>
-        </Box>
       </Box>
     </Box>
   );
