@@ -375,12 +375,41 @@ const Page = () => {
       {/* Floating geometric shapes */}
 
       {/* <SlidingCard /> */}
+
+
+
+
+
+<Box bg={"cyan.500"} py={"50px"}   px={["3%", "3%", "6%", "6%", "6%", "15%"]} >
+  <VStack justify="left" align="left" textAlign="left" w="100%">
+   
+    <Text
+      fontSize={["40px", "48px", "56px"]}
+      fontWeight={700}
+      fontFamily="poppins"
+      lineHeight="1.1"
+      color={"white"}
+    >
+Ready To Bring Your
+Home Back To Life
+    </Text>
+    
+  </VStack>
+
+  </Box>
+
+
       <Box
         my={"50px"}
         display={["block", "block", "none", "none", "none", "none"]}
       >
         <FreeQuote />
       </Box>
+
+
+
+
+
     </Box>
   );
 };
