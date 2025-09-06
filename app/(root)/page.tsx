@@ -393,7 +393,7 @@ const Page = () => {
       </Box>
 
       <Box
-        bg={"cyan.600"}
+       
         py={"50px"}
         px={["3%", "3%", "6%", "6%", "6%", "15%"]}
       >
@@ -401,68 +401,93 @@ const Page = () => {
           <Text
             fontSize={["40px", "48px", "56px"]}
             fontWeight={700}
-            fontFamily="poppins"
+            fontFamily="arial"
             lineHeight="1.1"
-            color={"white"}
+            color={"cyan.900"}
           >
             What we promise
           </Text>
 
           <VStack
-          mt={"20px"}
-          fontWeight={"500"}
+            mt={"20px"}
+            fontWeight={"500"}
             gap={"10px"}
             justify={"start"}
             align={"start"}
             w={"100%"}
-            px={["4%", "4%", "6%", "6%", "6%", "10%"]}
             fontFamily={"poppins"}
+
           >
-            <Text color={"cyan"}          fontWeight={"500"} fontSize="18px"  fontWeight={"700"}>
+            <Text
+              color={"cyan.500"}
+              fontWeight={"500"}
+              fontSize="15px"
+             
+            >
               ✓{" "}
-              <Span color="white"  fontWeight={"500"} >
+              <Span color={"black"} fontWeight={"600"}>
                 {" "}
                 100% Satisfaction Guarantee
               </Span>
             </Text>
-            <Text color={"cyan"}          fontWeight={"500"} fontSize="18px"  fontWeight={"700"}>
+
+            <Text
+              color={"cyan.500"}
+              fontWeight={"500"}
+              fontSize="15px"
+             
+            >
               ✓{" "}
-              <Span color="white"  fontWeight={"500"} >
+              <Span color={"black"} fontWeight={"600"}>
                 {" "}
                 Always On Time
               </Span>
             </Text>
-            <Text color={"cyan"}          fontWeight={"500"} fontSize="18px"  fontWeight={"700"}>
+            <Text
+              color={"cyan.500"}
+              fontWeight={"500"}
+              fontSize="15px"
+             
+            >
               ✓{" "}
-              <Span color="white"  fontWeight={"500"} >
-                {" "}
-                Always On Time
-              </Span>
-            </Text>
-            <Text color={"cyan"}          fontWeight={"500"} fontSize="18px"  fontWeight={"700"}>
-              ✓{" "}
-              <Span color="white"  fontWeight={"500"} >
+              <Span color={"black"} fontWeight={"600"}>
                 {" "}
                 Only Professional-Grade Equipment
               </Span>
             </Text>
-            <Text color={"cyan"}          fontWeight={"500"} fontSize="18px"  fontWeight={"700"}>
+            <Text
+              color={"cyan.500"}
+              fontWeight={"500"}
+              fontSize="15px"
+             
+            >
               ✓{" "}
-              <Span color="white"  fontWeight={"500"} >
+              <Span color={"black"} fontWeight={"600"}>
                 {" "}
                 Fully Insured
               </Span>
             </Text>
-            <Text color="cyan"          fontWeight={"500"} fontSize="18px"  fontWeight={"700"}>
+            <Text
+           
+              fontWeight={"500"}
+              fontSize="15px"
+              color={"cyan.500"}
+             
+            >
               ✓{" "}
-              <Span color="white"  fontWeight={"500"} >
+              <Span color={"black"} fontWeight={"600"}>
                 {" "}
                 Professional, Reliable & Efficient Service
               </Span>
             </Text>
-            <Text color={"cyan"}          fontWeight={"500"} fontSize="18px"  fontWeight={"700"}>
+            <Text
+              color={"cyan.500"}
+              fontWeight={"500"}
+              fontSize="15px"
+             
+            >
               ✓{" "}
-              <Span color="white"  fontWeight={"500"} >
+              <Span color={"black"} fontWeight={"600"}>
                 {" "}
                 We Leave Things CLEAN
               </Span>
