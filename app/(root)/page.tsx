@@ -287,7 +287,7 @@ const Page = () => {
               </Box>
 
               {/* Image area with decorative frame */}
-              <Box
+              {/* <Box
                 position="relative"
                 h={{ base: "100%", md: "100%", xl: "100%" }}
                 w={{ base: "100%", md: "100%" }}
@@ -313,7 +313,7 @@ const Page = () => {
                     overflow="hidden"
                   ></Box>
                 </Box>
-              </Box>
+              </Box> */}
             </HStack>
           </HStack>
         </Box>
