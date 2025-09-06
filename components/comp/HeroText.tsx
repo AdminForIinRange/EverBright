@@ -43,8 +43,10 @@ const HeroText = () => {
       >
         Adelaide’s #1 Choice for Remarkable Exterior Cleaning!
       </Text>
-      <Box mt={["20px", "20px", "20px", "20px", "20px", "20px"]}>
+      <Box mt={["20px", "20px", "20px", "20px", "20px", "20px"]}   >
         <VStack
+
+      
           textAlign={["left", "left", "left", "left", "left", "left"]}
           align={["start", "start", "start", "start", "start"]}
         >
@@ -64,7 +66,7 @@ const HeroText = () => {
                 Gutter Cleaning
               </Span>
             </Text>
-            <Text color="green.300" fontSize="24px" fontWeight={"700"}>
+            <Text color="green.300" fontSize="24px" fontWeight={"700"}    ml={"10px"} >
               ✓{" "}
               <Span
                 fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
@@ -85,6 +87,7 @@ const HeroText = () => {
           <HStack
             justify={["start", "start", "start", "start", "start"]}
             align={["start", "start", "start", "start", "start"]}
+         
           >
             <Text color="green.300" fontSize="24px" fontWeight={"700"}>
               ✓{" "}
@@ -98,7 +101,7 @@ const HeroText = () => {
                 Solar Cleaning
               </Span>
             </Text>
-            <Text color="green.300" fontSize="24px" fontWeight={"700"}>
+            <Text color="green.300" fontSize="24px" fontWeight={"700"}    ml={"10px"}>
               ✓{" "}
               <Span
                 fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
