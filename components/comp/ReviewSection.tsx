@@ -1,7 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import SectionHeading from "./compsDeep/SectionHeading";
-import { Box } from "@chakra-ui/react";
+import { Box, HStack, Text } from "@chakra-ui/react";
 import Image from "next/image";
+import { FaStar } from "react-icons/fa";
+import Google from "@/public/Google.png";
 /* ====== Tunables ====== */
 const CARD_W = 340;
 const CARD_H = 320;
@@ -192,28 +194,31 @@ function ReviewCard({
 
 /* ====== Banner Slider (auto + buttons) ====== */
 function BannerSlider() {
-const services = [
-  {
-    title: "Pressure Washing",
-    image: "https://images.pexels.com/photos/14965464/pexels-photo-14965464.jpeg",
-    desc: "Deep-clean hard surfaces to remove grime, algae, and stubborn stains.",
-  },
-  {
-    title: "Solar Cleaning",
-    image: "https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg",
-    desc: "Maximize panel efficiency with streak-free, residue-free cleaning.",
-  },
-  {
-    title: "Roof Cleaning",
-    image: "https://images.pexels.com/photos/2513975/pexels-photo-2513975.jpeg",
-    desc: "Safely lift moss and dark streaks to restore curb appeal.",
-  },
-  {
-    title: "Gutter Cleaning",
-    image: "https://images.pexels.com/photos/3258128/pexels-photo-3258128.jpeg",
-    desc: "Clear debris to prevent overflow, leaks, and foundation damage.",
-  },
-];
+  const services = [
+    {
+      title: "Pressure Washing",
+      image:
+        "https://images.pexels.com/photos/14965464/pexels-photo-14965464.jpeg",
+      desc: "Deep-clean hard surfaces to remove grime, algae, and stubborn stains.",
+    },
+    {
+      title: "Solar Cleaning",
+      image: "https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg",
+      desc: "Maximize panel efficiency with streak-free, residue-free cleaning.",
+    },
+    {
+      title: "Roof Cleaning",
+      image:
+        "https://images.pexels.com/photos/2513975/pexels-photo-2513975.jpeg",
+      desc: "Safely lift moss and dark streaks to restore curb appeal.",
+    },
+    {
+      title: "Gutter Cleaning",
+      image:
+        "https://images.pexels.com/photos/3258128/pexels-photo-3258128.jpeg",
+      desc: "Clear debris to prevent overflow, leaks, and foundation damage.",
+    },
+  ];
 
   const [idx, setIdx] = useState(0);
 
@@ -227,14 +232,11 @@ const services = [
 
   return (
     <div>
-
-
       <div
         style={{
           overflow: "hidden",
           position: "relative",
           height: "100%",
-   
         }}
       >
         <div
@@ -282,7 +284,6 @@ const services = [
           justifyContent: "center",
           gap: 8,
           padding: "10px 0",
-
         }}
       >
         {services.map((_, i) => (
@@ -324,9 +325,8 @@ function ReviewsCarousel({ reviews }) {
   }, [index]);
 
   return (
-    <Box  style={{ margin: "0 auto" }}>
+    <Box style={{ margin: "0 auto" }}>
       {/* controls */}
-  
 
       {/* viewport */}
       <div
@@ -353,7 +353,7 @@ function ReviewsCarousel({ reviews }) {
         </div>
       </div>
 
-          <div
+      <div
         style={{
           width: "100%",
           display: "flex",
@@ -363,7 +363,6 @@ function ReviewsCarousel({ reviews }) {
         }}
       >
         <button
-    
           type="button"
           onClick={goPrev}
           disabled={index === 0}
@@ -383,12 +382,11 @@ function ReviewsCarousel({ reviews }) {
 
       {/* dots (one per possible index position) */}
       <Box
-      mt={"15px"}
+        mt={"15px"}
         style={{
           display: "flex",
           justifyContent: "center",
           gap: 8,
-
         }}
       >
         {Array.from({ length: maxIndex + 1 }).map((_, i) => (
@@ -462,23 +460,36 @@ export default function ReviewSection() {
   ];
 
   return (
-    <Box
-     
-   
-        px={{ base: "4%", md: "6%", xl: "10%" }}
-        my={"50px"}
-    
-    >
+    <Box px={{ base: "4%", md: "6%", xl: "10%" }} my={"50px"}>
       {/* header */}
       <SectionHeading
         eyebrow={"What our customers say"}
-        title={"See what they're saying about us"}
-        color="black"
+        title={"Read Some Of Our Reviews!"}
+        color="blue.900"
       />
       {/* moving banner */}
-      <div style={{  marginBottom: 32 }}>
+      {/* <div style={{  marginBottom: 32 }}>
         <BannerSlider />
-      </div>
+      </div> */}
+      <HStack
+        alignItems="center"
+        justifyContent="center"
+        py={"20px"}
+        borderRadius="full"
+        spacing={2}
+      >
+        <Image src={Google} alt="Google" width={50} height={50} />
+        <HStack spacing={0.5}>
+
+               <Text  fontSize="xl" fontWeight="600" color="#fbbf24">
+          4.9 / 5
+        </Text>
+          {Array.from({ length: 5 }).map((_, i) => (
+            <FaStar key={i} color="#fbbf24" size={30} />
+          ))}
+        </HStack>
+   
+      </HStack>
 
       {/* reviews carousel */}
       <div style={{ padding: "0 24px" }}>
@@ -505,3 +516,4 @@ const navBtnStyle = {
   cursor: "pointer",
   transition: "background .2s ease, border-color .2s ease",
 };
+
