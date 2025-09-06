@@ -5,6 +5,7 @@ import Google from "@/public/Google.png";
 import Adl from "@/public/images/aerial-city-adelaide.jpeg";
 import { FaStar } from "react-icons/fa";
 import FreeQuote from "@/components/comp/FreeQuote";
+import { Phone } from "lucide-react";
 
 const HeroText = () => {
   return (
@@ -52,7 +53,7 @@ const HeroText = () => {
             align={["start", "start", "start", "start", "start"]}
           
           >
-            <Text  color="green.700" fontWeight={"700"} fontSize="24px">
+            <Text  color="green.300" fontWeight={"700"} fontSize="24px">
               ✓{" "}
               <Span
                 fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
@@ -61,10 +62,10 @@ const HeroText = () => {
                 fontWeight={"500"}
               >
                 {" "}
-                Pressure Cleaning
+            Gutter Cleaning
               </Span>
             </Text>
-            <Text  color="green.700"  fontSize="24px" fontWeight={"700"}>
+            <Text   color="green.300"  fontSize="24px" fontWeight={"700"}>
               ✓{" "}
               <Span
                 fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
@@ -73,7 +74,7 @@ const HeroText = () => {
                 fontWeight={"500"}
               >
                 {" "}
-                Pressure Cleaning
+               Roof Washing
               </Span>
             </Text>
           </HStack>
@@ -87,7 +88,7 @@ const HeroText = () => {
             align={["start", "start", "start", "start", "start"]}
            
           >
-            <Text   color="green.700"  fontSize="24px" fontWeight={"700"}>
+            <Text    color="green.300"  fontSize="24px" fontWeight={"700"}>
               ✓{" "}
               <Span
                 fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
@@ -96,10 +97,10 @@ const HeroText = () => {
                 fontWeight={"500"}
               >
                 {" "}
-                Pressure Cleaning
+              Solar Cleaning
               </Span>
             </Text>
-            <Text  color="green.700"  fontSize="24px" fontWeight={"700"}>
+            <Text   color="green.300"  fontSize="24px" fontWeight={"700"}>
               ✓{" "}
               <Span
                 fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
@@ -108,7 +109,7 @@ const HeroText = () => {
                 fontWeight={"500"}
               >
                 {" "}
-                Pressure Cleaning
+               Pressure Washing
               </Span>
             </Text>
           </HStack>
@@ -141,11 +142,11 @@ const HeroText = () => {
           p={4}
           color={"white"}
           rounded={"30px"}
-          px={"12"}
+          px={"8"}
           fontWeight={"500"}
           onClick={() => router.push("/services")}
         >
-          Call for a Quote!
+         <Phone /> Call for a Quote!
           {/* <Icon as={ArrowRight}> </Icon> */}
         </Box>
       </HStack>

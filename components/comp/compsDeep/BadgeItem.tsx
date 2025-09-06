@@ -23,7 +23,7 @@ const BadgeItem = ({ text, image }: BadgeItemProps) => (
       textShadow="0px 0px 100px white"
       textAlign="center"
       fontSize={["10px", "14px", "16px", "16px", "16px", "16px"]}
-      fontWeight="500"
+      fontWeight="700"
       fontFamily="poppins"
       color="white"
     >

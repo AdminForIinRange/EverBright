@@ -1,5 +1,6 @@
 "use client";
 import { Box } from "@chakra-ui/react";
+import { Phone } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const QuoteButton = () => {
@@ -30,7 +31,7 @@ const QuoteButton = () => {
       fontWeight="500"
       onClick={() => router.push("/services")}
     >
-      Call for a Quote!
+      Call for a Quote! 
     </Box>
   );
 };
