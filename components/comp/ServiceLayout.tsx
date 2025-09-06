@@ -21,7 +21,8 @@ import SectionHeading from "@/components/comp/compsDeep/SectionHeading";
 const services = [
   {
     title: "Pressure Washing",
-    image: "https://images.pexels.com/photos/14965464/pexels-photo-14965464.jpeg",
+    image:
+      "https://images.pexels.com/photos/14965464/pexels-photo-14965464.jpeg",
     desc: "Deep-clean hard surfaces to remove grime, algae, and stubborn stains.",
   },
   {
@@ -44,55 +45,49 @@ const services = [
 function ServiceLayout() {
   return (
     <>
-
-
-
-    <Box
-              borderRadius={"50px"}
-              backgroundImage={` url('/images/aerial-city-adelaide.jpeg')`}
-              backgroundRepeat="no-repeat"
-              backgroundPosition="center"
-              backgroundSize="cover"
-              position={"absolute"}
-              backgroundAttachment="fixed"
-              zIndex={-1}
-              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-              h={["1650px", "1650px", "1650px", "1650px", "1650px", "1650px"]}
-              opacity={1}
-      
-            ></Box>
-            <Box
-
-              position={"absolute"}
-              zIndex={-1}
-              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-              h={["1650px", "1650px", "1650px", "1650px", "1650px", "1650px"]}
-              bg="cyan.700"
-              opacity={0.6}
-        
-            ></Box>
+      <Box
+        borderRadius={"50px"}
+        backgroundImage={` url('/images/aerial-city-adelaide.jpeg')`}
+        backgroundRepeat="no-repeat"
+        backgroundPosition="center"
+        backgroundSize="cover"
+        position={"absolute"}
+        backgroundAttachment="fixed"
+        zIndex={-1}
+        w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+        h={["2000px", "2000px", "1650px", "1650px", "1650px", "1650px"]}
+        opacity={1}
+      ></Box>
+      <Box
+         borderRadius={"50px"}
+        position={"absolute"}
+        zIndex={-1}
+        w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+        h={["2000px", "2000px", "1650px", "1650px", "1650px", "1650px"]}
+        bg="cyan.700"
+        opacity={0.6}
+      ></Box>
       <VStack
-      mt={"50px"}
+        mt={"50px"}
         justify="center"
         align="center"
         w="100%"
         textAlign="center"
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-       
       >
-            <VStack
-            justify={"center"}
-            align={"center"}
-            w={"100%"}
-            textAlign={"center"}
-            px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-          >
-            <SectionHeading
-              eyebrow={``}
-              title="How we can help you home"
-   color="white"
-            />
-          </VStack>
+        <VStack
+          justify={"center"}
+          align={"center"}
+          w={"100%"}
+          textAlign={"center"}
+          px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+        >
+          <SectionHeading
+            eyebrow={``}
+            title="How we can help you home"
+            color="white"
+          />
+        </VStack>
       </VStack>
       <HStack
         wrap={"wrap"}
