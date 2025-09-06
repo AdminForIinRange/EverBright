@@ -226,7 +226,7 @@ const Page = () => {
           >
             <SectionHeading
               eyebrow={``}
-              title="Adelaide Exterior Cleaning"
+              title="A Local Business you can rely on"
               color="bule.100"
             />
           </VStack>
@@ -258,16 +258,27 @@ const Page = () => {
                 >
                   <Text>
                     I started EverBright Pressure Washing here in South
-                    Australia to help homeowners feel proud of their property. I
-                    treat every home as if it were my own, offering honest
-                    advice, paying close attention to detail, and making sure
-                    the job's done right the first time.
+                    Australia with one simple goal — to help homeowners feel
+                    proud of their property, whether that means restoring it to
+                    its best or keeping it looking great all year round.
+                           
+                  </Text>
+          
+
+                  <Text>
+                       <br />
+                    From day one, I’ve treated every home as if it were my own —
+                    offering honest, transparent advice, paying close attention
+                    to detail, and making sure the job’s done right the first
+                    time.
                   </Text>
 
                   <Text>
-                    My team shares that approach. We know life is busy, so we'll
-                    take care of the dirty work, giving you more time to enjoy
-                    what matters most.
+                       <br />
+                    I’ve built a small, dedicated team who share that same
+                    approach. We know life is busy — so let us take care of the
+                    dirty work, giving you more time to enjoy the things that
+                    matter most.
                   </Text>
 
                   {/* quick-hit trust chips */}
@@ -364,10 +375,12 @@ const Page = () => {
       {/* Floating geometric shapes */}
 
       <SlidingCard />
-      <Box my={"50px"} display={["block", "block", "none", "none", "none", "none"]}>
-      <FreeQuote />
+      <Box
+        my={"50px"}
+        display={["block", "block", "none", "none", "none", "none"]}
+      >
+        <FreeQuote />
       </Box>
-
     </Box>
   );
 };
