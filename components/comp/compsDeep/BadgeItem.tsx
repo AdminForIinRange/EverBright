@@ -18,11 +18,11 @@ const BadgeItem = ({ text, image }: BadgeItemProps) => (
     bg={["none", "none", "white", "white", "white", "white"]}
     borderRadius={["0px", "0px", "20px", "20px", "20px", "20px"]}
   >
-    <Image src={image} alt={text} width={38} height={38} />  {/* width/height added */}
+    <Image src={image} alt={text} width={58} height={58} />  {/* width/height added */}
     <Text
       textShadow="0px 0px 100px white"
       textAlign="center"
-      fontSize={["7px", "14px", "16px", "16px", "16px", "16px"]}
+      fontSize={["9px", "14px", "16px", "16px", "16px", "16px"]}
       fontWeight="700"
       fontFamily="poppins"
       color="white"

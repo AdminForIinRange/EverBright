@@ -44,7 +44,7 @@ const Page = () => {
   // ✅ NEW: small data arrays to map the repeated items
   const badges = [
     {
-      text: "100% Guarantee",
+      text: "Guarantee Satisfaction",
       Images: icon1,
     },
     {
