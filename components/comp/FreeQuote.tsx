@@ -50,7 +50,7 @@ const FreeQuote = () => {
             ))}
           </HStack>
           <Text fontSize="md" fontWeight="600" color="blue.900">
-            4.9 / 5
+           5 / 5
           </Text>
         </HStack>
 

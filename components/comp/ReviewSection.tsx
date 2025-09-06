@@ -1,14 +1,14 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import SectionHeading from "./compsDeep/SectionHeading";
 import { Box, HStack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import Google from "@/public/Google.png";
+
 /* ====== Tunables ====== */
 const CARD_W = 340;
 const CARD_H = 320;
 const CARD_GAP = 24; // px gap between cards
-const SLIDE_DURATION_MS = 4000; // banner auto-advance
 
 /* ====== Small utilities ====== */
 const srOnly = {
@@ -24,12 +24,8 @@ const srOnly = {
 };
 
 function StarRating({ value }) {
-  // render 5 stars using unicode, tint the filled ones
   return (
-    <div
-      aria-label={`${value} out of 5 stars`}
-      style={{ display: "flex", gap: 4 }}
-    >
+    <div aria-label={`${value} out of 5 stars`} style={{ display: "flex", gap: 4 }}>
       {Array.from({ length: 5 }).map((_, i) => (
         <span
           key={i}
@@ -37,10 +33,7 @@ function StarRating({ value }) {
           style={{
             fontSize: 16,
             lineHeight: 1,
-            filter:
-              i < value
-                ? "drop-shadow(0 1px 2px rgba(246,173,85,.35))"
-                : "none",
+            filter: i < value ? "drop-shadow(0 1px 2px rgba(246,173,85,.35))" : "none",
             color: i < value ? "#F6AD55" : "#E2E8F0",
           }}
         >
@@ -51,43 +44,11 @@ function StarRating({ value }) {
   );
 }
 
-function Chip({ text, bg = "#F0FFF4", border = "#C6F6D5", color = "#2F855A" }) {
-  return (
-    <span
-      style={{
-        display: "inline-block",
-        padding: "2px 8px",
-        borderRadius: 999,
-        border: `1px solid ${border}`,
-        background: bg,
-        color,
-        fontSize: 10,
-        fontWeight: 800,
-        letterSpacing: ".04em",
-      }}
-    >
-      {text}
-    </span>
-  );
-}
-
 /* ====== Review Card (fixed size) ====== */
-function ReviewCard({
-  name,
-  date,
-  reviewText,
-  stars,
-  platform,
-  avatar,
-  verified = false,
-}) {
+function ReviewCard({ name, date, reviewText, stars, platform, avatar }) {
   const initial = (name || "•").trim().charAt(0).toUpperCase();
   const platformLabel =
-    platform === "google"
-      ? "Google"
-      : platform === "facebook"
-        ? "Facebook"
-        : "Review";
+    platform === "google" ? "Google" : platform === "facebook" ? "Facebook" : "Review";
 
   return (
     <div
@@ -108,16 +69,8 @@ function ReviewCard({
         transition: "box-shadow .25s ease, border-color .25s ease",
       }}
     >
-      {/* platform pill */}
       {/* header */}
-      <div
-        style={{
-          display: "flex",
-          gap: 12,
-          alignItems: "center",
-          flexShrink: 0,
-        }}
-      >
+      <div style={{ display: "flex", gap: 12, alignItems: "center", flexShrink: 0 }}>
         <div
           style={{
             width: 44,
@@ -156,9 +109,7 @@ function ReviewCard({
               {name}
             </div>
           </div>
-          <div style={{ fontSize: 12, color: "#718096", fontWeight: 500 }}>
-            {date}
-          </div>
+          <div style={{ fontSize: 12, color: "#718096", fontWeight: 500 }}>{date}</div>
         </div>
       </div>
 
@@ -167,10 +118,8 @@ function ReviewCard({
         <StarRating value={stars} />
       </div>
 
-      {/* body (fixed region + line clamp) */}
-      <div
-        style={{ marginTop: 12, flex: 1, overflow: "hidden", display: "flex" }}
-      >
+      {/* body */}
+      <div style={{ marginTop: 12, flex: 1, overflow: "hidden", display: "flex" }}>
         <p
           style={{
             margin: 0,
@@ -192,219 +141,84 @@ function ReviewCard({
   );
 }
 
-/* ====== Banner Slider (auto + buttons) ====== */
-function BannerSlider() {
-  const services = [
-    {
-      title: "Pressure Washing",
-      image:
-        "https://images.pexels.com/photos/14965464/pexels-photo-14965464.jpeg",
-      desc: "Deep-clean hard surfaces to remove grime, algae, and stubborn stains.",
-    },
-    {
-      title: "Solar Cleaning",
-      image: "https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg",
-      desc: "Maximize panel efficiency with streak-free, residue-free cleaning.",
-    },
-    {
-      title: "Roof Cleaning",
-      image:
-        "https://images.pexels.com/photos/2513975/pexels-photo-2513975.jpeg",
-      desc: "Safely lift moss and dark streaks to restore curb appeal.",
-    },
-    {
-      title: "Gutter Cleaning",
-      image:
-        "https://images.pexels.com/photos/3258128/pexels-photo-3258128.jpeg",
-      desc: "Clear debris to prevent overflow, leaks, and foundation damage.",
-    },
-  ];
-
-  const [idx, setIdx] = useState(0);
+/* ====== Reviews Scroller (scroll + snap + drag, scrollbar visible) ====== */
+function ReviewsScroller({ reviews }) {
+  const scrollerRef = useRef(null);
+  const isDraggingRef = useRef(false);
+  const dragStartXRef = useRef(0);
+  const scrollStartRef = useRef(0);
 
   useEffect(() => {
-    const id = setInterval(
-      () => setIdx((i) => (i + 1) % services.length),
-      SLIDE_DURATION_MS
-    );
-    return () => clearInterval(id);
-  }, [services.length]);
+    const el = scrollerRef.current;
+    if (!el) return;
+    const onWheel = (e) => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        el.scrollLeft += e.deltaY;
+        e.preventDefault();
+      }
+    };
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, []);
 
-  return (
-    <div>
-      <div
-        style={{
-          overflow: "hidden",
-          position: "relative",
-          height: "100%",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            width: `${services.length * 100}%`,
-            transform: `translateX(-${(100 / services.length) * idx}%)`,
-            transition: "transform 400ms ease",
-          }}
-        >
-          {services.map((service, i) => (
-            <div
-              key={i}
-              style={{
-                minWidth: `${100 / services.length}%`,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "16px 20px",
-              }}
-            >
-              <Box position="relative" h="260px" w="100%" overflow="hidden">
-                <Image
-                  quality={80}
-                  loading="lazy"
-                  src={service.image}
-                  alt={`${service.title} service`}
-                  fill
-                  style={{
-                    borderRadius: " 20px",
-                    objectFit: "cover",
-                    objectPosition: "center",
-                  }}
-                />
-              </Box>
-            </div>
-          ))}
-        </div>
-      </div>
+  const onPointerDown = (e) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    isDraggingRef.current = true;
+    dragStartXRef.current = e.clientX;
+    scrollStartRef.current = el.scrollLeft;
+    el.setPointerCapture?.(e.pointerId);
+    el.style.scrollSnapType = "none";
+    el.style.cursor = "grabbing";
+  };
 
-      {/* dots */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: 8,
-          padding: "10px 0",
-        }}
-      >
-        {services.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setIdx(i)}
-            aria-label={`Go to slide ${i + 1}`}
-            style={{
-              width: 8,
-              height: 8,
-              borderRadius: "50%",
-              border: "none",
-              background: i === idx ? "#4A5568" : "#CBD5E0",
-              cursor: "pointer",
-            }}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
+  const onPointerMove = (e) => {
+    if (!isDraggingRef.current) return;
+    const el = scrollerRef.current;
+    if (!el) return;
+    const dx = e.clientX - dragStartXRef.current;
+    el.scrollLeft = scrollStartRef.current - dx;
+  };
 
-/* ====== Reviews Carousel (buttons + dots) ====== */
-function ReviewsCarousel({ reviews }) {
-  const visible = 3; // how many cards are visible in desktop viewport
-  const maxIndex = Math.max(0, reviews.length - visible);
-  const [index, setIndex] = useState(0);
-
-  const trackRef = useRef(null);
-
-  const goPrev = () => setIndex((i) => Math.max(0, i - 1));
-  const goNext = () => setIndex((i) => Math.min(maxIndex, i + 1));
-  const goTo = (i) => setIndex(() => Math.min(maxIndex, Math.max(0, i)));
-
-  useEffect(() => {
-    if (!trackRef.current) return;
-    const offset = index * (CARD_W + CARD_GAP);
-    trackRef.current.style.transform = `translateX(-${offset}px)`;
-  }, [index]);
+  const onPointerUp = (e) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    isDraggingRef.current = false;
+    el.releasePointerCapture?.(e.pointerId);
+    requestAnimationFrame(() => {
+      el.style.scrollSnapType = "x mandatory";
+      el.style.cursor = "grab";
+    });
+  };
 
   return (
     <Box style={{ margin: "0 auto" }}>
-      {/* controls */}
-
-      {/* viewport */}
       <div
+        ref={scrollerRef}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+        role="list"
+        aria-label="Customer reviews (scroll horizontally)"
         style={{
-          overflow: "hidden",
-          position: "relative",
+          display: "flex",
+          gap: CARD_GAP,
+          overflowX: "auto",
+          overflowY: "hidden",
           paddingBottom: 8,
+          scrollBehavior: "smooth",
+          scrollSnapType: "x mandatory",
+          WebkitOverflowScrolling: "touch",
+          cursor: "grab",
         }}
       >
-        <div
-          ref={trackRef}
-          style={{
-            display: "flex",
-            gap: CARD_GAP,
-            willChange: "transform",
-            transition: "transform 400ms ease",
-          }}
-          aria-label="Customer reviews"
-          role="list"
-        >
-          {reviews.map((r, i) => (
-            <ReviewCard key={i} {...r} />
-          ))}
-        </div>
-      </div>
-
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "flex-end",
-          gap: 8,
-          marginBottom: 12,
-        }}
-      >
-        <button
-          type="button"
-          onClick={goPrev}
-          disabled={index === 0}
-          style={navBtnStyle}
-        >
-          Prev
-        </button>
-        <button
-          type="button"
-          onClick={goNext}
-          disabled={index === maxIndex}
-          style={navBtnStyle}
-        >
-          Next
-        </button>
-      </div>
-
-      {/* dots (one per possible index position) */}
-      <Box
-        mt={"15px"}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: 8,
-        }}
-      >
-        {Array.from({ length: maxIndex + 1 }).map((_, i) => (
-          <button
-            key={i}
-            onClick={() => goTo(i)}
-            aria-label={`Go to set ${i + 1}`}
-            style={{
-              width: 8,
-              height: 8,
-              borderRadius: "50%",
-              border: "none",
-              background: i === index ? "#2D3748" : "#CBD5E0",
-              cursor: "pointer",
-            }}
-          />
+        {reviews.map((r, i) => (
+          <div key={i} style={{ scrollSnapAlign: "start" }}>
+            <ReviewCard {...r} />
+          </div>
         ))}
-      </Box>
+      </div>
     </Box>
   );
 }
@@ -419,7 +233,6 @@ export default function ReviewSection() {
         "The Calibre team was excellent. Polite and on time service before and after photos that clearly showed the results. Very happy",
       stars: 5,
       platform: "google",
-      verified: true,
     },
     {
       name: "Trevor Smith",
@@ -428,7 +241,6 @@ export default function ReviewSection() {
         "Caleb was a very hard-working deliverer of a great service...hard to believe the before and after photos. Highly recommend this pressure clean service.",
       stars: 5,
       platform: "google",
-      verified: true,
     },
     {
       name: "Robert Swann",
@@ -437,7 +249,6 @@ export default function ReviewSection() {
         "Great job done cleaning Solar panels and Gutters. Fantastic, prompt and friendly service. Highly recommend them for jobs.",
       stars: 5,
       platform: "facebook",
-      verified: false,
     },
     {
       name: "Sarah Johnson",
@@ -446,7 +257,6 @@ export default function ReviewSection() {
         "Outstanding service! The team was professional, punctual, and delivered exceptional results. Will definitely use again.",
       stars: 5,
       platform: "google",
-      verified: true,
     },
     {
       name: "Mike Wilson",
@@ -455,65 +265,34 @@ export default function ReviewSection() {
         "Excellent work on our driveway cleaning. The difference is remarkable. Highly recommend their services!",
       stars: 5,
       platform: "facebook",
-      verified: false,
     },
   ];
 
   return (
     <Box px={{ base: "4%", md: "6%", xl: "10%" }} my={"50px"}>
-      {/* header */}
       <SectionHeading
         eyebrow={"What our customers say"}
         title={"Read Some Of Our Reviews!"}
         color="blue.900"
       />
-      {/* moving banner */}
-      {/* <div style={{  marginBottom: 32 }}>
-        <BannerSlider />
-      </div> */}
-      <HStack
-        alignItems="center"
-        justifyContent="center"
-        py={"20px"}
-        borderRadius="full"
-        spacing={2}
-      >
+
+      <HStack alignItems="center" justifyContent="center" py={"20px"} borderRadius="full" spacing={2}>
         <Image src={Google} alt="Google" width={50} height={50} />
         <HStack spacing={0.5}>
-
-               <Text  fontSize="xl" fontWeight="600" color="#fbbf24">
-          4.9 / 5
-        </Text>
+          <Text fontSize="xl" fontWeight="600" color="#fbbf24">
+            4.9 / 5
+          </Text>
           {Array.from({ length: 5 }).map((_, i) => (
             <FaStar key={i} color="#fbbf24" size={30} />
           ))}
         </HStack>
-   
       </HStack>
 
-      {/* reviews carousel */}
       <div style={{ padding: "0 24px" }}>
-        <ReviewsCarousel reviews={reviews} />
+        <ReviewsScroller reviews={reviews} />
       </div>
 
-      {/* screen-reader helper text */}
-      <span style={srOnly}>
-        Use left and right buttons to navigate the review cards.
-      </span>
+      <span style={srOnly}>Scroll horizontally to explore review cards.</span>
     </Box>
   );
 }
-
-/* ====== shared button style ====== */
-const navBtnStyle = {
-  width: "100%",
-  appearance: "none",
-  background: "#fff",
-  border: "1px solid #CBD5E0",
-  borderRadius: 8,
-  padding: "8px 12px",
-  fontWeight: 700,
-  cursor: "pointer",
-  transition: "background .2s ease, border-color .2s ease",
-};
-
