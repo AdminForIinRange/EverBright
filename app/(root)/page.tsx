@@ -257,8 +257,8 @@ const Page = () => {
 
          
               
-                    top={4990}
-                    left={-120}
+                    top={4900}
+                    left={-200}
                     bottom={0}
                     zIndex={-1}
                     pos={"absolute"}
