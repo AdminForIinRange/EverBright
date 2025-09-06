@@ -49,6 +49,7 @@ function ServiceLayout() {
         align="center"
         w="100%"
         textAlign="center"
+        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
        
       >
         <VStack
@@ -60,6 +61,7 @@ function ServiceLayout() {
           textAlign="center"
           px={"4%"}
           w="100%"
+
         >
      
           <Text
