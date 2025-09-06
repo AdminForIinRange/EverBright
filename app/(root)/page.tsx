@@ -210,7 +210,7 @@ const Page = () => {
 
       <About />
 
-      <SlindingBanner />
+      {/* <SlindingBanner /> */}
 
       <Box pt={["50px", "50px", "50px", "100px", "100px", "100px"]}>
         <ServiceLayout />
