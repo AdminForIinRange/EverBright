@@ -215,7 +215,7 @@ const Page = () => {
       <Box pt={["50px", "50px", "50px", "100px", "100px", "100px"]}>
         <ServiceLayout />
 
-        <Box mt={["50px", "50px", "50px", "100px", "100px", "100px"]}>
+        <Box mt={["25px", "25px", "25px", "100px", "100px", "100px"]}>
           {/* Another spot where SectionHeading matches your style */}
           <VStack
             justify={"center"}
@@ -225,9 +225,9 @@ const Page = () => {
             px={["4%", "4%", "6%", "6%", "6%", "10%"]}
           >
             <SectionHeading
-              eyebrow={``}
+              eyebrow={`EVERBRIGHT PRESSURE WASHING`}
               title="A Local Business you can rely on"
-              color="bule.100"
+          color="blue.900"
             />
           </VStack>
 
