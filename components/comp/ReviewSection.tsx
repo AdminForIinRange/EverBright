@@ -7,7 +7,7 @@ import Google from "@/public/Google.png";
 
 /* ====== Tunables ====== */
 const CARD_W = 340;
-const CARD_H = 320;
+
 const CARD_GAP = 24; // px gap between cards
 
 /* ====== Small utilities ====== */
@@ -67,7 +67,7 @@ function ReviewCard({ name, date, reviewText, stars, platform, avatar }) {
       style={{
         width: CARD_W,
         minWidth: CARD_W,
-        height: CARD_H,
+        height: "220px",
         background: "#fff",
         border: "1px solid #E2E8F0",
         borderRadius: 12,

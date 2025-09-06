@@ -17,7 +17,7 @@ const SectionHeading = ({
       fontFamily="poppins"
       fontWeight={700}
       lineHeight="1.6"
-      color="blue.400"
+      color="cyan.500"
     >
       {eyebrow}
     </Text>

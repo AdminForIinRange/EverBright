@@ -18,7 +18,7 @@ const FreeQuote = () => {
       textAlign="center"
     >
       {/* Heading */}
-      <Text fontSize="md" fontWeight="600" color="blue.600" mb={1}>
+      <Text fontSize="md" fontWeight="600" color="cyan.500" mb={1}>
         Get Your No-Obligation
       </Text>
       <Text
