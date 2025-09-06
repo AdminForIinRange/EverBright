@@ -42,7 +42,7 @@ function ServicesBox({ title, image }: { title: string; image: string }) {
         <Box bottom="0" left="0" right="0" p="4">
           <Text
 
-            fontSize={{ base: "25px", md: "25px" }}
+            fontSize={{ base: "30px", md: "25px" }}
             fontWeight="700"
             textAlign="center"
             fontFamily="poppins"

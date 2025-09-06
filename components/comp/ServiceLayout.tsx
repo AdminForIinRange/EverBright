@@ -61,7 +61,7 @@ function ServiceLayout() {
           >
             <SectionHeading
               eyebrow={``}
-              title="How we can help you"
+              title="How we can help you home"
               color="bule.100"
             />
           </VStack>
