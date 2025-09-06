@@ -50,8 +50,9 @@ const HeroText = () => {
           <HStack
             justify={["start", "start", "start", "start", "start"]}
             align={["start", "start", "start", "start", "start"]}
+            textShadow={"0px 0px 10px black"}
           >
-            <Text color="green.300" fontWeight={"700"} fontSize="24px">
+            <Text  color="green.600" fontWeight={"700"} fontSize="24px">
               ✓{" "}
               <Span
                 fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
@@ -63,7 +64,7 @@ const HeroText = () => {
                 Pressure Cleaning
               </Span>
             </Text>
-            <Text color="green.300" fontSize="24px" fontWeight={"700"}>
+            <Text  color="green.600"  fontSize="24px" fontWeight={"700"}>
               ✓{" "}
               <Span
                 fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
@@ -84,8 +85,9 @@ const HeroText = () => {
           <HStack
             justify={["start", "start", "start", "start", "start"]}
             align={["start", "start", "start", "start", "start"]}
+             textShadow={"0px 0px 10px black"}
           >
-            <Text color="green.300" fontSize="24px" fontWeight={"700"}>
+            <Text   color="green.600"  fontSize="24px" fontWeight={"700"}>
               ✓{" "}
               <Span
                 fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}
@@ -97,7 +99,7 @@ const HeroText = () => {
                 Pressure Cleaning
               </Span>
             </Text>
-            <Text color="green.300" fontSize="24px" fontWeight={"700"}>
+            <Text  color="green.600"  fontSize="24px" fontWeight={"700"}>
               ✓{" "}
               <Span
                 fontSize={["14px", "16px", "16px", "20px", "20px", "20px"]}

@@ -19,90 +19,35 @@ import BadgeItem from "@/components/comp/compsDeep/BadgeItem";
 import PromiseItem from "@/components/comp/compsDeep/PromiseItem";
 import SectionHeading from "@/components/comp/compsDeep/SectionHeading";
 import ServiceLayout from "@/components/comp/ServiceLayout";
-import { Shield, Home, Leaf } from "lucide-react";
+
 import About from "@/components/comp/About";
 import SlidingCard from "@/components/comp/SlidingCard";
 import SlindingBanner from "@/components/comp/SlindingBanner";
 
-const Page = () => {
-  const services = [
-    {
-      title: "Pressure Washing",
-      image:
-        "https://images.pexels.com/photos/14965464/pexels-photo-14965464.jpeg",
-      desc: "Deep-clean hard surfaces to remove grime, algae, and stubborn stains.",
-    },
-    {
-      title: "Solar Cleaning",
-      image:
-        "https://images.pexels.com/photos/8853508/pexels-photo-8853508.jpeg",
-      desc: "Maximize panel efficiency with streak-free, residue-free cleaning.",
-    },
-    {
-      title: "Roof Cleaning",
-      image:
-        "https://images.pexels.com/photos/6474451/pexels-photo-6474451.jpeg",
-      desc: "Safely lift moss and dark streaks to restore curb appeal.",
-    },
-    {
-      title: "Gutter Cleaning",
-      image:
-        "https://images.pexels.com/photos/4894655/pexels-photo-4894655.jpeg",
-      desc: "Clear debris to prevent overflow, leaks, and foundation damage.",
-    },
-    {
-      title: "Window Cleaning",
-      image:
-        "https://images.pexels.com/photos/5852922/pexels-photo-5852922.jpeg",
-      desc: "Crystal-clear glass inside and out for a brighter home.",
-    },
-    {
-      title: "Softwashing",
-      image:
-        "https://images.pexels.com/photos/5691505/pexels-photo-5691505.jpeg",
-      desc: "Low-pressure wash with eco detergents—safe for siding and paint.",
-    },
-    {
-      title: "Commercial Jobs",
-      image:
-        "https://images.pexels.com/photos/3768894/pexels-photo-3768894.jpeg",
-      desc: "Reliable large-scale cleaning tailored to business schedules.",
-    },
-    {
-      title: "Driveway & Concrete",
-      image:
-        "https://images.pexels.com/photos/4870704/pexels-photo-4870704.jpeg",
-      desc: "Remove oil spots and tire marks for a fresh, even finish.",
-    },
-  ];
+import icon1 from "@/public/images/Icons/1.png";
+import icon2 from "@/public/images/Icons/2.png";
+import icon3 from "@/public/images/Icons/3.png";
+import icon4 from "@/public/images/Icons/4.png";
 
+const Page = () => {
   // ✅ NEW: small data arrays to map the repeated items
   const badges = [
     {
       text: "100% Guarantee",
-      icon: <Shield />,
+      Images: icon1,
     },
     {
       text: "Fully Insured",
-      icon: <Shield />,
+      Images: icon2,
     },
     {
       text: "Locally Owned &",
-      icon: <Home />,
+      Images: icon3,
     },
     {
       text: "ECO Friendly",
-      icon: <Leaf />,
+      Images: icon4,
     },
-  ];
-
-  const promises = [
-    "100% Satisfaction Guarantee – Or We Will Fix It!",
-    "We’ll Be On Time",
-    "We Leave Things CLEAN",
-    "All Our Quotes Are Clear, Fast and No Obligation",
-    "We Are Fully Insured and Police Cheaked",
-    "Only Professional Equipment",
   ];
 
   return (
@@ -189,7 +134,7 @@ const Page = () => {
                 p={["5px", "5px", "10px", "10px", "10px", "10px"]}
                 w={["100%", "100%", "100%", "100%", "100%", "100%"]}
                 borderRadius={["30px", "30px", "30px", "30px", "30px", "30px"]}
-                bg={["white", "white", "none", "none", "none", "none"]}
+                bg={["cyan.900", "white", "none", "none", "none", "none"]}
               >
                 <HStack
                   justify="start"
@@ -198,7 +143,11 @@ const Page = () => {
                   w={"100%"}
                 >
                   {badges.map((badge, idx) => (
-                    <BadgeItem key={idx} text={badge.text} icon={badge.icon} />
+                    <BadgeItem
+                      key={idx}
+                      text={badge.text}
+                      image={badge.Images}
+                    />
                   ))}
                 </HStack>
               </Box>
@@ -294,85 +243,12 @@ const Page = () => {
                   </Box>
                 </VStack>
               </Box>
-
-              {/* Image area with decorative frame */}
-              {/* <Box
-                position="relative"
-                h={{ base: "100%", md: "100%", xl: "100%" }}
-                w={{ base: "100%", md: "100%" }}
-                display="flex"
-                justifyContent="end"
-              >
-                <Box
-                  position="relative"
-                  h={{ base: "100%", md: "100%" }}
-                  w={{ base: "100%", md: "100%" }}
-                  // subtle gradient border frame
-             
-            
-                >
-                  <Box
-                    borderRadius={"50px"}
-                    backgroundImage={` url('/images/aerial-city-adelaide.jpeg')`}
-                    backgroundRepeat="no-repeat"
-                    backgroundPosition="center"
-                    backgroundSize="cover"
-                    h="400px"
-                    w="100%"
-                    overflow="hidden"
-                  ></Box>
-                </Box>
-              </Box> */}
             </HStack>
           </HStack>
         </Box>
       </Box>
 
       <ReviewSection />
-
-      {/* <HStack bg={"blue.700"} py={"25px"}>
-        <VStack
-          justify={"center"}
-          align={"center"}
-          w={"100%"}
-          textAlign={"center"}
-          px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-        >
-          <Text
-            fontSize={["30px", "48px", "56px"]}
-            fontWeight={700}
-            fontFamily="poppins"
-            color="white"
-            lineHeight="1.1"
-          >
-            Ready to bring your home back to life
-          </Text>
-
-          <Box display="flex" justifyContent="center" h={"100%"} width="100%">
-            <HStack
-              justify={[
-                "center",
-                "center",
-                "center",
-                "center",
-                "center",
-                "center",
-              ]}
-              align={"center"}
-              w={"100%"}
-              transition={"all 0.2s ease-in-out"}
-              zIndex={4}
-            >
-          
-              <QuoteButton />
-            </HStack>
-          </Box>
-        </VStack>
-      </HStack> */}
-
-      {/* Floating geometric shapes */}
-
-      {/* <SlidingCard /> */}
 
       <Box
         bg={"cyan.500"}
@@ -392,11 +268,7 @@ const Page = () => {
         </VStack>
       </Box>
 
-      <Box
-       
-        py={"50px"}
-        px={["3%", "3%", "6%", "6%", "6%", "15%"]}
-      >
+      <Box py={"50px"} px={["3%", "3%", "6%", "6%", "6%", "15%"]}>
         <VStack justify="left" align="left" textAlign="left" w="100%">
           <Text
             fontSize={["40px", "48px", "56px"]}
@@ -416,14 +288,8 @@ const Page = () => {
             align={"start"}
             w={"100%"}
             fontFamily={"poppins"}
-
           >
-            <Text
-              color={"cyan.500"}
-              fontWeight={"500"}
-              fontSize="15px"
-             
-            >
+            <Text color={"cyan.500"} fontWeight={"500"} fontSize="15px">
               ✓{" "}
               <Span color={"black"} fontWeight={"600"}>
                 {" "}
@@ -431,61 +297,35 @@ const Page = () => {
               </Span>
             </Text>
 
-            <Text
-              color={"cyan.500"}
-              fontWeight={"500"}
-              fontSize="15px"
-             
-            >
+            <Text color={"cyan.500"} fontWeight={"500"} fontSize="15px">
               ✓{" "}
               <Span color={"black"} fontWeight={"600"}>
                 {" "}
                 Always On Time
               </Span>
             </Text>
-            <Text
-              color={"cyan.500"}
-              fontWeight={"500"}
-              fontSize="15px"
-             
-            >
+            <Text color={"cyan.500"} fontWeight={"500"} fontSize="15px">
               ✓{" "}
               <Span color={"black"} fontWeight={"600"}>
                 {" "}
                 Only Professional-Grade Equipment
               </Span>
             </Text>
-            <Text
-              color={"cyan.500"}
-              fontWeight={"500"}
-              fontSize="15px"
-             
-            >
+            <Text color={"cyan.500"} fontWeight={"500"} fontSize="15px">
               ✓{" "}
               <Span color={"black"} fontWeight={"600"}>
                 {" "}
                 Fully Insured
               </Span>
             </Text>
-            <Text
-           
-              fontWeight={"500"}
-              fontSize="15px"
-              color={"cyan.500"}
-             
-            >
+            <Text fontWeight={"500"} fontSize="15px" color={"cyan.500"}>
               ✓{" "}
               <Span color={"black"} fontWeight={"600"}>
                 {" "}
                 Professional, Reliable & Efficient Service
               </Span>
             </Text>
-            <Text
-              color={"cyan.500"}
-              fontWeight={"500"}
-              fontSize="15px"
-             
-            >
+            <Text color={"cyan.500"} fontWeight={"500"} fontSize="15px">
               ✓{" "}
               <Span color={"black"} fontWeight={"600"}>
                 {" "}
