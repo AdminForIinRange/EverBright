@@ -1,7 +1,7 @@
 "use client";
 import { Box, VStack, Text, HStack, Span, Link } from "@chakra-ui/react";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import Google from "@/public/Google.png";
 import Adl from "@/public/Shayal.png";
 import Shayal from "@/public/Shayal.png"; // <-- Add this line (update path/filename as needed)
@@ -29,7 +29,22 @@ import icon2 from "@/public/images/Icons/2.png";
 import icon3 from "@/public/images/Icons/3.png";
 import icon4 from "@/public/images/Icons/4.png";
 
+import Aos from "aos";
+import "aos/dist/aos.css";
+
+
 const Page = () => {
+  
+
+
+    useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+    });
+  }, []);
+
   // ✅ NEW: small data arrays to map the repeated items
   const badges = [
     {
@@ -41,7 +56,7 @@ const Page = () => {
       Images: icon2,
     },
     {
-      text: "Locally Owned &",
+      text: "Locally Owned",
       Images: icon3,
     },
     {
@@ -134,7 +149,7 @@ const Page = () => {
                 p={["5px", "5px", "10px", "10px", "10px", "10px"]}
                 w={["100%", "100%", "100%", "100%", "100%", "100%"]}
                 borderRadius={["30px", "30px", "30px", "30px", "30px", "30px"]}
-                bg={["cyan.900", "white", "none", "none", "none", "none"]}
+                bg={["#062042", "#062042", "none", "none", "none", "none"]}
               >
                 <HStack
                   justify="start"
