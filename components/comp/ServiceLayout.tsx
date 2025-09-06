@@ -52,29 +52,19 @@ function ServiceLayout() {
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
        
       >
-        <VStack
-          py={"50px"}
-          borderRadius={["25px", "25px", "25px", "25px", "25px", "25px"]}
-          bg={"cyan.500"}
-          justify="center"
-          align="center"
-          textAlign="center"
-          px={"4%"}
-          w="100%"
-
-        >
-     
-          <Text
-          textAlign={"left"}
-         fontSize={["40px", "48px", "56px"]}
-            fontWeight={700}
-            fontFamily="poppins"
-            lineHeight="1.1"
-            color={"white"}
+            <VStack
+            justify={"center"}
+            align={"center"}
+            w={"100%"}
+            textAlign={"center"}
+            px={["4%", "4%", "6%", "6%", "6%", "10%"]}
           >
-        How we can help your home
-          </Text>
-        </VStack>
+            <SectionHeading
+              eyebrow={``}
+              title="How we can help you"
+              color="bule.100"
+            />
+          </VStack>
       </VStack>
       <HStack
         wrap={"wrap"}

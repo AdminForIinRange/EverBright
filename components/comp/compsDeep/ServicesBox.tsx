@@ -13,10 +13,9 @@ function ServicesBox({ title, image }: { title: string; image: string }) {
     >
       <Box
         bg="white"
-       borderRadius={"25px"}
+        borderRadius={"25px"}
         overflow="hidden"
         boxShadow="0 0px 50px rgba(0,0,0,0.2)"
-        
         borderColor="Blue.500"
         transition="all 0.3s ease"
       >
@@ -37,99 +36,80 @@ function ServicesBox({ title, image }: { title: string; image: string }) {
               objectPosition: "center",
             }}
           />
-          <Box
-            position="absolute"
-            top="0"
-            left="0"
-            right="0"
-            bottom="0"
-         
-          />
-
+          <Box position="absolute" top="0" left="0" right="0" bottom="0" />
         </Box>
 
-        
-          <Box bottom="0" left="0" right="0" p="4">
-            <Text
-     
-              fontSize={{ base: "25px", md: "25px" }}
-              fontWeight="700"
-              textAlign="START"
+        <Box bottom="0" left="0" right="0" p="4">
+          <Text
 
-              fontFamily="poppins"
-                         color="black"
-            >
-              {title}
-            </Text>
-            <Text
-              py={"10px"}
+            fontSize={{ base: "25px", md: "25px" }}
+            fontWeight="700"
+            textAlign="center"
+            fontFamily="poppins"
+            color="black"
+
+          
+            
+          >
+            {title}
+          </Text>
+
+          <HStack mt={"30px"}  gap={"10px"} w="100%" position="RELATIVE">
+            <Link
+              href={"/services/PressureWashing"}
+              flex="1"
+              py="2"
+              px="2"
+              bg="gray.100"
               color="black"
-              fontSize={{ base: "sm", md: "md" }}
-              textAlign="START"
-             
-              fontFamily="poppins"
-              
+              rounded="lg"
+              fontSize="sm"
+              fontWeight="600"
+              textAlign="center"
+              textDecoration="none"
+              transition="all 0.2s ease"
+              _hover={{
+                bg: "cyan.600",
+                textDecoration: "none",
+                transform: "translateY(-1px)",
+              }}
+              _active={{
+                transform: "translateY(0)",
+              }}
             >
-              Comprehensive management service including all our offerings.
-            </Text>
+              <Text textAlign={"center"} w={"100%"}>
+                Get a Quote
+              </Text>
+            </Link>
 
-            <HStack gap={"10px"} w="100%" position="RELATIVE">
-              <Link
-                href={"/services/PressureWashing"}
-                flex="1"
-                py="2"
-                px="2"
-                bg="gray.100"
-                color="black"
-                rounded="lg"
-                fontSize="sm"
-                fontWeight="600"
-                textAlign="center"
-                textDecoration="none"
-                transition="all 0.2s ease"
-
-                _hover={{
-                  bg: "cyan.600",
-                  textDecoration: "none",
-                  transform: "translateY(-1px)",
-                }}
-                _active={{
-                  transform: "translateY(0)",
-                }}
-              >
-                <Text textAlign={"center"} w={"100%"}>
-                  Get a Quote
-                </Text>
-              </Link>
-
-              <Link
-                href={"/services/PressureWashing"}
-                flex="1"
-                py="2"
-                px="2"
-                bg="cyan.500"
-                color="white"
-                rounded="lg"
-                fontSize="sm"
-                fontWeight="600"
-                textAlign="center"
-                textDecoration="none"
-                transition="all 0.2s ease"
-                _hover={{
-                  bg: "cyan.600",
-                  textDecoration: "none",
-                  transform: "translateY(-1px)",
-                }}
-                _active={{
-                  transform: "translateY(0)",
-                }}
-              >
-                <Text textAlign={"center"} w={"100%"}>
-                  Learn More
-                </Text>
-              </Link>
-            </HStack>
-          </Box>
+            <Link
+              href={"/services/PressureWashing"}
+              flex="1"
+              py="2"
+              px="2"
+              bg="cyan.500"
+              color="white"
+              rounded="lg"
+              fontSize="sm"
+              fontWeight="600"
+              textAlign="center"
+              textDecoration="none"
+              transition="all 0.2s ease"
+              _hover={{
+                bg: "cyan.600",
+                textDecoration: "none",
+                transform: "translateY(-1px)",
+              }}
+              _active={{
+                transform: "translateY(0)",
+              }}
+            >
+              <Text textAlign={"center"} w={"100%"}>
+                Learn More
+              </Text>
+            </Link>
+          </HStack>
+        </Box>
       </Box>
     </Box>
   );
