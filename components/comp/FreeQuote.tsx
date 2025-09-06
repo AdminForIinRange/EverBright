@@ -13,7 +13,7 @@ const FreeQuote = () => {
       w={["100%", "100%", "600px"]}
       bg="white"
       borderRadius={["20px", "20px"]}
-      boxShadow="0 8px 24px rgba(0,0,0,0.08)"
+
       p={6}
       textAlign="center"
     >
@@ -60,7 +60,7 @@ const FreeQuote = () => {
 
       {/* Inputs (styled boxes only, since no Chakra Input) */}
       <VStack spacing={3} align="stretch">
-        <HStack  >
+        <HStack  wrap={"wrap"}  >
           <Box
             as="input"
             placeholder="Name"
@@ -82,7 +82,7 @@ const FreeQuote = () => {
             fontSize="sm"
           />
         </HStack>
-        <HStack>
+        <HStack  wrap={"wrap"}>
           <Box
             as="input"
             placeholder="Email"

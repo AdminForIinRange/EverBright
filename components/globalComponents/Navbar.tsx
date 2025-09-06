@@ -219,20 +219,18 @@ const Navbar = () => {
         { label: "Our Journey", link: "/about/journey", description: "See how EverBright has evolved" },
       ],
     },
-    {
-      name: "Services",
-      path: "/services",
-      hasDropdown: true,
-      items: [
-        { label: "Property Management", link: "/services/property-management", description: "Full-service management for luxury properties" },
-        { label: "Cleaning & Linen", link: "/services/cleaning-and-linen", description: "Premium cleaning and linen services" },
-        { label: "Furnishing & Styling", link: "/services/furnishing-and-styling", description: "Expert interior design and furnishing" },
-        { label: "Photography", link: "/services/photography", description: "Professional property photography" },
-      ],
-    },
-    { name: "Pricing", path: "/pricing", hasDropdown: false },
-    { name: "Gallery", path: "/gallery", hasDropdown: false },
-    { name: "Contact", path: "/contact", hasDropdown: false },
+    // {
+    //   name: "Services",
+    //   path: "/services",
+    //   hasDropdown: true,
+    //   items: [
+    //     { label: "Property Management", link: "/services/property-management", description: "Full-service management for luxury properties" },
+    //     { label: "Cleaning & Linen", link: "/services/cleaning-and-linen", description: "Premium cleaning and linen services" },
+    //     { label: "Furnishing & Styling", link: "/services/furnishing-and-styling", description: "Expert interior design and furnishing" },
+    //     { label: "Photography", link: "/services/photography", description: "Professional property photography" },
+    //   ],
+    // },
+
   ];
 
   return (
@@ -368,8 +366,9 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <Box
+      w={"100%"}
         position="fixed"
-        top="70px"
+        top="85px"
         left="0"
         right="0"
         bottom="0"
@@ -450,21 +449,10 @@ const Navbar = () => {
           {/* Mobile Contact Info */}
           <Box mt="32px" pt="20px" borderTop="1px solid #eee">
             <Text textStyle={"smallText"} color="#666" mb="12px">
-              luxemanagemnets.info@gmail.com
+              EverBright Pressure washing
             </Text>
-            <Text textStyle={"smallText"} color="#666" mb="12px">
-              +61 406 631 461
-            </Text>
-            <Text
-              textStyle={"smallText"}
-              fontWeight="500"
-              color="#333"
-              cursor="pointer"
-              _hover={{ color: "#000" }}
-              onClick={() => handleNavigate("/contact")}
-            >
-              Request a Quote
-            </Text>
+           
+           
           </Box>
         </Box>
       </Box>

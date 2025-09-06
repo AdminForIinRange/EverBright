@@ -288,7 +288,7 @@ export default function ReviewSection() {
         </HStack>
       </HStack>
 
-      <div style={{ padding: "0 24px" }}>
+      <div>
         <ReviewsScroller reviews={reviews} />
       </div>
 
